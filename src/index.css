@@ -1,1 +1,28 @@
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+    font-family: Rubik;
+}
+.SearchInputNav:focus{
+    border:none;
+    outline:none;
+    
+}
+.hoverBox{
+    display: none;
+    background-color: red;
+    padding:25px;
+    position:absolute;
+    top:65px;
+}
+.hoverBox:hover{
+    display: flex;
+}
+.Men:hover~.hoverBox{
+    display: flex;
+    
+}
+
