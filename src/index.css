@@ -5,24 +5,36 @@
 
 body{
     font-family: Rubik;
+    width:100%;
+    height:100%;
 }
-.SearchInputNav:focus{
-    border:none;
-    outline:none;
-    
-}
+
 .hoverBox{
     display: none;
-    background-color: red;
-    padding:25px;
+    background: white;
+    box-shadow: 0 0 20px -12px rgba(0,0,0,0.5);
+    /* padding:25px; */
     position:absolute;
     top:65px;
+    left:-50px;
 }
 .hoverBox:hover{
     display: flex;
 }
+
 .Men:hover~.hoverBox{
     display: flex;
     
 }
+.Women:hover~.hoverBox{
+    display: flex;
+    
+}
 
+.hoverBox>div>div>p{
+    cursor: pointer;
+}
+.hoverBox>div>div>p:hover{
+    scale:1.03;
+    color:rgba(0,0,0,0.8)
+}

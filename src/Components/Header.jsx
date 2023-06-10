@@ -4,73 +4,66 @@ import { CgProfile } from "react-icons/cg";
 import { MdPermIdentity } from "react-icons/md";
 import logo from "../assets/logo.svg";
 import { AiOutlineShoppingCart } from "react-icons/ai";
+import HoverComponent from "./HoverComponent";
 
 export default function Header() {
-    const[opaque,setOpaque]=useState('hidden')
-    function handleMouseOver (){
-     
+    const[opaque,setOpaque]=useState('hidden');
+    const [item, setItem] = useState(null)
+    
+    function handleMouseOver (item){
+      setOpaque("block")
+      setItem(item)
     }
+    const hoverOver=()=>{
+        setOpaque("block")
+        
+    }
+    function handleMouseLeave(){
+        
+        setOpaque("hidden")
+    }
+
+    
+  const NavArray = ["Men","Women","kids","Home & Living","Beauty"];
+  
   return (
 
     
     <>
-    <nav className="  w-full flex justify-center px-[20px] mx-auto min-[768px]:py-[5px] min-[768px]:m-0 shadow-[0_8px_20px_-16px_rgba(0,0,0,0.3)]  box-border  ">
-      <div className="flex items-center  w-[90%] justify-between max-w-[1300px] box-border ">
-        <img className="w-[200px] cursor-pointer" src={logo} alt="logo" />
-        <ul className="flex text-[18px] text-[rgba(0,0,0,0.7)] font-semibold  justify-between min-[768px]:gap-[30px] gap-[20px] box-border relative ">
-          <li className="cursor-pointer hover:underline underline-offset-[4px] underline-thickness-2 decoration-2 decoration-red-300 Men py-[20px]" onMouseOver={handleMouseOver}>
-            Men
-          </li>
+    <nav className="  w-full flex   min-[768px]:py-[5px] shadow-[0_8px_20px_-16px_rgba(0,0,0,0.3)]   ">
+      <div className="flex items-center  w-full justify-around  box-border ">
+        <img className="w-[17%] cursor-pointer " src={logo} alt="logo" />
+        <ul className="flex w-[32%] text-[17px] max-[900px]:text-[13px] text-[rgba(0,0,0,0.7)] font-semibold  justify-between   box-border relative items-center">
+         {NavArray.map((data,index)=>{
+           return(
+            <  >
+            <li key={index} className={`cursor-pointer hover:underline underline-offset-[20px]  decoration-[3px] decoration-red-300 ${data} max-[900px]:py-[10px] max-[900px]:px-[4px] py-[20px] px-[10px] `} onMouseOver={()=>{handleMouseOver(data)}} onMouseLeave={handleMouseLeave}>
+            {data}
+           </li>
+             <div className="hoverBox  z-10" onMouseOver={hoverOver} onMouseLeave={handleMouseLeave}><HoverComponent item={item}/></div>
+            </>
+           )
+         })}
           
-          <div className="hoverBox box-border z-10">
-            <div>
-                <h3>Topwear</h3>
-                <p>T-Shirts</p>
-                <p>Casual Shirts</p>
-                <p>Formal Shirts</p>
-                <p>SweatShirts</p>
-                <p>Sweaters</p>
-                <p>Jackets</p>
-                <p>Blazers&Coats</p>
-                <p>Suits</p>
-                <p>Rain jackets</p>
-
-            </div>
-          
-          </div>
-          <li className="cursor-pointer hover:underline underline-offset-[4px] underline-thickness-2 decoration-2 decoration-red-300 py-[20px]">
-            Women
-          </li>
-          <li className="cursor-pointer hover:underline underline-offset-[4px] underline-thickness-2 decoration-2 decoration-red-300 py-[20px]">
-            Women
-          </li>
-          <li className="cursor-pointer hover:underline underline-offset-[4px] underline-thickness-2 decoration-2 decoration-red-300 py-[20px]">
-            Kids
-          </li>
-          <li className="cursor-pointer hover:underline underline-offset-[4px] underline-thickness-2 decoration-2 decoration-red-300 py-[20px]">
-            Home&Living
-          </li>
-          <li className="cursor-pointer hover:underline underline-offset-[4px] underline-thickness-2 decoration-2 decoration-red-300 py-[20px]">
-            Beauty
-          </li>
         </ul>
 
-        <div className="flex items-center min-[768px]:gap-[30px] gap-[20px]  ">
-          <form className="relative bg-[rgba(0,0,0,0.1)] min-w-[250px] w-full ">
+        <div className="flex w-[33%] items-center min-[768px]:gap-[30px] gap-[20px]  ">
+          <form className="relative bg-[rgba(0,0,0,0.1)] w-[50%]  ">
             <input
-              className="SearchInputNav px-[35px]  w-full text-[15px] focus-visible:outline-none border-none bg-transparent"
+              className="px-[35px] max-[900px]:py-[5px] w-full text-[15px] focus-visible:outline-none border-none bg-transparent"
               type="text"
               name=""
               id=""
+              placeholder="Search for clothes & brands..."
             />
             <BsSearch className="absolute top-[12px] left-2 mr-5 cursor-pointer" />
           </form>
-          <MdPermIdentity className="text-[35px] font-light cursor-pointer" />
-          <AiOutlineShoppingCart className="text-[30px] font-light cursor-pointer" />
+          <MdPermIdentity className="text-[35px]  w-[8%] font-light cursor-pointer" />
+          <AiOutlineShoppingCart className="text-[30px] w-[8%] font-light cursor-pointer" />
         </div>
       </div>
     </nav>
-    <div className={`opaque ${opaque} absolute top-[82px] bottom-0 right-0 left-0 bg-[rgba(0,0,0,0.4)] z-[1]`}></div>
+    <div className={`opaque ${opaque} absolute top-[78px] bottom-0 right-0 left-0 bg-[rgba(0,0,0,0.3)] z-[1]`}></div>
     </>
   );
 }
