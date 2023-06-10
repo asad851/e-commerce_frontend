@@ -11,25 +11,38 @@ body{
 
 .hoverBox{
     display: none;
+    
     background: white;
     box-shadow: 0 0 20px -12px rgba(0,0,0,0.5);
     /* padding:25px; */
     position:absolute;
     top:65px;
-    left:-50px;
+    left:-150px;
+    overflow: hidden;
 }
 .hoverBox:hover{
     display: flex;
+    
 }
 
 .Men:hover~.hoverBox{
     display: flex;
+   ;
     
 }
 .Women:hover~.hoverBox{
     display: flex;
+   
     
 }
+.Kids:hover~.hoverBox{
+    display: flex;
+}
+.Home.Living:hover~.hoverBox{
+    display: flex;
+}
+   
+    
 
 .hoverBox>div>div>p{
     cursor: pointer;
