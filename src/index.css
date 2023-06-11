@@ -11,7 +11,7 @@ body{
 
 .hoverBox{
     display: none;
-    
+    justify-content: center;
     background: white;
     box-shadow: 0 0 20px -12px rgba(0,0,0,0.5);
     /* padding:25px; */
@@ -38,7 +38,7 @@ body{
 .Kids:hover~.hoverBox{
     display: flex;
 }
-.Home.Living:hover~.hoverBox{
+.Beauty:hover~.hoverBox{
     display: flex;
 }
    
