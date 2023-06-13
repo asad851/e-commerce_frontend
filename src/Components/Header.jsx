@@ -5,7 +5,7 @@ import { MdPermIdentity } from "react-icons/md";
 import logo from "../assets/logo.svg";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import HoverComponent from "./HoverComponent";
-
+import {RxHamburgerMenu} from 'react-icons/rx'
 export default function Header() {
     const[opaque,setOpaque]=useState('hidden');
     const [item, setItem] = useState(null)
