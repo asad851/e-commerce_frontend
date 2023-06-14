@@ -149,11 +149,11 @@ export default function Header() {
                 
               </ul>
                 <div className="flex flex-col gap-[10px] text-slate-100">
-                <div className="w-full flex items-center cursor-pointer   bg-gradient-to-br from-pink-500 to-orange-400 rounded-md justify-center p-[5px]">
+                <div className="w-full flex items-center cursor-pointer   bg-gradient-to-br from-pink-500 to-orange-400 rounded-md justify-center gap-[5px] p-[5px]">
                   <p>Account</p>
                   <MdPermIdentity className="text-[25px]" />
                 </div>
-                <div className="w-full flex items-center cursor-pointer  bg-gradient-to-br from-pink-500 to-orange-400 rounded-md justify-center p-[5px]">
+                <div className="w-full flex items-center cursor-pointer  bg-gradient-to-br from-pink-500 to-orange-400 rounded-md justify-center gap-[5px] p-[5px]">
                   <p>Cart</p>
                   <AiOutlineShoppingCart className="text-[22px]" />
                 </div>
@@ -181,7 +181,7 @@ export default function Header() {
               class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 absolute top-4 right-3 inline-flex items-center "
               onClick={() => setShowSubSlider(false)}
             >
-              <BsArrowLeft className="text-[20px]"/>
+              <BsArrowLeft className="text-[23px]"/>
               <span class="sr-only">Close menu</span>
             </button>
             <div className="mt-[50px] flex  ">

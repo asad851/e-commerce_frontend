@@ -5,7 +5,10 @@ function HoverComponent({ item }) {
     if (item == "Men") {
       return (
         <div className=" box-border w-full flex gap-[5px] max-[1000px]:flex-col max-lg:gap-0">
-          <div className="text-[1.15vw]  max-[1000px]:text-[18px] text-[rgba(0,0,0,0.5)] p-[2.1vw] ">
+          <div className="text-[1.15vw] flex flex-col  max-[1000px]:text-[18px] text-[rgba(0,0,0,0.5)] p-[2.1vw] ">
+            <h3 className="min-[1000px]:hidden my-3  text-[23px] text-red-400 font-semibold cursor-pointer">
+              All
+            </h3>
             <h3 className="text-[1.25vw]  max-[1000px]:text-[20px] text-black font-semibold cursor-pointer">
               Topwear
             </h3>
@@ -26,8 +29,8 @@ function HoverComponent({ item }) {
             <p className="px-[4px]  py-[2px] active:bg-gray-100">Sherwanis</p>
             <p className="px-[4px]  py-[2px] active:bg-gray-100">Nehru Jacket</p>
             <p className="px-[4px]  py-[2px] active:bg-gray-100">Dhotis</p>
-          </div>
           <div className="my-[20px] h-[1px] min-[1000px]:hidden max-[1000px]:my-[20px]  w-[16vw] max-[1000px]:w-full bg-[rgba(0,0,0,0.2)] "></div>
+          </div>
           <div className="text-[1.15vw] max-[1000px]:text-[18px] text-[rgba(0,0,0,0.5)] bg-[#fdfafa] max-[1000px]:bg-transparent  p-[2.1vw]">
             <h3 className="text-[1.25vw] max-[1000px]:text-[20px] text-black font-semibold cursor-pointer">
               Bottomwear
@@ -47,6 +50,7 @@ function HoverComponent({ item }) {
             <p className="px-[4px]  py-[2px] active:bg-gray-100">Vests</p>
             <p className="px-[4px]  py-[2px] active:bg-gray-100">Sleepear & Loungewear</p>
             <p className="px-[4px]  py-[2px] active:bg-gray-100">Thermals</p>
+          <div className="my-[20px] h-[1px] min-[1000px]:hidden max-[1000px]:my-[20px]  w-[16vw] max-[1000px]:w-full bg-[rgba(0,0,0,0.2)] "></div>
           </div>
           <div className="text-[1.15vw] max-[1000px]:text-[18px] text-[rgba(0,0,0,0.5)] p-[2.1vw]">
             <h3 className="text-[1.25vw] max-[1000px]:text-[20px] text-black font-semibold cursor-pointer">
@@ -66,10 +70,12 @@ function HoverComponent({ item }) {
             <h3 className="text-[1.25vw] max-[1000px]:text-[20px] my-[10px] cursor-pointer text-black font-semibold">
               Sunglasses & Frames
             </h3>
+            <div className="my-[20px] h-[1px] min-[1000px]:hidden max-[1000px]:my-[20px]  w-[16vw] max-[1000px]:w-full bg-[rgba(0,0,0,0.2)] "></div>
             <h3 className="text-[1.25vw] max-[1000px]:text-[20px] my-[10px] cursor-pointer text-black font-semibold">
-              Watches
+              Watches0
+
             </h3>
-            
+            <div className="my-[20px] h-[1px] min-[1000px]:hidden max-[1000px]:my-[20px]  w-[16vw] max-[1000px]:w-full bg-[rgba(0,0,0,0.2)] "></div>
           </div>
           <div className="text-[1.15vw] max-[1000px]:text-[18px] text-[rgba(0,0,0,0.5)] bg-[#fdfafa] max-[1000px]:bg-transparent  p-[2.1vw]">
             <h3 className="text-[1.25vw] max-[1000px]:text-[20px] text-black font-semibold cursor-pointer">
@@ -97,6 +103,9 @@ function HoverComponent({ item }) {
         return(
             <div className=" box-border w-full flex max-[1000px]:flex-col gap-[5px] max-lg:gap-0">
           <div className="text-[1.15vw] max-[1000px]:text-[18px] text-[rgba(0,0,0,0.5)] p-[2.1vw]">
+          <h3 className="min-[1000px]:hidden my-3  text-[23px] text-red-400 font-semibold cursor-pointer">
+              All
+            </h3>
             <h3 className="text-[1.25vw] max-[1000px]:text-[20px] text-black font-semibold cursor-pointer">
               Indian & fusion Wear
             </h3>
@@ -113,10 +122,11 @@ function HoverComponent({ item }) {
             <h3 className="text-[1.25vw] max-[1000px]:text-[20px] text-black font-semibold">
               Belts, Scarves & More
             </h3>
+            <div className="my-[20px] h-[1px] min-[1000px]:hidden max-[1000px]:my-[20px]  w-[16vw] max-[1000px]:w-full bg-[rgba(0,0,0,0.2)] "></div>
             <h3 className="text-[1.25vw] max-[1000px]:text-[20px] my-[10px] text-black font-semibold">
               Watches & Wearables
             </h3>
-            
+            <div className="my-[20px] h-[1px] min-[1000px]:hidden max-[1000px]:my-[20px]  w-[16vw] max-[1000px]:w-full bg-[rgba(0,0,0,0.2)] "></div>
           </div>
           <div className="text-[1.15vw] max-[1000px]:text-[18px] text-[rgba(0,0,0,0.5)] bg-[#fdfafa] max-[1000px]:bg-transparent  p-[2.1vw]">
             <h3 className="text-[1.25vw] max-[1000px]:text-[20px]  text-black font-semibold cursor-pointer">
@@ -141,15 +151,17 @@ function HoverComponent({ item }) {
             <h3 className="text-[1.25vw] max-[1000px]:text-[20px] text-black font-semibold">
               Plus Size
             </h3>
-            
+            <div className="my-[20px] h-[1px] min-[1000px]:hidden max-[1000px]:my-[20px]  w-[16vw] max-[1000px]:w-full bg-[rgba(0,0,0,0.2)] "></div>
           </div>
           <div className="text-[1.15vw] max-[1000px]:text-[18px] text-[rgba(0,0,0,0.5)] p-[2.1vw]">
             <h3 className="text-[1.25vw] max-[1000px]:text-[20px] text-black font-semibold cursor-pointer">
               Maternity
             </h3>
+            <div className="my-[20px] h-[1px] min-[1000px]:hidden max-[1000px]:my-[20px]  w-[16vw] max-[1000px]:w-full bg-[rgba(0,0,0,0.2)] "></div>
             <h3 className="text-[1.25vw] my-[10px]  max-[1000px]:text-[20px] text-black font-semibold cursor-pointer">
               Sunglasses & Frames
             </h3>
+            <div className="my-[20px] h-[1px] min-[1000px]:hidden max-[1000px]:my-[20px]  w-[16vw] max-[1000px]:w-full bg-[rgba(0,0,0,0.2)] "></div>
             <h3 className="text-[1.25vw] my-[10px] max-[1000px]:text-[20px] text-black font-semibold cursor-pointer">
               Footwear
             </h3>
@@ -168,7 +180,7 @@ function HoverComponent({ item }) {
             <p className="px-[4px]  py-[2px] active:bg-gray-100">Footwear</p>
             <p className="px-[4px]  py-[2px] active:bg-gray-100">Sports Accessories</p>
             <p className="px-[4px]  py-[2px] active:bg-gray-100">Sports Equipments</p>
-            
+            <div className="my-[20px] h-[1px] min-[1000px]:hidden max-[1000px]:my-[20px]  w-[16vw] max-[1000px]:w-full bg-[rgba(0,0,0,0.2)] "></div>
           </div>
           <div className="text-[1.15vw] max-[1000px]:text-[18px] text-[rgba(0,0,0,0.5)] bg-[#fdfafa] max-[1000px]:bg-transparent  p-[2.1vw]">
             <h3 className="text-[1.25vw] max-[1000px]:text-[20px] text-black font-semibold cursor-pointer">
@@ -201,6 +213,9 @@ function HoverComponent({ item }) {
     return(
         <div className=" box-border w-full max-[1000px]:flex-col  flex gap-[5px] max-lg:gap-0">
         <div className="text-[1.15vw] max-[1000px]:text-[18px] text-[rgba(0,0,0,0.5)] p-[2.1vw] min-w-[250px] max-lg:min-w-[16vw] max-[1000px]:w-full w-full">
+        <h3 className="min-[1000px]:hidden my-3  text-[23px] text-red-400 font-semibold cursor-pointer">
+              All
+            </h3>
           <h3 className="text-[1.25vw] max-[1000px]:text-[20px]  text-black font-semibold cursor-pointer">
             Boys Clothing
           </h3>
@@ -217,7 +232,7 @@ function HoverComponent({ item }) {
           <p className="px-[4px]  py-[2px] active:bg-gray-100">Nightwaear & Lounge</p>
           <p className="px-[4px]  py-[2px] active:bg-gray-100">Value Packs</p>
          
-          
+          <div className="my-[20px] h-[1px] min-[1000px]:hidden max-[1000px]:my-[20px]  w-[16vw] max-[1000px]:w-full bg-[rgba(0,0,0,0.2)] "></div>
         </div>
         <div className="text-[1.15vw] max-[1000px]:text-[18px] text-[rgba(0,0,0,0.5)] bg-[#fdfafa] max-[1000px]:bg-transparent  p-[2.1vw] min-w-[280px] max-lg:min-w-[16vw] max-[1000px]:w-full w-full">
           <h3 className="text-[1.25vw] max-[1000px]:text-[20px]  text-black font-semibold cursor-pointer">
@@ -238,8 +253,8 @@ function HoverComponent({ item }) {
           <p className="px-[4px]  py-[2px] active:bg-gray-100">Innerwear & Thermals</p>
           <p className="px-[4px]  py-[2px] active:bg-gray-100">Nightwear & Loungewear</p>
           <p className="px-[4px]  py-[2px] active:bg-gray-100">ValuePacks</p>
-          
-
+          <div className="my-[20px] h-[1px] min-[1000px]:hidden max-[1000px]:my-[20px]  w-[16vw] max-[1000px]:w-full bg-[rgba(0,0,0,0.2)] "></div>
+           
           
           
         </div>
@@ -266,7 +281,7 @@ function HoverComponent({ item }) {
           <p className="px-[4px]  py-[2px] active:bg-gray-100">Activity toys</p>
           <p className="px-[4px]  py-[2px] active:bg-gray-100">Soft Toys</p>
           <p className="px-[4px]  py-[2px] active:bg-gray-100">Action Figure/Playsets</p>
-          
+          <div className="my-[20px] h-[1px] min-[1000px]:hidden max-[1000px]:my-[20px]  w-[16vw] max-[1000px]:w-full bg-[rgba(0,0,0,0.2)] "></div>
         </div>
         <div className="text-[1.15vw] max-[1000px]:text-[18px] text-[rgba(0,0,0,0.5)] bg-[#fdfafa] max-[1000px]:bg-transparent  p-[2.1vw]">
           <h3 className="text-[1.25vw] max-[1000px]:text-[20px] text-black font-semibold cursor-pointer">
@@ -302,6 +317,9 @@ function HoverComponent({ item }) {
     return(
         <div className=" box-border w-full max-[1000px]:flex-col flex gap-[5px] max-lg:gap-0">
         <div className="text-[1.15vw] max-[1000px]:text-[18px] text-[rgba(0,0,0,0.5)] p-[2.1vw]  w-[16vw] max-[1000px]:w-full ">
+        <h3 className="min-[1000px]:hidden my-3  text-[23px] text-red-400 font-semibold cursor-pointer">
+              All
+            </h3>
           <h3 className="text-[1.25vw] max-[1000px]:text-[20px]  text-black font-semibold cursor-pointer">
             Makeup
           </h3>
@@ -317,7 +335,7 @@ function HoverComponent({ item }) {
           <p className="px-[4px]  py-[2px] active:bg-gray-100">Concealer</p>
           <p className="px-[4px]  py-[2px] active:bg-gray-100">Compact</p>
           <p className="px-[4px]  py-[2px] active:bg-gray-100">Nail Polish</p>
-         
+          <div className="my-[20px] h-[1px] min-[1000px]:hidden max-[1000px]:my-[20px]  w-[16vw] max-[1000px]:w-full bg-[rgba(0,0,0,0.2)] "></div>
           
         </div>
         <div className="text-[1.15vw] max-[1000px]:text-[18px] text-[rgba(0,0,0,0.5)] bg-[#fdfafa] max-[1000px]:bg-transparent  p-[2.1vw]  ">
@@ -344,7 +362,7 @@ function HoverComponent({ item }) {
           <h3 className="text-[1.25vw] max-[1000px]:text-[20px] text-black font-semibold cursor-pointer">
             Masks
           </h3>
-
+          <div className="my-[20px] h-[1px] min-[1000px]:hidden max-[1000px]:my-[20px]  w-[16vw] max-[1000px]:w-full bg-[rgba(0,0,0,0.2)] "></div>
           
           
         </div>
@@ -371,7 +389,7 @@ function HoverComponent({ item }) {
           <p className="px-[4px]  py-[2px] active:bg-gray-100">Deodorant</p>
           <p className="px-[4px]  py-[2px] active:bg-gray-100">Body Mist</p>
           
-          
+          <div className="my-[20px] h-[1px] min-[1000px]:hidden max-[1000px]:my-[20px]  w-[16vw] max-[1000px]:w-full bg-[rgba(0,0,0,0.2)] "></div>
         </div>
         <div className="text-[1.15vw] max-[1000px]:text-[18px] text-[rgba(0,0,0,0.5)] bg-[#fdfafa] max-[1000px]:bg-transparent  p-[2.1vw]">
           <h3 className="text-[1.25vw] max-[1000px]:text-[20px] text-black font-semibold cursor-pointer">
