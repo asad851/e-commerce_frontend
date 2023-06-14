@@ -7,11 +7,12 @@ import { AiOutlineShoppingCart } from "react-icons/ai";
 import HoverComponent from "./HoverComponent";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { RxCaretRight } from "react-icons/rx";
-
+import {BsArrowLeft} from "react-icons/bs"
 export default function Header() {
   const [opaque, setOpaque] = useState("hidden");
   const [item, setItem] = useState(null);
   const [showSlider, setShowSlider] = useState(false);
+  const [showSubSlider, setShowSubSlider] = useState(false);
   function handleMouseOver(item) {
     setOpaque("block");
     setItem(item);
@@ -22,7 +23,10 @@ export default function Header() {
   function handleMouseLeave() {
     setOpaque("hidden");
   }
-
+  const mobileMenuClickHandler=(data)=>{
+    setShowSubSlider(true);
+    setItem(data)
+  }
   const NavArray = ["Men", "Women", "Kids", "Beauty"];
 
   return (
@@ -80,7 +84,7 @@ export default function Header() {
         </div>
 
         {/* MOBILE MENU */}
-
+        
         <div className=" items-center flex min-[1000px]:hidden w-screen justify-between px-[25px] box-border ">
           <img className=" cursor-pointer " src={logo} alt="logo" />
           <div className="flex gap-[25px] items-centert">
@@ -90,6 +94,8 @@ export default function Header() {
               onClick={() => setShowSlider(true)}
             />
           </div>
+          {showSlider&&<div className=" max-[1000px]:hidden absolute top-[0px] bottom-0 right-0 left-0 bg-[rgba(0,0,0,0.3)] z-10 " onClick={() => setShowSlider(false)}
+      ></div>}
           <div
             id="drawer-right-example"
             class={`fixed top-0 ${
@@ -121,19 +127,17 @@ export default function Header() {
               </svg>
               <span class="sr-only">Close menu</span>
             </button>
-            <div className="flex flex-col w-full gap-[100px] text-[20px] font-bold mt-[50px] px-[50px] box-border">
+            <div className="flex flex-col w-full gap-[100px] text-[20px] font-bold mt-[100px] px-[50px] box-border">
               <ul className="flex flex-col w-full  gap-[30px] text-[20px] items-center overflow-hidden  text-[rgba(0,0,0,0.7)]     box-border relative  ">
                 {NavArray.map((data, index) => {
                   return (
                     <>
-                      <div className="flex items-center justify-between gap-[15px] w-full cursor-pointer hover:bg-slate-200 rounded-[5px] px-[10px] ">
+                      <div className="flex items-center justify-between gap-[15px] w-full cursor-pointer active:bg-gray-100 rounded-[5px] px-[10px]  " onClick={()=>mobileMenuClickHandler(data)}>
                         <li
                           key={index}
                           className={`  `}
-                          onMouseOver={() => {
-                            handleMouseOver(data);
-                          }}
-                          onMouseLeave={handleMouseLeave}
+                          
+                          
                         >
                           {data}
                         </li>
@@ -157,6 +161,35 @@ export default function Header() {
             </div>
           </div>
         </div>
+           
+           {/* SUB MENU */}
+
+           
+          <div
+            id="drawer-right-example"
+            class={`fixed top-0 ${
+              showSubSlider ? "right-[0px] " : "right-[-550px]"
+            } z-40 p-4 overflow-y-auto transition-[right] duration-500 w-[100%] min-[400px]:w-[40%] h-screen bg-white ease-out shadow-xl  box-border`}
+            tabindex="-1"
+            aria-labelledby="drawer-right-label"
+          >
+            
+            <button
+              type="button"
+              data-drawer-hide="drawer-right-example"
+              aria-controls="drawer-right-example"
+              class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 absolute top-4 right-3 inline-flex items-center "
+              onClick={() => setShowSubSlider(false)}
+            >
+              <BsArrowLeft className="text-[20px]"/>
+              <span class="sr-only">Close menu</span>
+            </button>
+            <div className="mt-[50px] flex  ">
+              <HoverComponent item={item}/>
+            </div>
+          </div>
+        
+
       </nav>
     </>
   );
