@@ -72,7 +72,7 @@ function HoverComponent({ item }) {
             </h3>
             <div className="my-[20px] h-[1px] min-[1000px]:hidden max-[1000px]:my-[20px]  w-[16vw] max-[1000px]:w-full bg-[rgba(0,0,0,0.2)] "></div>
             <h3 className="text-[1.25vw] max-[1000px]:text-[20px] my-[10px] cursor-pointer text-black font-semibold">
-              Watches0
+              Watches
 
             </h3>
             <div className="my-[20px] h-[1px] min-[1000px]:hidden max-[1000px]:my-[20px]  w-[16vw] max-[1000px]:w-full bg-[rgba(0,0,0,0.2)] "></div>

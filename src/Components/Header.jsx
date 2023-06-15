@@ -7,28 +7,53 @@ import { AiOutlineShoppingCart } from "react-icons/ai";
 import HoverComponent from "./HoverComponent";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { RxCaretRight } from "react-icons/rx";
-import {BsArrowLeft} from "react-icons/bs"
+import { BsArrowLeft } from "react-icons/bs";
+import SignupOrInModal from "./SignupOrInModal";
 export default function Header() {
   const [opaque, setOpaque] = useState("hidden");
   const [item, setItem] = useState(null);
   const [showSlider, setShowSlider] = useState(false);
   const [showSubSlider, setShowSubSlider] = useState(false);
+  const [showSearch, setShowSeacrh] = useState(false);
+  const [showAccountModal,setShowAccountModal] =useState(false);
+  // const [Switch,setSwitch] = useState("Sign in")
+
   function handleMouseOver(item) {
     setOpaque("block");
     setItem(item);
   }
+  
   const hoverOver = () => {
     setOpaque("block");
   };
   function handleMouseLeave() {
     setOpaque("hidden");
   }
-  const mobileMenuClickHandler=(data)=>{
+  const mobileMenuClickHandler = (data) => {
     setShowSubSlider(true);
-    setItem(data)
+    setItem(data);
+  };
+  const handleClickAccount=()=>{
+    setShowSlider(false)
+    setShowAccountModal(true)
   }
   const NavArray = ["Men", "Women", "Kids", "Beauty"];
-
+  const SearchBar = () => {
+    return(
+      <div className="absolute left-0 right-0 top-[80px] flex justify-center w-screen z-30 overflow-hidden ">
+        <form className="relative bg-[rgba(0,0,0,0.1)]  w-[90%] rounded-[5px] ">
+      <input
+        className="pl-[35px]  py-[8px] rounded-[8px] w-full text-[15px] focus-visible:outline-none border-none bg-white placeholder:truncate"
+        type="text"
+        name=""
+        id=""
+        placeholder="Search for clothes & brands..."
+      />
+      <BsSearch className="absolute top-[50%] bottom-[50%]  translate-x-[-10%] translate-y-[-50%]    left-3 mr-5 cursor-pointer" />
+    </form>
+      </div>
+    )
+  };
   return (
     <>
       <div
@@ -84,32 +109,43 @@ export default function Header() {
         </div>
 
         {/* MOBILE MENU */}
-        
+
         <div className=" items-center flex min-[1000px]:hidden w-screen justify-between px-[25px] box-border ">
           <img className=" cursor-pointer " src={logo} alt="logo" />
           <div className="flex gap-[25px] items-centert">
-            <BsSearch className=" cursor-pointer" />
+            <BsSearch className=" cursor-pointer" onClick={()=>setShowSeacrh(true)} />
             <RxHamburgerMenu
               className="text-xl font-bold cursor-pointer"
               onClick={() => setShowSlider(true)}
             />
           </div>
-          {showSlider&&<div className=" max-[1000px]:hidden absolute top-[0px] bottom-0 right-0 left-0 bg-[rgba(0,0,0,0.3)] z-10 " onClick={() => setShowSlider(false)}
-      ></div>}
+          {showSearch&&
+          <>
+          <div
+              className=" max-[1000px]:hidden absolute top-[0px] bottom-0 right-0 left-0 bg-[rgba(0,0,0,0.3)] z-10 "
+              onClick={() => setShowSeacrh(false)}
+            ></div>
+            {SearchBar()}
+          </>}
+          {showSlider && (
+            <div
+              className=" max-[1000px]:hidden absolute top-[0px] bottom-0 right-0 left-0 bg-[rgba(0,0,0,0.3)] z-10 "
+              onClick={() => setShowSlider(false)}
+            ></div>
+          )}
           <div
             id="drawer-right-example"
-            class={`fixed top-0 ${
+            className={`fixed top-0 ${
               showSlider ? "right-[0px] " : "right-[-500px]"
             } z-40 p-4 overflow-y-auto transition-[right] duration-500 w-[100%] min-[400px]:w-[40%] h-screen bg-white ease-out shadow-xl  box-border`}
-            tabindex="-1"
+            tabIndex="-1"
             aria-labelledby="drawer-right-label"
           >
-            
             <button
               type="button"
               data-drawer-hide="drawer-right-example"
               aria-controls="drawer-right-example"
-              class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 absolute top-4 right-3 inline-flex items-center "
+              className="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 absolute top-4 right-3 inline-flex items-center "
               onClick={() => setShowSlider(false)}
             >
               <svg
@@ -125,20 +161,18 @@ export default function Header() {
                   clipRule="evenodd"
                 ></path>
               </svg>
-              <span class="sr-only">Close menu</span>
+              <span className="sr-only">Close menu</span>
             </button>
             <div className="flex flex-col w-full gap-[100px] text-[20px] font-bold mt-[100px] px-[50px] box-border">
               <ul className="flex flex-col w-full  gap-[30px] text-[20px] items-center overflow-hidden  text-[rgba(0,0,0,0.7)]     box-border relative  ">
                 {NavArray.map((data, index) => {
                   return (
                     <>
-                      <div className="flex items-center justify-between gap-[15px] w-full cursor-pointer active:bg-gray-100 rounded-[5px] px-[10px]  " onClick={()=>mobileMenuClickHandler(data)}>
-                        <li
-                          key={index}
-                          className={`  `}
-                          
-                          
-                        >
+                      <div
+                        className="flex items-center justify-between gap-[15px] w-full cursor-pointer active:bg-gray-100 rounded-[5px] px-[10px]  "
+                        onClick={() => mobileMenuClickHandler(data)}
+                      >
+                        <li key={index} className={`  `}>
                           {data}
                         </li>
                         <RxCaretRight />
@@ -146,10 +180,9 @@ export default function Header() {
                     </>
                   );
                 })}
-                
               </ul>
-                <div className="flex flex-col gap-[10px] text-slate-100">
-                <div className="w-full flex items-center cursor-pointer   bg-gradient-to-br from-pink-500 to-orange-400 rounded-md justify-center gap-[5px] p-[5px]">
+              <div className="flex flex-col gap-[10px] text-slate-100">
+                <div className="w-full flex items-center cursor-pointer   bg-gradient-to-br from-pink-500 to-orange-400 rounded-md justify-center gap-[5px] p-[5px]" onClick={()=>handleClickAccount()} >
                   <p>Account</p>
                   <MdPermIdentity className="text-[25px]" />
                 </div>
@@ -157,40 +190,37 @@ export default function Header() {
                   <p>Cart</p>
                   <AiOutlineShoppingCart className="text-[22px]" />
                 </div>
-                </div>
+              </div>
             </div>
           </div>
         </div>
-           
-           {/* SUB MENU */}
 
-           
-          <div
-            id="drawer-right-example"
-            class={`fixed top-0 ${
-              showSubSlider ? "right-[0px] " : "right-[-550px]"
-            } z-40 p-4 overflow-y-auto transition-[right] duration-500 w-[100%] min-[400px]:w-[40%] h-screen bg-white ease-out shadow-xl  box-border`}
-            tabindex="-1"
-            aria-labelledby="drawer-right-label"
+        {/* SUB MENU */}
+
+        <div
+          id="drawer-right-example"
+          className={`fixed top-0 ${
+            showSubSlider ? "right-[0px] " : "right-[-550px]"
+          } z-40 p-4 overflow-y-auto transition-[right] duration-500 w-[100%] min-[400px]:w-[40%] h-screen bg-white ease-out shadow-xl  box-border`}
+          tabIndex="-1"
+          aria-labelledby="drawer-right-label"
+        >
+          <button
+            type="button"
+            data-drawer-hide="drawer-right-example"
+            aria-controls="drawer-right-example"
+            className="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 absolute top-4 right-3 inline-flex items-center "
+            onClick={() => setShowSubSlider(false)}
           >
-            
-            <button
-              type="button"
-              data-drawer-hide="drawer-right-example"
-              aria-controls="drawer-right-example"
-              class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 absolute top-4 right-3 inline-flex items-center "
-              onClick={() => setShowSubSlider(false)}
-            >
-              <BsArrowLeft className="text-[23px]"/>
-              <span class="sr-only">Close menu</span>
-            </button>
-            <div className="mt-[50px] flex  ">
-              <HoverComponent item={item}/>
-            </div>
+            <BsArrowLeft className="text-[23px]" />
+            <span className="sr-only">Close menu</span>
+          </button>
+          <div className="mt-[50px] flex  ">
+            <HoverComponent item={item} />
           </div>
-        
-
+        </div>
       </nav>
+      {showAccountModal&&<SignupOrInModal setShowAccountModal={setShowAccountModal}/>}
     </>
   );
 }
