@@ -7,12 +7,12 @@ function SignupOrInModal({setShowAccountModal}) {
     setSwitch(current);
   };
   return (
-    <div className="flex justify-center items-center mx-[20px] ">
+    <div className="flex justify-center  items-center  absolute top-0 left-0 bottom-0 right-0">
       <div
-        className="absolute top-0 left-0 bottom-0 right-0 bg-[rgba(0,0,0,0.4)] backdrop-blur-[3.5px]  "
+        className="  absolute top-0 left-0 bottom-0 right-0  bg-[rgba(0,0,0,0.4)] backdrop-blur-[3.5px]  "
         onClick={() => setShowAccountModal(false)}
       ></div>
-      <div className="shadow-xl bg-white p-7  rounded-lg max-w-[500px] max-h-[500px] h-full min-h-[500px]  z-50 w-full relative flex  flex-col overflow-hidden min-[400px]:items-center">
+      <div className="shadow-xl  bg-white p-7  rounded-lg max-w-[500px] max-h-[500px] h-full min-h-[500px]   w-full relative flex  flex-col overflow-hidden min-[400px]:items-center mx-[20px]">
         <IoCloseCircleOutline onClick={()=>setShowAccountModal(false)} className="absolute top-1 right-1 text-[25px] cursor-pointer text-gray-400"/>
         <div className="flex w-full text-[18px] font-medium">
           <div
