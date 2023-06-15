@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import {IoCloseCircleOutline} from "react-icons/io5"
 function SignupOrInModal({setShowAccountModal}) {
   const [Switch, setSwitch] = useState("Sign in");
   const SwitchKey = (current) => {
@@ -11,14 +12,15 @@ function SignupOrInModal({setShowAccountModal}) {
         className="absolute top-0 left-0 bottom-0 right-0 bg-[rgba(0,0,0,0.4)] backdrop-blur-[3.5px]  "
         onClick={() => setShowAccountModal(false)}
       ></div>
-      <div className="shadow-xl bg-white p-7  rounded-lg max-w-[500px] max-h-[500px] h-full min-h-[500px]  z-50 w-full relative flex  flex-col overflow-hidden">
+      <div className="shadow-xl bg-white p-7  rounded-lg max-w-[500px] max-h-[500px] h-full min-h-[500px]  z-50 w-full relative flex  flex-col overflow-hidden min-[400px]:items-center">
+         <IoCloseCircleOutline onClick={()=>setShowAccountModal(false)} className="absolute top-1 right-1 text-[25px] cursor-pointer "/>
         <div className="flex w-full text-[18px] font-medium">
           <div
             className={`w-[50%] bg-gray-100 py-2 text-center ${
               Switch === "Sign in"
                 ? ""
                 : "shadow-[inset_-10px_-10px_8px_-10px_rgba(0,0,0,0.3)] border-r-gray-300 border-b-gray-300 border-r-[1px] border-b-[1px]"
-            } cursor-pointer box-border rounded-l-md transition-all ease-out duration-300`}
+            } cursor-pointer box-border  transition-all ease-out duration-300 rounded-tl-md`}
             onClick={(e) => SwitchKey("Sign in")}
           >
             Sign in
@@ -28,31 +30,38 @@ function SignupOrInModal({setShowAccountModal}) {
               Switch === "Sign Up"
                 ? ""
                 : "shadow-[inset_10px_-10px_8px_-10px_rgba(0,0,0,0.3)]  border-r-gray-300 border-b-gray-300 border-r-[1px] border-b-[1px]"
-            } py-2 text-center cursor-pointer box-border rounded-r-md transition-all ease-out duration-300`}
+            } py-2 text-center cursor-pointer box-border  transition-all ease-out duration-300 rounded-tr-md`}
             onClick={(e) => SwitchKey("Sign Up")}
           >
             Sign Up
           </div>
         </div>
         <div
-          className={`bg-red-300 w-full  h-[428px] absolute ${
-            Switch === "Sign in" ? "left-0 top-[72px]  " : "top-[72px] left-[-500px]"
-          } transition-[left] duration-400 ease-out `}
-        >
-            <input type="text" />
-            <input type="email" name="email" id="" />
-            <input type="password" name="password" id="" />
-            <button>Sign in</button>
+          className={`Signin bg-gray-100 w-full  h-[428px] absolute ${
+            Switch === "Sign in" ? "left-0 top-[71px]  " : "top-[71px] left-[-500px]"
+          } transition-[left] duration-400 ease-out flex flex-col  px-4 `}
+        >   
+            <span>Email </span>
+            <input type="email" name="email" id="" required />
+            <span>password</span>
+            <input type="password" name="password" id="" required/>
+            <p className="text-[14px] my-[25px] text-center text-[rgba(0,0,0,0.6)]">If you already have an account Sign in or <span onClick={()=>SwitchKey("Sign Up")} className="text-blue-400 underline font-semibold cursor-pointer">Sign up </span> {""} if you are new </p>
+            <button className="bg-gradient-to-br from-pink-500 to-orange-400  py-2 rounded-md mx-auto w-[50%] mt-[25px]">Sign in</button>
             </div>
         <div
-          className={`bg-red-300 w-full h-[428px] absolute ${
-            Switch === "Sign Up" ? "right-0 top-[72px] " : " top-[72px] right-[-500px]"
-          } transition-[right] duration-400 ease-in-out `}
+          className={`Signin bg-gray-100 w-full h-[428px] absolute ${
+            Switch === "Sign Up" ? "right-0 top-[71px] " : " top-[71px] right-[-500px]"
+          } transition-[right] duration-400 ease-out flex flex-col px-4  `}
         >
-        <input type="text" />
-        <input type="email" name="email" id="" />
-        <input type="password" name="password" id="" />
-        <button>Sign in</button></div>
+       <span>Name</span>
+            <input type="text" required />
+            <span>Email </span>
+            <input type="email" name="email" id="" required />
+            <span>password</span>
+            <input type="password" name="password" id="" required/>
+            <p className="text-[14px] my-[25px] text-center text-[rgba(0,0,0,0.6)]">If you don't have an account Sign up or <span onClick={()=>SwitchKey("Sign in")} className="text-blue-400 underline font-semibold cursor-pointer">Sign in </span></p>
+            <button className="bg-gradient-to-br from-pink-500 to-orange-400  py-2 rounded-md mx-auto w-[50%] mt-[25px]">Sign Up</button>
+        </div>
       </div>
     </div>
   );
