@@ -41,7 +41,7 @@ export default function Header() {
   const SearchBar = () => {
     return(
       <div className="absolute left-0 right-0 top-[80px] flex justify-center w-screen z-30 overflow-hidden ">
-        <form className="relative bg-[rgba(0,0,0,0.1)]  w-[90%] rounded-[5px] ">
+        <form className="relative   w-[90%] rounded-[5px] ">
       <input
         className="pl-[35px]  py-[8px] rounded-[8px] w-full text-[15px] focus-visible:outline-none border-none bg-white placeholder:truncate"
         type="text"
@@ -103,7 +103,9 @@ export default function Header() {
               />
               <BsSearch className="absolute top-[50%] bottom-[50%]  translate-x-[-50%] translate-y-[-50%]    left-3 mr-5 cursor-pointer" />
             </form>
-            <MdPermIdentity className="text-[35px]  w-[8%] font-light cursor-pointer" />
+            
+            <MdPermIdentity onClick={()=>setShowAccountModal(true)} className="text-[35px]  w-[8%] font-light cursor-pointer" />
+            
             <AiOutlineShoppingCart className="text-[30px] w-[8%] font-light cursor-pointer" />
           </div>
         </div>
@@ -122,7 +124,7 @@ export default function Header() {
           {showSearch&&
           <>
           <div
-              className=" max-[1000px]:hidden absolute top-[0px] bottom-0 right-0 left-0 bg-[rgba(0,0,0,0.3)] z-10 "
+              className=" min-[1000px]:hidden absolute top-[0px] bottom-0 right-0 left-0 bg-[rgba(0,0,0,0.3)] z-10 "
               onClick={() => setShowSeacrh(false)}
             ></div>
             {SearchBar()}
