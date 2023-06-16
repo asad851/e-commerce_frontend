@@ -13,7 +13,7 @@ const iconStyle =
 
 const Footer = () => {
   return (
-    <footer className="bg-white -z-10 relative  shadow-[0_-4px_5px_-6px_rgba(0,0,0,0.5)]  py-[50px] text-white" >
+    <footer className="bg-white  shadow-[0_-4px_5px_-6px_rgba(0,0,0,0.5)]  py-[50px] text-white" >
       <div className="flex items-center flex-col">
         <ul className="flex items-center judtify-center gap-[10px] list-none mb-[20px] min-[768px]:mb-[30px] min-[768px]:gap-[30px] ">
           <li className={listStyle}>Terms Of Use</li>
@@ -30,19 +30,20 @@ const Footer = () => {
           reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
           pariatur.
         </div>
-        <div className="flex items-center -z-10 justify-center gap-[10px]">
-          <span className={iconStyle}>
+        <div className="flex items-center justify-center gap-[10px]">
+          <a href="https://www.facebook.com/asadsaiyan/" target="_blank" ><span className={iconStyle}>
             <FaFacebookF />
-          </span>
-          <span className={iconStyle}>
+          </span></a>
+          <a href="https://www.instagram.com/asad_saiyan/" target="_blank" ><span className={iconStyle}>
             <FaInstagram />
-          </span>
+          </span></a>
+          
           <span className={iconStyle}>
             <FaTwitter />
           </span>
-          <span className={iconStyle}>
+          <a href="https://www.linkedin.com/in/asad-ahmed-siddiqui-7b875977/" target="_blank"><span className={iconStyle}>
             <FaLinkedin />
-          </span>
+          </span></a>
         </div>
       </div>
     </footer>

@@ -59,7 +59,7 @@ export default function Header() {
       <div
         className={` hidden min-[1000px]:${opaque} absolute top-[0px] bottom-0 right-0 left-0 bg-[rgba(0,0,0,0.3)] -z-10   `}
       ></div>
-      <nav className="flex bg-white z-10 h-[80px] max-[400px]:h-[70px]  w-screen    py-[5px] shadow-[0_8px_20px_-16px_rgba(0,0,0,0.3)]   ">
+      <nav className="flex bg-white z-10 h-[80px] max-[400px]:h-[70px]  w-full fixed top-0   py-[5px] shadow-[0_8px_22px_-14px_rgba(0,0,0,0.4)]   ">
         <div className=" items-center hidden min-[1000px]:flex w-full justify-between  box-border ">
           <img
             className="w-[17%] cursor-pointer ml-[45px]"
@@ -122,13 +122,13 @@ export default function Header() {
             />
           </div>
           {showSearch&&
-          <>
+          <div className=" min-[1000px]:hidden fixed top-[0px] bottom-0 right-0 left-0 bg-[rgba(0,0,0,0.3)] z-10" >
           <div
-              className=" min-[1000px]:hidden absolute top-[0px] bottom-0 right-0 left-0 bg-[rgba(0,0,0,0.3)] z-10 "
+              className=" min-[1000px]:hidden fixed top-[0px] bottom-0 right-0 left-0 bg-[rgba(0,0,0,0.3)] z-10 "
               onClick={() => setShowSeacrh(false)}
             ></div>
             {SearchBar()}
-          </>}
+          </div>}
           {showSlider && (
             <div
               className=" max-[1000px]:hidden absolute top-[0px] bottom-0 right-0 left-0 bg-[rgba(0,0,0,0.3)] z-10 "
