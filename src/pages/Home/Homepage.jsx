@@ -4,7 +4,7 @@ import Collections from '../Collections'
 
 function Homepage() {
   return (
-    <div className=''>
+    <div className='border-none '>
     <HeroBanner/>
     <Collections/>
     </div>
