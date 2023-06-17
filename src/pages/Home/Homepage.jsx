@@ -1,11 +1,11 @@
 import React from 'react'
-import HeroSection from './HeroSection'
+import HeroBanner from './HeroBanner'
 import Collections from '../Collections'
 
 function Homepage() {
   return (
     <div className=''>
-    <HeroSection/>
+    <HeroBanner/>
     <Collections/>
     </div>
   )
