@@ -21,7 +21,7 @@ function HeroSection() {
   }, []);
 
   return (
-    <div className="  h-[250px] mt-[70px] relative min-[768px]:mt-[80px]  min-[1000px]:h-[450px] overflow-hidden   w-full ">
+    <div className="  h-[200px] mt-[70px]   relative min-[768px]:mt-[80px]  min-[1000px]:h-[450px] overflow-hidden   w-full ">
       <div
         className=" h-full w-full flex  transition-transform duration-500 ease-in "
         style={{ transform: `translateX(-${slideNum * 100}%)` }}
@@ -31,7 +31,7 @@ function HeroSection() {
             <div className="h-full w-full  flex-[0_0_100%]" key={index}>
               <Img
                 src={img}
-                className="  w-full h-[250px] min-[1000px]:h-[450px] object-center object-fill "
+                className="  w-full h-[200px] min-[1000px]:h-[450px] object-center object-fill "
               />
             </div>
           );
@@ -42,7 +42,7 @@ function HeroSection() {
           return (
             <div
               key={index}
-              className={`min-[768px]:h-3.5 h-2 w-2 min-[768px]:w-3.5  rounded-xl ${
+              className={`min-[768px]:h-3 h-2 w-2 min-[768px]:w-3 rounded-xl ${
                 index == slideNum ? "bg-gray-800" : "bg-gray-300"
               } cursor-pointer mx-1.5 `}
               onClick={() => setSlideNum(index)}
