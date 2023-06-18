@@ -12,7 +12,7 @@ function Collections() {
     <div className='h-full w-full flex flex-wrap gap-5 justify-center'>
         {
             newarr.map((items,index)=>{
-                console.log(items)
+                
                 return(
                     <Cards img={items.image1||items.image2} title={items.title} price={items.price}/>
                 )
