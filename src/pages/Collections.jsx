@@ -7,6 +7,16 @@ function Collections() {
         return(keyword.includes(" "))
       
     })
+    // const result=[]
+    // for(const category in data){
+        
+    //     for(const array in data[category]){
+            
+    //        const filtered = data[category][array].filter((item)=>item.title.toUpperCase().includes("JEANS")) 
+    //         result.push(...filtered)
+    //         console.log(result)
+    //     }
+    // }
     // console.log(data.men)
     // console.log(newarr)
   return (
@@ -15,7 +25,7 @@ function Collections() {
             newarr.map((items,index)=>{
                 
                 return(
-                    <Cards img={items.image1||items.image2} title={items.title} price={items.price}/>
+                    <Cards key={index} img={items.image1||items.image2} title={items.title} price={items.price}/>
                 )
             })
         }

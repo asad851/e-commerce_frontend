@@ -9,6 +9,7 @@ import { RxHamburgerMenu } from "react-icons/rx";
 import { RxCaretRight } from "react-icons/rx";
 import { BsArrowLeft } from "react-icons/bs";
 import SignupOrInModal from "./SignupOrInModal";
+import { useNavigate } from "react-router-dom";
 export default function Header() {
   const [opaque, setOpaque] = useState("hidden");
   const [item, setItem] = useState(null);
@@ -16,7 +17,7 @@ export default function Header() {
   const [showSubSlider, setShowSubSlider] = useState(false);
   const [showSearch, setShowSeacrh] = useState(false);
   const [showAccountModal,setShowAccountModal] =useState(false);
-  // const [Switch,setSwitch] = useState("Sign in")
+  const navigate = useNavigate()
 
   function handleMouseOver(item) {
     setOpaque("block");
@@ -62,6 +63,7 @@ export default function Header() {
       <nav className="flex bg-white z-10 h-[80px] max-[400px]:h-[70px]  w-full fixed top-0   py-[5px] shadow-[0_8px_22px_-14px_rgba(0,0,0,0.4)]   ">
         <div className=" items-center hidden min-[1000px]:flex w-full justify-between  box-border ">
           <img
+            onClick={()=> navigate("/")}
             className="w-[17%] cursor-pointer ml-[45px]"
             src={logo}
             alt="logo"

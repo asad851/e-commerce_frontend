@@ -1,16 +1,18 @@
 import React from 'react'
 import noimage from '../assets/Image Not found.svg'
+import { useNavigate } from 'react-router-dom'
 function Cards({img,title,price}) {
+    const navigate = useNavigate()
   return (
     
 <div className="w-full flex flex-col items-center md:max-w-[300px] max-w-[250px] bg-white border border-gray-200 rounded-lg shadow relative ">
-    <a href="#" className='flex justify-center'>
-        <img id="CardImg" className="rounded-t-lg object-contain  object-center mt-2   md:w-60 md:h-44 h-40 w-full " src={img} alt="product image" />
-    </a>
-    <div className="px-2 pb-5 md:px-5  mb-10 ">
-        <a href="#" >
-            <h5 className="md:text-xl text-lg font-semibold tracking-tight text-center text-gray-900 dark:text-white">{title}</h5>
-        </a>
+    <div  className='flex justify-center cursor-pointer'>
+        <img id="CardImg" className="rounded-t-lg object-contain  object-center mt-2   md:w-60 md:h-44 h-40 w-full " src={img} alt="product image" onClick={()=>navigate(`/Details/${title}`)} />
+    </div>
+    <div className="px-2 pb-5 md:px-5  mb-10 cursor-pointer ">
+        
+            <h5 className="md:text-xl text-lg font-semibold tracking-tight text-center text-gray-900 dark:text-white" onClick={()=>navigate(`/Details/${title}`)}>{title}</h5>
+        
         
     </div>
         <div className="flex items-center justify-center md:left-6 left-0 right-0 absolute bottom-2 gap-[20px] mt-10">
