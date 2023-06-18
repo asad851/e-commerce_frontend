@@ -4,10 +4,11 @@ import Cards from '../Components/Cards'
 function Collections() {
    const newarr= data.men.shoes.filter((item)=>{
         const keyword =item.title.toUpperCase()
-        return(keyword.includes("SHOE"))
+        return(keyword.includes(" "))
       
     })
-    console.log(newarr)
+    // console.log(data.men)
+    // console.log(newarr)
   return (
     <div className='h-full w-full flex flex-wrap gap-5 justify-center'>
         {
