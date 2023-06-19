@@ -10,7 +10,9 @@ import { RxCaretRight } from "react-icons/rx";
 import { BsArrowLeft } from "react-icons/bs";
 import SignupOrInModal from "./SignupOrInModal";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 export default function Header() {
+  
   const [opaque, setOpaque] = useState("hidden");
   const [item, setItem] = useState(null);
   const [showSlider, setShowSlider] = useState(false);
@@ -58,7 +60,7 @@ export default function Header() {
   return (
     <>
       <div
-        className={` hidden min-[1000px]:${opaque} absolute top-[0px] bottom-0 right-0 left-0 bg-[rgba(0,0,0,0.3)] -z-10   `}
+        className={`  ${opaque} fixed z-[5] top-0 bottom-0 right-0 left-0 bg-[rgba(0,0,0,0.3)]    `}
       ></div>
       <nav className="flex bg-white z-10 h-[80px] max-[400px]:h-[70px]  w-full fixed top-0   py-[5px] shadow-[0_8px_22px_-14px_rgba(0,0,0,0.4)]   ">
         <div className=" items-center hidden min-[1000px]:flex w-full justify-between  box-border ">
@@ -72,16 +74,17 @@ export default function Header() {
             {NavArray.map((data, index) => {
               return (
                 <>
-                  <li
+                  <Link to={`/explore/${item}`}
                     key={index}
                     className={`cursor-pointer hover:underline underline-offset-[20px]  decoration-[3px] decoration-red-300 ${data}  py-[20px] px-[10px] `}
                     onMouseOver={() => {
                       handleMouseOver(data);
                     }}
                     onMouseLeave={handleMouseLeave}
+                    
                   >
                     {data}
-                  </li>
+                  </Link>
                   <div
                     className="hoverBox  z-10 "
                     onMouseOver={hoverOver}

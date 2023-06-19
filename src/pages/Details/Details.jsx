@@ -1,32 +1,35 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
-import { data } from '../../Db/data'
+import { DATA } from '../../Db/myntradb'
 import { useEffect,useState } from 'react'
 export default function Details() {
     const {productTitle} =useParams();
-    const [product, setProduct] = useState(null)
+    const [product, setProduct] = useState()
+    const decodedTitle = decodeURIComponent(productTitle);
     const Data=()=>{
         
-    for(const category in data){
+    for(const category in DATA){
         
-        for(const array in data[category]){
+        for(const array in DATA[category]){
             
-            const filtered = data[category][array].find((item)=>item.title.toUpperCase().includes("TRIPLE S SNEAKERS")) 
-
-            setProduct(filtered)
-            // console.log(filtered[0]?.title)
+            const filtered = DATA[category][array].find((item)=> {return(item.name.toUpperCase().includes(`${decodedTitle.toUpperCase()}`))})
+            return(
+                <div>
+                    <h1>{filtered?.name}</h1>
+                    <img src={filtered?.image} alt="Product" />
+                </div>
+            )
         }
     }
 }
-console.log(product)
+   
     useEffect(() => {
-     Data()
-
+     
      
     }, [])
   return (
     <div className='text-3xl text-red-600 h-full my-[100px]'>
-        <p>{product?.title}</p>
+        {Data()}
         
     </div>
   )

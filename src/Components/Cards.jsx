@@ -3,15 +3,16 @@ import noimage from '../assets/Image Not found.svg'
 import { useNavigate } from 'react-router-dom'
 function Cards({img,title,price}) {
     const navigate = useNavigate()
+    const encodedTitle = encodeURIComponent(title);
   return (
     
-<div className="w-full flex flex-col items-center md:max-w-[300px] max-w-[250px] bg-white border border-gray-200 rounded-lg shadow relative ">
-    <div  className='flex justify-center cursor-pointer'>
-        <img id="CardImg" className="rounded-t-lg object-contain  object-center mt-2   md:w-60 md:h-44 h-40 w-full " src={img} alt="product image" onClick={()=>navigate(`/Details/${title}`)} />
+<div className="w-full flex flex-col items-center md:max-w-[280px] max-w-[250px] bg-white border border-gray-200 rounded-lg shadow relative ">
+    <div  className='flex justify-center cursor-pointer w-full h-72'>
+        <img id="CardImg" className="rounded-t-lg object-cover  object-top   h-full w-full " src={img} alt="product image" onClick={()=>navigate(`/Details/${encodedTitle}`)} />
     </div>
-    <div className="px-2 pb-5 md:px-5  mb-10 cursor-pointer ">
+    <div className="px-2 pb-5 md:px-5  mb-10 mt-4 cursor-pointer ">
         
-            <h5 className="md:text-xl text-lg font-semibold tracking-tight text-center text-gray-900 dark:text-white" onClick={()=>navigate(`/Details/${title}`)}>{title}</h5>
+            <h5 className="md:text-xl text-lg font-semibold tracking-tight text-center text-gray-900 dark:text-white" onClick={()=>navigate(`/Details/${encodedTitle}`)}>{title}</h5>
         
         
     </div>
