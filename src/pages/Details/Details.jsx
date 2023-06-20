@@ -17,7 +17,7 @@ export default function Details() {
         return (
           <div className="md:mx-auto  flex md:max-w-[1200px] md:items-start md:gap-20 gap-10 w-full max-md:flex-col items-center  ">
             <img
-              className="rounded-md object-cover max-[400px]:w-[calc(90%-10px)] object-center md:h-[500px] shadow-lg"
+              className="rounded-md object-cover max-[400px]:w-[calc(90%-10px)] object-center md:h-[500px] shadow-xl"
               src={filtered?.image}
               alt="Product"
             />
@@ -56,7 +56,7 @@ export default function Details() {
                   XL
                 </button>
               </div>
-              
+              <button className="text-white mt-3 max-w-[150px] bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center ">Add to cart</button>
             </div>
           </div>
         );
