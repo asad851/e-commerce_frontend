@@ -118,7 +118,7 @@ export default function Header() {
         {/* MOBILE MENU */}
 
         <div className=" items-center flex min-[1000px]:hidden w-screen justify-between px-[25px] box-border ">
-          <img className=" cursor-pointer " src={logo} alt="logo" />
+          <img onClick={()=>navigate('/')} className=" cursor-pointer " src={logo} alt="logo" />
           <div className="flex gap-[25px] items-centert">
             <BsSearch className=" cursor-pointer" onClick={()=>setShowSeacrh(true)} />
             <RxHamburgerMenu
@@ -223,7 +223,7 @@ export default function Header() {
             <span className="sr-only">Close menu</span>
           </button>
           <div className="mt-[50px] flex  ">
-            <HoverComponent item={item} />
+            <HoverComponent item={item} setShowSubSlider={setShowSubSlider} setShowSlider={setShowSlider} />
           </div>
         </div>
       </nav>

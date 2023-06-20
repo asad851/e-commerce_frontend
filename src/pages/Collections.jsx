@@ -4,7 +4,8 @@ import Cards from '../Components/Cards'
 function Collections() {
    const newarr= DATA.MEN.clothing.filter((item)=>{
         const keyword =item.name.toUpperCase()
-        return(keyword.includes(" "))
+        
+        return(keyword.includes("T-SHIRT"))
       
     })
     // const result=[]

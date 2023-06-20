@@ -9,7 +9,7 @@ import { useLocation } from 'react-router-dom'
 export default function App() {
   const location = useLocation()
   useEffect(()=>{
-  Window.scrollTo(0,0)
+  window.scrollTo(0,0)
   },[location])
   return (
     <>

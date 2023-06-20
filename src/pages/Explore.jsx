@@ -23,8 +23,11 @@ function Explore() {
     }
     
   return (
-    <div className='mt-[100px] flex justify-center flex-wrap'>
+    <div className='flex justify-between w-full'>
+        <div className='w-[300px]  top-20 bg-white shadow-md left-0 mt-36 h-screen'></div>
+        <div className='mt-36 gap-5 mb-10 flex lg:justify-start justify-center  flex-wrap w-[1000px] '>
         {getDATA()}
+    </div>
     </div>
   )
 }
