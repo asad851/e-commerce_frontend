@@ -97,7 +97,7 @@ export default function Header() {
                   </Link>
                   <div
                   style={{display:hideCategoryModal}}
-                    className={`hoverBox  z-10 `}
+                    className={`hoverBox  z-10 rounded-sm `}
                     onMouseOver={hoverOver}
                     onMouseLeave={handleMouseLeave}
                     

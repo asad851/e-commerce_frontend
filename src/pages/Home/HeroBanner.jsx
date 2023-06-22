@@ -16,7 +16,7 @@ function HeroSection() {
   
 
   return (
-    <div className="  h-[200px] mt-[70px]   relative min-[768px]:mt-[80px]  min-[1000px]:h-[450px] overflow-hidden   w-full ">
+    <div className="  h-[250px] mt-[70px]   relative min-[768px]:mt-[80px]  min-[1000px]:h-[500px] overflow-hidden   w-full ">
       <div className="h-full w-full ">
       <CarouselComponent items={Carouselarray}/>
       </div>

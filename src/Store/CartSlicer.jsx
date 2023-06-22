@@ -14,8 +14,9 @@ const CartSlicer = createSlice({
            state.products=state.products.filter((item)=>item.id !== action.payload.id)
         },
         Decrease:(state,action)=>{
-           state.products=state.products.slice(0,-1)
-        }
+          state.products=state.products.slice(0,-1)
+            
+        },
 
     }
 })

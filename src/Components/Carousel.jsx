@@ -20,7 +20,7 @@ const CarouselComponent = ({ items }) => {
         <div key={index} className="flex-[0_0_100%] h-full w-full">
           <Img
                 src={item}
-                className="  w-full h-[200px] min-[1000px]:h-[450px] object-center object-fill "
+                className="  w-full h-[250px] min-[1000px]:h-[500px] object-center object-fill "
               />
         </div>
       ))}

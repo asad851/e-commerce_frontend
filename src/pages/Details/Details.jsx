@@ -11,9 +11,10 @@ export default function Details() {
   const { products } = useSelector((state) => state.cart);
   const cartedproducts = products.filter((item)=>item.id==id)
   const [quantity,setQuantity] =useState(cartedproducts.length)
-  
+  const [sizeSelected,setSizeSelected] =useState(false)
   const [Add, setAdd] = useState(JSON.parse(localStorage.getItem("boolean"))||false);
   const [size,setSize] =useState("")
+  const [showMessage,setShowMessage] = useState(false)
   
   localStorage.setItem("mycart", JSON.stringify(products));
   localStorage.setItem("boolean", JSON.stringify(Add));
@@ -21,22 +22,34 @@ export default function Details() {
  
    const handleSize=(e)=>{
      setSize(e.target.innerHTML)
-   }
-   const handleDecrease = (data) =>{
-    if(quantity>0){
-    setQuantity(prev=>prev-1)
-    dispatch(Decrease(data))
+     setSizeSelected(true)
+    }
+    const handleDecrease = (data) =>{
+        if(quantity>0){
+            setQuantity(prev=>prev-1)
+            dispatch(Decrease(data))
     
     }else{
         return
     }
    }
    const handleIncrease=(data)=>{
-    setQuantity(prev=>prev+1)
-    dispatch(AddToCart(data))
+    if(sizeSelected){
+        setQuantity(prev=>prev+1)
+        dispatch(AddToCart(data))
+    }else{
+       setShowMessage(true)
+       setTimeout(()=>{
+           setShowMessage(false)
+
+       },1500)
+    }
     
 
    }
+   useEffect(()=>{
+    
+   },[handleIncrease])
    useEffect(()=>{
     const found=products.find((item)=>item.id==id)
      if(found){
@@ -44,6 +57,7 @@ export default function Details() {
      }else{
         setAdd(false)
      }
+     setSizeSelected(false)
      
    },[quantity])
    
@@ -91,8 +105,8 @@ const Data = () => {
                 consequatur at, dicta, repellat nisi adipisci odit quod
                 doloribus ad suscipit quas eligendi!
               </p>
-              <h1 className="md:text-2xl text-xl text-black font-bold my-2">Sizes : </h1>
-              <div className="flex gap-4">
+              <h1 className="md:text-2xl text-xl text-black font-bold my-2 ">Sizes : </h1>
+              <div className="flex gap-4 relative">
                 <button onClick={(e)=>{handleSize(e)}} className="px-3 py-1 rounded-md font-semibold focus:bg-blue-700 focus:text-white bg-gray-100">
                   S
                 </button>
@@ -105,12 +119,13 @@ const Data = () => {
                 <button onClick={(e)=>{handleSize(e)}} className="px-3 py-1 rounded-md font-semibold focus:bg-blue-700 focus:text-white bg-gray-100">
                   XL
                 </button>
+                <span className={`px-4 py-1 border-2 rounded-md bg-white absolute max-md:top-9 max-md:right-0 ${showMessage?"block":"hidden"} `}>Please Select the size first </span>
               </div>
               <h1 className="md:text-2xl text-xl text-black font-bold my-2">Quantity : </h1>
               <div className="flex gap-1">
-                <button onClick={()=>handleDecrease(updated)} className="text-xl  bg-slate-200  rounded-sm w-[30px]">-</button>
-                 <span className="bg-gray-300 w-[50px] text-center rounded-sm text-lg">{cartedproducts.length}</span>
-                <button onClick={()=>handleIncrease(updated)} className="text-xl bg-slate-200 rounded-sm  w-[30px]">+</button>
+                <button onClick={()=>handleDecrease(updated)} className="text-xl  bg-slate-200  rounded-sm w-[30px] active:bg-slate-300">-</button>
+                 <span className="bg-gray-300 w-[50px] text-center rounded-sm text-lg ">{quantity}</span>
+                <button onClick={()=>handleIncrease(updated)} className="text-xl bg-slate-200 rounded-sm  w-[30px] active:bg-slate-300">+</button>
               </div>
               { 
               Add?(
