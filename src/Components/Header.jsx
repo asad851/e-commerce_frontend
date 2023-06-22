@@ -11,8 +11,9 @@ import { BsArrowLeft } from "react-icons/bs";
 import SignupOrInModal from "./SignupOrInModal";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 export default function Header() {
-  
+  const {products} = useSelector(state=>state.cart)
   const [opaque, setOpaque] = useState("hidden");
   const [item, setItem] = useState(null);
   const [showSlider, setShowSlider] = useState(false);
@@ -20,6 +21,7 @@ export default function Header() {
   const [showSearch, setShowSeacrh] = useState(false);
   const [showAccountModal,setShowAccountModal] =useState(false);
   const [hideCategoryModal,setHideCategoryModal] =useState("")
+  const [showCartNum, setShowCartNum] = useState("hidden")
   const navigate = useNavigate()
 
   function handleMouseOver(item) {
@@ -41,6 +43,12 @@ export default function Header() {
     setShowSlider(false)
     setShowAccountModal(true)
   }
+  useEffect(()=>{
+    setShowCartNum("block")
+    setTimeout(() => {
+      setShowCartNum("hidden")
+    }, 800);
+  },[products])
   const NavArray = ["Men", "Women", "Kids", "Beauty"];
   const SearchBar = () => {
     return(
@@ -101,7 +109,7 @@ export default function Header() {
             })}
           </ul>
 
-          <div className="flex w-[33%] items-center min-[768px]:gap-[35px] gap-[20px]  ">
+          <div className="flex w-[33%] items-center min-[768px]:gap-[35px] gap-[20px] relative  ">
             <form className="relative bg-[rgba(0,0,0,0.1)] w-[55%] rounded-[5px] ">
               <input
                 className="pl-[35px] pr-[10px] py-[5px] rounded-[5px] w-full text-[15px] focus-visible:outline-none border-none bg-transparent placeholder:truncate"
@@ -115,7 +123,8 @@ export default function Header() {
             
             <MdPermIdentity onClick={()=>setShowAccountModal(true)} className="text-[35px]  w-[8%] font-light cursor-pointer" />
             
-            <AiOutlineShoppingCart onClick={()=>navigate("/Cart")} className="text-[30px] w-[8%] font-light cursor-pointer" />
+            <AiOutlineShoppingCart onClick={()=>navigate("/Cart")} className="text-[30px] w-[8%] font-light cursor-pointer" ></AiOutlineShoppingCart>
+            <span className={`absolute right-11 -top-1 h-4 w-4  rounded-2xl bg-black text-white text-center text-xs ${showCartNum} `}>{products.length}</span>
           </div>
         </div>
 
