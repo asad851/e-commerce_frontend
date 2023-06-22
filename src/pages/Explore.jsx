@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { useParams } from 'react-router-dom'
-import{ DATA } from "../Db/myntradb"
+import DATA  from "../Db/datadb"
 import Cards from '../Components/Cards'
 function Explore() {
     const{Category,Subcategory,Type} = useParams()
@@ -14,10 +14,10 @@ function Explore() {
     const filtered = toFilter?.filter((item)=>{
         return(item.name.toUpperCase().includes(updatedType))
     })
-    console.log(filtered)
+    // console.log(filtered)
     return (filtered.map((filtered,index)=>{
             return(
-                <Cards key={index}img={filtered?.image} title={filtered?.name} price={filtered?.price} />
+                <Cards key={index} filtered={filtered} />
             )
            }))
     }

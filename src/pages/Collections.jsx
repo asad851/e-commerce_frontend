@@ -1,13 +1,14 @@
 import React from 'react'
-import {DATA} from '../Db/myntradb'
+import DATA from '../Db/datadb'
 import Cards from '../Components/Cards'
 function Collections() {
    const newarr= DATA.MEN.clothing.filter((item)=>{
         const keyword =item.name.toUpperCase()
         
-        return(keyword.includes("T-SHIRT"))
+        return(keyword.includes(""))
       
     })
+    
     // const result=[]
     // for(const category in data){
         
@@ -26,7 +27,7 @@ function Collections() {
             newarr.map((items,index)=>{
                 
                 return(
-                    <Cards key={index} img={items.image} title={items.name} price={items.price}/>
+                    <Cards key={index} items={items}/>
                 )
             })
         }

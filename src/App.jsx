@@ -6,6 +6,7 @@ import {Routes,Route} from 'react-router-dom'
 import Details from './pages/Details/Details'
 import Explore from './pages/Explore'
 import { useLocation } from 'react-router-dom'
+import CartProductsPage from './pages/CartProductsPage'
 export default function App() {
   const location = useLocation()
   useEffect(()=>{
@@ -16,8 +17,9 @@ export default function App() {
     <Header/>
     <Routes>
       <Route path="/" element={<Homepage/>}/>
-      <Route path="/Details/:productTitle" element={<Details/>}/>
+      <Route path="/Details/:id" element={<Details/>}/>
       <Route path="/Explore/:Category/:Subcategory/:Type" element={<Explore/>}/>
+      <Route path="/Cart" element={<CartProductsPage/>}/>
     </Routes>
     <Footer/>
     </> 

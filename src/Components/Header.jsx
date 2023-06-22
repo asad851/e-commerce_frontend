@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { BsSearch } from "react-icons/bs";
 import { CgProfile } from "react-icons/cg";
 import { MdPermIdentity } from "react-icons/md";
@@ -19,6 +19,7 @@ export default function Header() {
   const [showSubSlider, setShowSubSlider] = useState(false);
   const [showSearch, setShowSeacrh] = useState(false);
   const [showAccountModal,setShowAccountModal] =useState(false);
+  const [hideCategoryModal,setHideCategoryModal] =useState("")
   const navigate = useNavigate()
 
   function handleMouseOver(item) {
@@ -57,6 +58,7 @@ export default function Header() {
       </div>
     )
   };
+  
   return (
     <>
       <div
@@ -86,11 +88,13 @@ export default function Header() {
                     {data}
                   </Link>
                   <div
-                    className="hoverBox  z-10 "
+                  style={{display:hideCategoryModal}}
+                    className={`hoverBox  z-10 `}
                     onMouseOver={hoverOver}
                     onMouseLeave={handleMouseLeave}
+                    
                   >
-                    <HoverComponent item={item} />
+                    <HoverComponent item={item} setHideCategoryModal={setHideCategoryModal} />
                   </div>
                 </>
               );
@@ -111,7 +115,7 @@ export default function Header() {
             
             <MdPermIdentity onClick={()=>setShowAccountModal(true)} className="text-[35px]  w-[8%] font-light cursor-pointer" />
             
-            <AiOutlineShoppingCart className="text-[30px] w-[8%] font-light cursor-pointer" />
+            <AiOutlineShoppingCart onClick={()=>navigate("/Cart")} className="text-[30px] w-[8%] font-light cursor-pointer" />
           </div>
         </div>
 
@@ -193,7 +197,7 @@ export default function Header() {
                   <p>Account</p>
                   <MdPermIdentity className="text-[25px]" />
                 </div>
-                <div className="w-full flex items-center cursor-pointer  bg-gradient-to-br from-pink-500 to-orange-400 rounded-md justify-center gap-[5px] p-[5px]">
+                <div onClick={()=>{navigate("/Cart"); setShowSlider(false)}} className="w-full flex items-center cursor-pointer  bg-gradient-to-br from-pink-500 to-orange-400 rounded-md justify-center gap-[5px] p-[5px]">
                   <p>Cart</p>
                   <AiOutlineShoppingCart className="text-[22px]" />
                 </div>

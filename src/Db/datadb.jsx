@@ -1,4 +1,6 @@
-export const DATA = {
+
+
+const DATA = {
   MEN: {
     clothing: [
       {
@@ -158,3 +160,22 @@ export const DATA = {
     ],
   },
 };
+
+//  const data = Object.values(DATA).flatMap(category=>Object.values(category)).flatMap(subcategory=>Object.values(subcategory))
+
+//  const updatedData = data.map((item,index)=>({...item,id:index+1}))
+//  console.log(updatedData)
+
+  
+for(const category in DATA){
+        
+      for(const array in DATA[category]){
+          
+          DATA[category][array].map((item,index)=>item.id=index+1)
+         
+      }
+  }
+
+
+
+ export default DATA;
