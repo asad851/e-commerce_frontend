@@ -856,6 +856,75 @@ const DATA = {
         price: "479Rs",
       },
     ],
+    footwear:[
+      {
+        "image":"https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/17990342/2022/4/22/9b07013a-6b53-4e96-99c5-5768885840081650619111596KillerMenBlackWovenDesignSlip-OnSneakers7.jpg",
+        brand:"Killer",
+        name:"Men Woven Design Slip-On Sneakers",
+        price:"549Rs"
+        },
+        {
+        "image":"https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/16572054/2022/9/29/d4c2d0e0-64e7-424c-b574-0b735a93385a1664440798390BigFoxMenBlackLoafers1.jpg",
+        brand:"Big Fox",
+        name:"Men Loafers",
+        price:"599Rs"
+        },
+        {
+        "image":"https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/19706550/2022/8/29/bc871684-cca2-4164-af03-62214c1beaf01661760489971ASIANMenGreyColourblockedSneakers1.jpg",
+        brand:"ASIAN",
+        name:"Men Colourblocked Sneakers",
+        price:"597Rs"
+        },
+        {
+        "image":"https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/17990344/2022/4/22/dc61e654-4eb4-43f8-97fc-6ca39ff4c5231650617297958KillerMenGreyWovenDesignSlip-OnSneakers7.jpg",
+        brand:"Killer",
+        name:"Men Woven Design Slip-On Sneakers",
+        price:"549Rs",
+        },
+        {
+        "image":"https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/20479568/2022/10/20/25e1c583-223c-4d06-9a4f-cd189aabd92a1666276785899BigFoxMenBlackTexturedLoafers1.jpg",
+        brand:"Big Fox",
+        name:"Men Slip-On Loafers",
+        price:"599Rs"
+        },
+        {
+        "image":"https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/16572094/2022/9/27/a128cf5b-8e40-4c3a-9205-57606ba332361664277435180BigFoxMenBlackLoafers1.jpg",
+        brand:"Big Fox",
+        name:"Men Loafers",
+        price:"599Rs"
+        },
+        {
+        "image":"https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/23168008/2023/5/13/2f7f3274-d865-4f50-9de4-8b7b6d3791571683970530010HRXbyHrithikRoshanMenTealWovenDesignSlip-OnSneakers1.jpg",
+        brand:"HRX by Hrithik Roshan",
+        name:"Men Slip-On Sneakers",
+        price:"599Rs"
+        },
+        {
+        "image":"https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/15467210/2022/6/3/eda2ba26-9259-4d20-867c-81ab366f8f711654258777631BigFoxMenBlackLoafers7.jpg",
+        brand:"Big Fox",
+        name:"Men Black Loafers",
+        price:"599Rs"
+        },
+        {
+        "image":"https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/19608466/2022/8/23/29c6245a-441d-4c40-aacd-77ce4633baca1661236459353ELIXIRMANMenWhiteColourblockedSneakers1.jpg",
+        brand:"ELIXIR MAN",
+        name:"Men Colourblocked Sneakers",
+        price:"623Rs"
+        },
+        {
+        "image":"https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/18787396/2022/6/20/9af7db32-e91a-4a03-998f-1534bb558d2c1655717270397Delta-141.jpg",
+        brand:"ASIAN",
+        name:"Men Woven Design Sneakers",
+        price:"610Rs"
+        },
+        {
+        "image":"https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/17435794/2022/3/8/2db68408-82c5-4e41-9d7e-534352350c361646729241497M7byMetronautMenGreyWovenDesignSneakers1.jpg",
+         brand:"M7 by Metronaut",
+         name:"Men Woven Design Sneakers",
+         price:"659Rs"
+        },
+        
+    ],
   },
 };
 

@@ -63,14 +63,14 @@ function HoverComponent({ item,setShowSlider,setShowSubSlider,setHideCategoryMod
             <h3 className="text-[1.25vw] max-[1000px]:text-[20px] text-black font-semibold cursor-pointer">
               Footwear
             </h3>
-            <p onClick={(e)=>{navigate(`/Explore/${item}/${e.target.innerHTML}`);handleClick()}} className="px-[4px]  py-[2px] active:bg-gray-100">Casual Shoes</p>
-            <p onClick={(e)=>{navigate(`/Explore/${item}/${e.target.innerHTML}`);handleClick()}} className="px-[4px]  py-[2px] active:bg-gray-100">Sport Shoes</p>
-            <p onClick={(e)=>{navigate(`/Explore/${item}/${e.target.innerHTML}`);handleClick()}} className="px-[4px]  py-[2px] active:bg-gray-100">Formal Shoes</p>
-            <p onClick={(e)=>{navigate(`/Explore/${item}/${e.target.innerHTML}`);handleClick()}} className="px-[4px]  py-[2px] active:bg-gray-100">Sneakers</p>
-            <p onClick={(e)=>{navigate(`/Explore/${item}/${e.target.innerHTML}`);handleClick()}} className="px-[4px]  py-[2px] active:bg-gray-100">Sandals & Floaters</p>
-            <p onClick={(e)=>{navigate(`/Explore/${item}/${e.target.innerHTML}`);handleClick()}} className="px-[4px]  py-[2px] active:bg-gray-100">Flip FLops</p>
-            <p onClick={(e)=>{navigate(`/Explore/${item}/${e.target.innerHTML}`);handleClick()}} className="px-[4px]  py-[2px] active:bg-gray-100">Socks</p>
-                    clothing
+            <p onClick={(e)=>{navigate(`/Explore/${item}/footwear/${e.target.innerHTML}`);handleClick()}} className="px-[4px]  py-[2px] active:bg-gray-100">Casual Shoes</p>
+            <p onClick={(e)=>{navigate(`/Explore/${item}/footwear/${e.target.innerHTML}`);handleClick()}} className="px-[4px]  py-[2px] active:bg-gray-100">Sport Shoes</p>
+            <p onClick={(e)=>{navigate(`/Explore/${item}/footwear/${e.target.innerHTML}`);handleClick()}} className="px-[4px]  py-[2px] active:bg-gray-100">Formal Shoes</p>
+            <p onClick={(e)=>{navigate(`/Explore/${item}/footwear/${e.target.innerHTML}`);handleClick()}} className="px-[4px]  py-[2px] active:bg-gray-100">Sneakers</p>
+            <p onClick={(e)=>{navigate(`/Explore/${item}/footwear/${e.target.innerHTML}`);handleClick()}} className="px-[4px]  py-[2px] active:bg-gray-100">Sandals & Floaters</p>
+            <p onClick={(e)=>{navigate(`/Explore/${item}/footwear/${e.target.innerHTML}`);handleClick()}} className="px-[4px]  py-[2px] active:bg-gray-100">Flip FLops</p>
+            <p onClick={(e)=>{navigate(`/Explore/${item}/footwear/${e.target.innerHTML}`);handleClick()}} className="px-[4px]  py-[2px] active:bg-gray-100">Socks</p>
+                    
             <div className="my-[20px] h-[1px]  max-[1000px]:my-[20px] w-[16vw] max-[1000px]:w-full bg-[rgba(0,0,0,0.2)] "></div>
             
             
