@@ -12,7 +12,7 @@ function Explore() {
     
     const toFilter = DATA[category]?.[Subcategory]
     const filtered = toFilter?.filter((item)=>{
-        return(item.name.toUpperCase().includes(updatedType))
+        return(item.name.toUpperCase().includes(updatedType)||item.image.toUpperCase().includes(updatedType))
     })
     // console.log(filtered)
     return (filtered.map((filtered,index)=>{

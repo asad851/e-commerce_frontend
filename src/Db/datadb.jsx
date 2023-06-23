@@ -475,13 +475,13 @@ const DATA = {
           "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/23478792/2023/5/30/586c9177-e511-4d7c-8318-f9ce382513131685448092780RainJacket1.jpg",
         brand: "Zeel",
         name: "Colourblocked Rain Hood Jacket",
-        peice: "1899",
+        price: "1899",
       },
       {
         image:
           "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/21854762/2023/2/9/cb9fc736-7901-4900-9c51-5e2f2461fdfe1675939596253-Columbia-Mens-Orange-Colour-Polyester-Watertight-II-Jacket-4-1.jpg",
         brand: "Columbia",
-        nmae: "Men Watertight II Rain Jacket",
+        name: "Men Watertight II Rain Jacket",
         price: "5499",
       },
       {
@@ -516,7 +516,7 @@ const DATA = {
         image:
           "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/9360499/2019/4/30/a60538b6-ccba-41ef-b677-c0eb50eb63ff1556627382618-Plutus-Men-Navy-Solid-Hooded-Longline-Rain-Jacket-7361556627-1.jpg",
         brand: "Plutus",
-        nmae: "Solid Hooded Rain Jacket",
+        name: "Solid Hooded Rain Jacket",
         price: "1049Rs",
       },
       {
@@ -650,7 +650,7 @@ const DATA = {
           "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/19902078/2022/9/12/988b5b20-930b-4f5f-83de-45b93be5aded1662981155249AllenSollyBlueNehruJacket1.jpg",
         brand: "Allen Solly",
         name: "Men Solid Nehru Jacket",
-        orice: "2759Rs",
+        price: "2759Rs",
       },
       {
         image:
