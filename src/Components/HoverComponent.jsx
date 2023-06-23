@@ -24,38 +24,39 @@ function HoverComponent({ item,setShowSlider,setShowSubSlider,setHideCategoryMod
             <p onClick={(e)=>{navigate(`/Explore/${item}/clothing/${e.target.innerHTML}`);handleClick()}} className="px-[4px]  py-[2px] active:bg-gray-100">Formal Shirts</p>
             <p onClick={(e)=>{navigate(`/Explore/${item}/clothing/${e.target.innerHTML}`);handleClick()}} className="px-[4px]  py-[2px] active:bg-gray-100">Sweaters</p>
             <p onClick={(e)=>{navigate(`/Explore/${item}/clothing/${e.target.innerHTML}`);handleClick()}} className="px-[4px]  py-[2px] active:bg-gray-100">Jackets</p>
-            <p onClick={(e)=>{navigate(`/Explore/${item}/clothing/${e.target.innerHTML}`);handleClick()}} className="px-[4px]  py-[2px] active:bg-gray-100">Blazers&Coats</p>
+            <p onClick={(e)=>{navigate(`/Explore/${item}/clothing/${e.target.innerHTML}`);handleClick()}} className="px-[4px]  py-[2px] active:bg-gray-100">Blazers</p>
+           
             <p onClick={(e)=>{navigate(`/Explore/${item}/clothing/${e.target.innerHTML}`);handleClick()}} className="px-[4px]  py-[2px] active:bg-gray-100">Suits</p>
             <p onClick={(e)=>{navigate(`/Explore/${item}/clothing/${e.target.innerHTML}`);handleClick()}} className="px-[4px]  py-[2px] active:bg-gray-100">Rain jackets</p>
             <div className="my-[20px] h-[1px]  max-[1000px]:my-[20px]  w-[16vw] max-[1000px]:w-full bg-[rgba(0,0,0,0.2)] "></div>
             <h3 className="text-[1.25vw] max-[1000px]:text-[20px] text-black font-semibold">
               Indian & festive Wear
             </h3>
-            <p onClick={(e)=>{navigate(`/Explore/${item}/clothing${e.target.innerHTML}`);handleClick()}} className="px-[4px]  py-[2px] active:bg-gray-100">Kurta & Kurta Sets</p>
-            <p onClick={(e)=>{navigate(`/Explore/${item}/clothing${e.target.innerHTML}`);handleClick()}} className="px-[4px]  py-[2px] active:bg-gray-100">Sherwanis</p>
-            <p onClick={(e)=>{navigate(`/Explore/${item}/clothing${e.target.innerHTML}`);handleClick()}} className="px-[4px]  py-[2px] active:bg-gray-100">Nehru Jacket</p>
-            <p onClick={(e)=>{navigate(`/Explore/${item}/clothing${e.target.innerHTML}`);handleClick()}} className="px-[4px]  py-[2px] active:bg-gray-100">Dhotis</p>
+            <p onClick={(e)=>{navigate(`/Explore/${item}/clothing/${e.target.innerHTML}`);handleClick()}} className="px-[4px]  py-[2px] active:bg-gray-100">Kurta</p>
+            <p onClick={(e)=>{navigate(`/Explore/${item}/clothing/${e.target.innerHTML}`);handleClick()}} className="px-[4px]  py-[2px] active:bg-gray-100">Sherwanis</p>
+            <p onClick={(e)=>{navigate(`/Explore/${item}/clothing/${e.target.innerHTML}`);handleClick()}} className="px-[4px]  py-[2px] active:bg-gray-100">Nehru Jacket</p>
+            <p onClick={(e)=>{navigate(`/Explore/${item}/clothing/${e.target.innerHTML}`);handleClick()}} className="px-[4px]  py-[2px] active:bg-gray-100">Dhotis</p>
           <div className="my-[20px] h-[1px] min-[1000px]:hidden max-[1000px]:my-[20px]  w-[16vw] max-[1000px]:w-full bg-[rgba(0,0,0,0.2)] "></div>
           </div>
           <div className="text-[1.15vw] max-[1000px]:text-[18px] text-[rgba(0,0,0,0.5)] bg-[#fdfafa] max-[1000px]:bg-transparent  p-[2.1vw]">
             <h3 className="text-[1.25vw] max-[1000px]:text-[20px] text-black font-semibold cursor-pointer">
               Bottomwear
             </h3>
-            <p onClick={(e)=>{navigate(`/Explore/${item}/clothing${e.target.innerHTML}`);handleClick()}} className="px-[4px]  py-[2px] active:bg-gray-100">Jeans</p>
-            <p onClick={(e)=>{navigate(`/Explore/${item}/clothing${e.target.innerHTML}`);handleClick()}} className="px-[4px]  py-[2px] active:bg-gray-100">casual Trousers</p>
-            <p onClick={(e)=>{navigate(`/Explore/${item}/clothing${e.target.innerHTML}`);handleClick()}} className="px-[4px]  py-[2px] active:bg-gray-100">Formal Trousers</p>
-            <p onClick={(e)=>{navigate(`/Explore/${item}/clothing${e.target.innerHTML}`);handleClick()}} className="px-[4px]  py-[2px] active:bg-gray-100">Shorts</p>
-            <p onClick={(e)=>{navigate(`/Explore/${item}/clothing${e.target.innerHTML}`);handleClick()}} className="px-[4px]  py-[2px] active:bg-gray-100">Track Pants & Joggers</p>
+            <p onClick={(e)=>{navigate(`/Explore/${item}/clothing/${e.target.innerHTML}`);handleClick()}} className="px-[4px]  py-[2px] active:bg-gray-100">Jeans</p>
+            <p onClick={(e)=>{navigate(`/Explore/${item}/clothing/${e.target.innerHTML}`);handleClick()}} className="px-[4px]  py-[2px] active:bg-gray-100">casual Trousers</p>
+            <p onClick={(e)=>{navigate(`/Explore/${item}/clothing/${e.target.innerHTML}`);handleClick()}} className="px-[4px]  py-[2px] active:bg-gray-100">Formal Trousers</p>
+            <p onClick={(e)=>{navigate(`/Explore/${item}/clothing/${e.target.innerHTML}`);handleClick()}} className="px-[4px]  py-[2px] active:bg-gray-100">Shorts</p>
+            <p onClick={(e)=>{navigate(`/Explore/${item}/clothing/${e.target.innerHTML}`);handleClick()}} className="px-[4px]  py-[2px] active:bg-gray-100">Track Pants & Joggers</p>
 
             <div className="my-[20px] h-[1px]  max-[1000px]:my-[20px] w-[16vw] max-[1000px]:w-full bg-[rgba(0,0,0,0.2)] "></div>
             <h3 className="text-[1.25vw] max-[1000px]:text-[20px] text-black font-semibold">
               Inner Wear & Sleepwear
             </h3>
-            <p onClick={(e)=>{navigate(`/Explore/${item}/clothing${e.target.innerHTML}`);handleClick()}} className="px-[4px]  py-[2px] active:bg-gray-100">Breif & Trunks</p>
-            <p onClick={(e)=>{navigate(`/Explore/${item}/clothing${e.target.innerHTML}`);handleClick()}} className="px-[4px]  py-[2px] active:bg-gray-100">Boxers</p>
-            <p onClick={(e)=>{navigate(`/Explore/${item}/clothing${e.target.innerHTML}`);handleClick()}} className="px-[4px]  py-[2px] active:bg-gray-100">Vests</p>
-            <p onClick={(e)=>{navigate(`/Explore/${item}/clothing${e.target.innerHTML}`);handleClick()}} className="px-[4px]  py-[2px] active:bg-gray-100">Sleepear & Loungewear</p>
-            <p onClick={(e)=>{navigate(`/Explore/${item}/clothing${e.target.innerHTML}`);handleClick()}} className="px-[4px]  py-[2px] active:bg-gray-100">Thermals</p>
+            <p onClick={(e)=>{navigate(`/Explore/${item}/clothing/${e.target.innerHTML}`);handleClick()}} className="px-[4px]  py-[2px] active:bg-gray-100">Breif & Trunks</p>
+            <p onClick={(e)=>{navigate(`/Explore/${item}/clothing/${e.target.innerHTML}`);handleClick()}} className="px-[4px]  py-[2px] active:bg-gray-100">Boxers</p>
+            <p onClick={(e)=>{navigate(`/Explore/${item}/clothing/${e.target.innerHTML}`);handleClick()}} className="px-[4px]  py-[2px] active:bg-gray-100">Vests</p>
+            <p onClick={(e)=>{navigate(`/Explore/${item}/clothing/${e.target.innerHTML}`);handleClick()}} className="px-[4px]  py-[2px] active:bg-gray-100">Sleepear & Loungewear</p>
+            <p onClick={(e)=>{navigate(`/Explore/${item}/clothing/${e.target.innerHTML}`);handleClick()}} className="px-[4px]  py-[2px] active:bg-gray-100">Thermals</p>
           <div className="my-[20px] h-[1px] min-[1000px]:hidden max-[1000px]:my-[20px]  w-[16vw] max-[1000px]:w-full bg-[rgba(0,0,0,0.2)] "></div>
           </div>
           <div className="text-[1.15vw] max-[1000px]:text-[18px] text-[rgba(0,0,0,0.5)] p-[2.1vw]">
