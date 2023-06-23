@@ -3,11 +3,12 @@ import DATA from '../Db/datadb'
 import Cards from '../Components/Cards'
 function Collections() {
    const newarr= DATA.MEN.clothing.filter((item)=>{
-        const keyword =item.name.toUpperCase()
+        // const keyword =item?.name.toUpperCase()
         
-        return(keyword.includes(""))
+        // return(keyword.includes(""))
       
     })
+    console.log(DATA)
     
     // const result=[]
     // for(const category in data){

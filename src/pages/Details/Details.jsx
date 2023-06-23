@@ -33,6 +33,18 @@ export default function Details() {
         return
     }
    }
+   const handleAddtoCart=(data)=>{
+    if(sizeSelected){
+        
+        dispatch(AddToCart(data))
+    }else{
+       setShowMessage(true)
+       setTimeout(()=>{
+           setShowMessage(false)
+
+       },1500)
+    }
+   }
    const handleIncrease=(data)=>{
     if(sizeSelected){
         setQuantity(prev=>prev+1)
@@ -130,7 +142,7 @@ const Data = () => {
               { 
               Add?(
                 <button onClick={()=>{dispatch(Remove(updated)); setAdd(false)}}  className="text-white mt-3 max-w-[150px] bg-blue-700 hover:bg-blue-800  font-medium rounded-lg text-sm px-5 py-2.5 text-center ">Remove</button>
-              ):(<button onClick={()=>{dispatch(AddToCart(updated)); setAdd(true)}} className="text-white mt-3 max-w-[150px] bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center ">Add to cart</button>)}
+              ):(<button onClick={()=>{handleAddtoCart(updated)}} className="text-white mt-3 max-w-[150px] bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center ">Add to cart</button>)}
             </div>
           </div>
         );

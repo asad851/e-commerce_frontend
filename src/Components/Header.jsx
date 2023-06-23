@@ -123,8 +123,8 @@ export default function Header() {
             
             <MdPermIdentity onClick={()=>setShowAccountModal(true)} className="text-[35px]  w-[8%] font-light cursor-pointer" />
             
-            <AiOutlineShoppingCart onClick={()=>navigate("/Cart")} className="text-[30px] w-[8%] font-light cursor-pointer" ></AiOutlineShoppingCart>
-            <span className={`absolute right-11 -top-1 h-4 w-4  rounded-2xl bg-black text-white text-center text-xs ${showCartNum} `}>{products.length}</span>
+            <AiOutlineShoppingCart onClick={()=>navigate("/Cart")} className="text-[30px] w-[8%] font-light cursor-pointer" />
+            <span className={`absolute right-12 -top-1 h-4 w-4  rounded-2xl bg-black text-white text-center text-xs ${showCartNum} `}>{products.length}</span>
           </div>
         </div>
 
