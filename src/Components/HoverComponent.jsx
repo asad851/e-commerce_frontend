@@ -141,7 +141,7 @@ function HoverComponent({ item,setShowSlider,setShowSubSlider,setHideCategoryMod
             </h3>
             <p onClick={(e)=>{navigate(`/Explore/${item}/${e.target.innerHTML}`);handleClick()}} className="px-[4px]  py-[2px] active:bg-gray-100">Dresses</p>
             <p onClick={(e)=>{navigate(`/Explore/${item}/${e.target.innerHTML}`);handleClick()}} className="px-[4px]  py-[2px] active:bg-gray-100">Tops</p>
-            <p onClick={(e)=>{navigate(`/Explore/${item}/${e.target.innerHTML}`);handleClick()}} className="px-[4px]  py-[2px] active:bg-gray-100">Tshirts</p>
+            <p onClick={(e)=>{navigate(`/Explore/${item}/${e.target.innerHTML}`);handleClick()}} className="px-[4px]  py-[2px] active:bg-gray-100">T-Shirts</p>
             <p onClick={(e)=>{navigate(`/Explore/${item}/${e.target.innerHTML}`);handleClick()}} className="px-[4px]  py-[2px] active:bg-gray-100">Jeans</p>
             <p onClick={(e)=>{navigate(`/Explore/${item}/${e.target.innerHTML}`);handleClick()}} className="px-[4px]  py-[2px] active:bg-gray-100">Trousers & Capris</p>
             <p onClick={(e)=>{navigate(`/Explore/${item}/${e.target.innerHTML}`);handleClick()}} className="px-[4px]  py-[2px] active:bg-gray-100">Shorts & Skirts</p>

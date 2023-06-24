@@ -717,21 +717,21 @@ const DATA = {
           "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/23136886/2023/5/11/8e654f0f-eb4c-44a2-ad64-6cc4f5187c511683816830201Dhotis1.jpg",
         brand: "Ramraj",
         name: "Men Cotton Panchakacham Dhoti",
-        price: "1195",
+        price: "1195Rs",
       },
       {
         image:
           "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/23136892/2023/5/12/9793e353-3925-403f-8caa-d0f3af15febd1683868092684Dhotis1.jpg",
         brand: "Ramraj",
         name: "Men Cotton Panchakacham Dhoti",
-        price: "1240",
+        price: "1240Rs",
       },
       {
         image:
           "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/21635414/2023/1/20/178541a9-acca-4b20-9ee3-e32d2f6cff661674200616718SochWomenOffWhiteViscoseRayonSolidDhoti1.jpg",
         brand: "Soch",
         name: "Women Self-Designed Dhoti",
-        price: "1498",
+        price: "1498Rs",
       },
       {
         image:
@@ -745,14 +745,14 @@ const DATA = {
           "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/23525894/2023/6/5/ce6f5c02-28ee-46e1-8c36-5a907052be501685942343613Dhotis1.jpg",
         brand: "Ramraj",
         name: "Tissue With Zari Border Dhoti",
-        price: "600",
+        price: "600Rs",
       },
       {
         image:
           "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/23095130/2023/5/10/39dc2cee-6739-4b96-9275-50424134e2151683664204833Dhotis1.jpg",
         brand: "Ramraj",
         name: "Men Double Layer Cotton Dhotis",
-        price: "1250",
+        price: "1250Rs",
       },
       {
         image:
@@ -766,7 +766,7 @@ const DATA = {
           "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/23006470/2023/5/4/8a1d9b72-2db9-4f2f-816d-4a42560e66fa1683176413774Dhotis1.jpg",
         brand: "Ramraj",
         name: "Wrap Around Pure Cotton Dhoti",
-        price: "660",
+        price: "660Rs",
       },
       {
         image:
@@ -780,7 +780,7 @@ const DATA = {
           "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/23526470/2023/6/5/328a542a-b05b-48f7-b831-f8e5cb83b3f21685949355713Dhotis1.jpg",
         brand: "Ramraj",
         name: "Cotton With Zari Border Dhoti",
-        price: "605",
+        price: "605Rs",
       },
       {
         image:
