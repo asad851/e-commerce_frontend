@@ -9,7 +9,7 @@ export default function Details() {
   const { id } = useParams();
   const dispatch = useDispatch();
   const { products } = useSelector((state) => state.cart);
-  const cartedproducts = products.filter((item)=>item.id===id)
+  const cartedproducts = products.filter((item)=>item.id==id)
   console.log(cartedproducts.length)
   const [quantity,setQuantity] =useState(cartedproducts.length)
   const [sizeSelected,setSizeSelected] =useState(false)
@@ -64,7 +64,7 @@ export default function Details() {
     
    },[handleIncrease])
    useEffect(()=>{
-    const found=products.find((item)=>item.id===id)
+    const found=products.find((item)=>item.id==id)
      if(found){
         setAdd(true)
      }else{
@@ -77,25 +77,25 @@ export default function Details() {
    useEffect(() => {
      setQuantity(cartedproducts.length)
    }, [products])
-   const data = Object.values(DATA).flatMap(category=>Object.values(category)).flatMap(subcategory=>Object.values(subcategory))
-   const filt = data.find((item)=>{
-    return item.id===id
-   })
-
-   console.log(data)
-   console.log(filt)
-const Data = () => {
-    for (const category in DATA) {
-        for (const array in DATA[category]) {
-            const filtered = DATA[category][array].find((item) => {
+   
+//    console.log(filt)
+   
+   const Data = () => {
+    const data = Object.values(DATA).flatMap(category=>Object.values(category)).flatMap(subcategory=>Object.values(subcategory))
+    const updated = data.find((item)=>{
+     return item.id==id
+    })
+    // for (const category in DATA) {
+    //     for (const array in DATA[category]) {
+    //         const filtered = DATA[category][array].find((item) => {
                 
-                return item.id===id
+    //             return (item.id==id)
 
-            });
+    //         });
             
-            const updated = {...filtered}
-             updated.userId=""
-             updated.size=size
+    //         const updated = {...filtered}
+    //          updated.userId=""
+    //          updated.size=size
              
              
             
@@ -106,19 +106,19 @@ const Data = () => {
             
             <img
               className="rounded-md object-cover max-[400px]:w-[calc(90%-10px)] object-center md:h-[500px] shadow-xl"
-              src={filtered?.image}
+              src={updated?.image}
               alt="Product"
             />
             <div className="flex md:items-start  gap-3 h-full flex-col px-10">
-              <h1 className="font-semibold md:text-3xl text-2xl ">{filtered?.name}</h1>
+              <h1 className="font-semibold md:text-3xl text-2xl ">{updated?.name}</h1>
               <h1 className="text-[rgba(0,0,0,0.5)] font-medium md:text-xl text-lg mt-3">
                 <span className="md:text-2xl text-xl text-black font-bold">Price : </span>
                 {""}
-                {filtered?.price}
+                {updated?.price}
               </h1>
               <h1 className=" md:text-xl text-lg font-medium text-[rgba(0,0,0,0.4)]">
                 <span className="md:text-2xl text-xl text-black font-bold">Brand : </span>{" "}
-                {filtered?.brand}
+                {updated?.brand}
               </h1>
               <h1 className="md:text-2xl text-xl text-black font-bold mt-2 ">
                 Description :{" "}
@@ -158,8 +158,8 @@ const Data = () => {
             </div>
           </div>
         );
-      }
-    }
+    //   }
+    // }
   };
  useEffect(()=>{
    Data()

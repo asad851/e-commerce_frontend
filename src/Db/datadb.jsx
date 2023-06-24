@@ -944,20 +944,19 @@ const DATA = {
   }
 };
 
-//  const data = Object.values(DATA).flatMap(category=>Object.values(category)).flatMap(subcategory=>Object.values(subcategory))
+  Object.values(DATA).flatMap(category=>Object.values(category)).flatMap(subcategory=>Object.values(subcategory)).map((item,index)=>{
+    item.id=index+1
+  })
 
-//  const updatedData = data.map((item,index)=>({...item,id:index+1}))
-//  console.log(updatedData)
 
-for (const category in DATA) {
-  for (const subcategory in DATA[category]) {
-    const items=DATA[category][subcategory]
-    for (let i=0; i<items.length; i++){
-      // const uniqueId =Date.now().toString(36)+Math.random().toString(36).substring(2,5)
-      items[i].id=nanoid()
-    }
-  }
-}
+// for (const category in DATA) {
+//   for (const subcategory in DATA[category]) {
+//     const items=DATA[category][subcategory]
+//     items.map((item,index)=>{
+//      item.id=nanoid()
+//     })
+//   }
+// }
 // console.log(DATA)
 
 export default DATA;
