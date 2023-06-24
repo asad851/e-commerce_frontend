@@ -77,7 +77,13 @@ export default function Details() {
    useEffect(() => {
      setQuantity(cartedproducts.length)
    }, [products])
-   
+   const data = Object.values(DATA).flatMap(category=>Object.values(category)).flatMap(subcategory=>Object.values(subcategory))
+   const filt = data.find((item)=>{
+    return item.id===id
+   })
+
+   console.log(data)
+   console.log(filt)
 const Data = () => {
     for (const category in DATA) {
         for (const array in DATA[category]) {
