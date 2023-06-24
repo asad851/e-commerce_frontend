@@ -6,20 +6,21 @@ function Explore() {
     const{Category,Subcategory,Type} = useParams()
     const category =Category.toUpperCase()
     const type = Type.toUpperCase()
-    const updatedType = type.slice(0,-1)
+    // const updatedType = type.slice(0,-1)
     console.log(type)
     const getDATA=()=>{
     
-    const toFilter = DATA[category]?.[Subcategory]
-    const filtered = toFilter?.filter((item)=>{
-        return(item.name.toUpperCase().includes(updatedType)||item.image.toUpperCase().includes(updatedType))
-    })
-    // console.log(filtered)
-    return (filtered.map((filtered,index)=>{
-            return(
-                <Cards key={index} filtered={filtered} />
-            )
-           }))
+    const toFilter = DATA[category]
+    toFilter.map((item)=>console.log(item))
+    // const filtered = toFilter?.filter((item)=>{
+    //     return(item===[Type])
+    // })
+    // // console.log(filtered)
+    // return (filtered.map((filtered,index)=>{
+    //         return(
+    //             <Cards key={index} filtered={filtered} />
+    //         )
+    //        }))
     }
     
   return (

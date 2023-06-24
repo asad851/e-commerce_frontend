@@ -2,13 +2,13 @@ import React from 'react'
 import DATA from '../Db/datadb'
 import Cards from '../Components/Cards'
 function Collections() {
-   const newarr= DATA.MEN.clothing.filter((item)=>{
+   const newarr= DATA.MEN['T-Shirts'].filter((item)=>{
         const keyword =item?.name.toUpperCase()
         
         return(keyword.includes(""))
       
     })
-   
+    console.log(DATA.MEN['Casual Shirts'] )
     
     // const result=[]
     // for(const category in data){

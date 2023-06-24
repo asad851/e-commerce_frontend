@@ -1,6 +1,6 @@
 const DATA = {
   MEN: {
-    clothing: [
+      "T-Shirts": [
       {
         image:
           "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/9901805/2019/7/16/8139e933-b2a1-4d35-8a9f-d01cf3e1ace81563256634726-Roadster-Men-Tshirts-5541563256633223-1.jpg",
@@ -78,7 +78,8 @@ const DATA = {
         name: "Running Typography T-shirt",
         price: "269Rs",
       },
-      {
+    ],
+     "Casual Shirts":[ {
         image:
           "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/22642774/2023/6/8/315b50d7-ae50-4080-b51c-dd4b68e3d10d1686218414024-FUBAR-Modern-Spread-Collar-Casual-Shirt-7981686218413679-1.jpg",
         brand: "FUBAR",
@@ -155,7 +156,8 @@ const DATA = {
         name: "Slim Fit Cotton Casual Shirt",
         price: "434Rs",
       },
-      {
+    ],
+     "Sweaters":[ {
         image:
           "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/19635108/2022/8/24/a309e8a0-6828-4cbb-ac35-d7149a2aa2961661329872836PoloRalphLaurenMenNavyBlueSweaters1.jpg",
         brand: "Polo Ralph Lauren",
@@ -232,7 +234,8 @@ const DATA = {
         name: "Pullover",
         price: "899Rs",
       },
-      {
+    ],
+     "Jackets":[ {
         image:
           "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/4453297/2019/12/2/77b5d9e0-8d65-4a36-94e7-290ed271db6b1575267599079-HRX-by-Hrithik-Roshan-Men-Olive-Green-Solid-Active-Bomber-Ja-1.jpg",
         brand: "HRX by Hrithik Roshan",
@@ -308,8 +311,8 @@ const DATA = {
         brand: "Nike",
         name: "Men Therma-FIT Training Jacket",
         price: "3595",
-      },
-      {
+      },],
+     "Blazers": [{
         image:
           "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/16698514/2022/1/6/3a85935d-2b4f-4af3-aae1-0565a8dbc9b81641448352255PeterEnglandMenBlackSolidSlim-FitSingle-BreastedBlazer1.jpg",
         brand: "Peter England",
@@ -386,7 +389,8 @@ const DATA = {
         name: "Slim Fit Bandhgala Blazer",
         price: "2624Rs",
       },
-      {
+    ],
+    "Suits": [ {
         image:
           "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/11353956/2020/2/12/9c48b7b7-a6f6-4620-8e9f-d000ba3016a11581497225150-Louis-Philippe-Men-Suits-4981581497221685-1.jpg",
         brand: "Louis Philippe",
@@ -463,7 +467,8 @@ const DATA = {
         name: "Men Slim Fit Tuxedo Suit",
         price: "2924Rs",
       },
-      {
+    ],
+     "Rain Jackets": [{
         image:
           "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/22483440/2023/3/23/35487c10-3705-4749-9274-5f593893045d1679576283721RainJacket1.jpg",
         brand: "Zeel",
@@ -540,7 +545,8 @@ const DATA = {
         name: "Men Solid Hooded Rain Jacket",
         price: "1899",
       },
-      {
+    ],
+     "Kurta & Kurta Sets":[ {
         image:
           "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/17593278/2022/7/6/d53617f3-7840-4f9d-af76-f8c25aa6e3f51657110309550-Anouk-Men-Kurtas-521657110309090-1.jpg",
         brand: "Anouk",
@@ -616,15 +622,17 @@ const DATA = {
         brand: "Jompers",
         name: "Straight Pure Cotton Kurta",
         price: "890Rs",
-      },
-      {
+      },],
+     "Sherwani":[ {
         image:
           "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/23056766/2023/5/6/54b3b08d-a87a-4109-9711-0b896d0db9b71683367362028ManyavarBlackBlendedRayonSelfDesignIndoWesternSet1.jpg",
         brand: "Manyavar",
         name: "Self-Design Sherwani Set",
         price: "24999",
       },
-      {
+    ],
+
+    "Nehru Jackets": [ {
         image:
           "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/15001756/2021/10/11/4809b431-5e72-473f-a213-ae9a6437aa251633928930774VASTRAMAYBoysPinkGreenFloralDigitalPrintedSlim-FitNehruJacke1.jpg",
         brand: "VASTRAMAY",
@@ -701,6 +709,8 @@ const DATA = {
         name: "Men Woven Design Nehru Jackets",
         price: "1151Rs",
       },
+    ],
+    "Dhotis":[
       {
         image:
           "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/23136886/2023/5/11/8e654f0f-eb4c-44a2-ad64-6cc4f5187c511683816830201Dhotis1.jpg",
@@ -778,6 +788,8 @@ const DATA = {
         name: "Men Floral Cotton Silk Dhoti",
         price: "809Rs",
       },
+    ],
+    "Jeans":[
       {
         image:
           "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/13961910/2021/4/6/f47a9ae4-caf6-483c-9819-ff59b6226e051617685910330-Hubberholme-Men-Jeans-6731617685909546-1.jpg",
@@ -856,7 +868,7 @@ const DATA = {
         price: "479Rs",
       },
     ],
-    footwear:[
+    "Casual Shoes":[
       {
         "image":"https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/17990342/2022/4/22/9b07013a-6b53-4e96-99c5-5768885840081650619111596KillerMenBlackWovenDesignSlip-OnSneakers7.jpg",
         brand:"Killer",
