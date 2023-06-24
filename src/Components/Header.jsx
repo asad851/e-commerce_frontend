@@ -102,7 +102,7 @@ export default function Header() {
                     onMouseLeave={handleMouseLeave}
                     
                   >
-                    <HoverComponent item={item} setHideCategoryModal={setHideCategoryModal} />
+                    <HoverComponent item={item} setHideCategoryModal={setHideCategoryModal} setShowSlider={setShowSlider} setShowSubSlider={setShowSubSlider} />
                   </div>
                 </>
               );

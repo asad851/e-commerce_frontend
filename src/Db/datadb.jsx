@@ -623,7 +623,7 @@ const DATA = {
         name: "Straight Pure Cotton Kurta",
         price: "890Rs",
       },],
-     "Sherwani":[ {
+     "Sherwanis":[ {
         image:
           "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/23056766/2023/5/6/54b3b08d-a87a-4109-9711-0b896d0db9b71683367362028ManyavarBlackBlendedRayonSelfDesignIndoWesternSet1.jpg",
         brand: "Manyavar",
@@ -938,6 +938,9 @@ const DATA = {
         
     ],
   },
+  WOMEN:{
+
+  }
 };
 
 //  const data = Object.values(DATA).flatMap(category=>Object.values(category)).flatMap(subcategory=>Object.values(subcategory))
@@ -946,8 +949,12 @@ const DATA = {
 //  console.log(updatedData)
 
 for (const category in DATA) {
-  for (const array in DATA[category]) {
-    DATA[category][array].map((item, index) => (item.id = index + 1));
+  for (const subcategory in DATA[category]) {
+    const items=DATA[category][subcategory]
+    for (let i=0; i<items.length; i++){
+      const uniqueId =Date.now().toString(36)+Math.random().toString(36).substring(2,5)
+      items[i].id=uniqueId
+    }
   }
 }
 

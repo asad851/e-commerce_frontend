@@ -8,7 +8,7 @@ function Collections() {
         return(keyword.includes(""))
       
     })
-    console.log(DATA.MEN['Casual Shirts'] )
+    // console.log(DATA.MEN)
     
     // const result=[]
     // for(const category in data){
