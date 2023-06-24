@@ -27,14 +27,14 @@ function HoverComponent({ item,setShowSlider,setShowSubSlider,setHideCategoryMod
             <p onClick={(e)=>{navigate(`/Explore/${item}/${e.target.innerHTML}`);handleClick()}} className="px-[4px]  py-[2px] active:bg-gray-100">Blazers</p>
            
             <p onClick={(e)=>{navigate(`/Explore/${item}/${e.target.innerHTML}`);handleClick()}} className="px-[4px]  py-[2px] active:bg-gray-100">Suits</p>
-            <p onClick={(e)=>{navigate(`/Explore/${item}/${e.target.innerHTML}`);handleClick()}} className="px-[4px]  py-[2px] active:bg-gray-100">Rain jackets</p>
+            <p onClick={(e)=>{navigate(`/Explore/${item}/${e.target.innerHTML}`);handleClick()}} className="px-[4px]  py-[2px] active:bg-gray-100">Rain Jackets</p>
             <div className="my-[20px] h-[1px]  max-[1000px]:my-[20px]  w-[16vw] max-[1000px]:w-full bg-[rgba(0,0,0,0.2)] "></div>
             <h3 className="text-[1.25vw] max-[1000px]:text-[20px] text-black font-semibold">
               Indian & festive Wear
             </h3>
-            <p onClick={(e)=>{navigate(`/Explore/${item}/${e.target.innerHTML}`);handleClick()}} className="px-[4px]  py-[2px] active:bg-gray-100">Kurta & Kurta Sets</p>
+            <p onClick={(e)=>{navigate(`/Explore/${item}/${e.target.innerHTML}`);handleClick()}} className="px-[4px]  py-[2px] active:bg-gray-100">Kurta and Kurta Sets</p>
             <p onClick={(e)=>{navigate(`/Explore/${item}/${e.target.innerHTML}`);handleClick()}} className="px-[4px]  py-[2px] active:bg-gray-100">Sherwanis</p>
-            <p onClick={(e)=>{navigate(`/Explore/${item}/${e.target.innerHTML}`);handleClick()}} className="px-[4px]  py-[2px] active:bg-gray-100">Nehru Jacket</p>
+            <p onClick={(e)=>{navigate(`/Explore/${item}/${e.target.innerHTML}`);handleClick()}} className="px-[4px]  py-[2px] active:bg-gray-100">Nehru Jackets</p>
             <p onClick={(e)=>{navigate(`/Explore/${item}/${e.target.innerHTML}`);handleClick()}} className="px-[4px]  py-[2px] active:bg-gray-100">Dhotis</p>
           <div className="my-[20px] h-[1px] min-[1000px]:hidden max-[1000px]:my-[20px]  w-[16vw] max-[1000px]:w-full bg-[rgba(0,0,0,0.2)] "></div>
           </div>

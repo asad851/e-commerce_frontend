@@ -9,9 +9,10 @@ import { RxHamburgerMenu } from "react-icons/rx";
 import { RxCaretRight } from "react-icons/rx";
 import { BsArrowLeft } from "react-icons/bs";
 import SignupOrInModal from "./SignupOrInModal";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
+
 export default function Header() {
   const {products} = useSelector(state=>state.cart)
   const [opaque, setOpaque] = useState("hidden");
@@ -22,6 +23,7 @@ export default function Header() {
   const [showAccountModal,setShowAccountModal] =useState(false);
   const [hideCategoryModal,setHideCategoryModal] =useState("")
   const [showCartNum, setShowCartNum] = useState("hidden")
+  const location = useLocation()
   const navigate = useNavigate()
 
   function handleMouseOver(item) {
@@ -49,6 +51,9 @@ export default function Header() {
       setShowCartNum("hidden")
     }, 800);
   },[products])
+  useEffect(()=>{
+   setHideCategoryModal("")
+  },[hideCategoryModal])
   const NavArray = ["Men", "Women", "Kids", "Beauty"];
   const SearchBar = () => {
     return(

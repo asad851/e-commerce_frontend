@@ -9,7 +9,8 @@ export default function Details() {
   const { id } = useParams();
   const dispatch = useDispatch();
   const { products } = useSelector((state) => state.cart);
-  const cartedproducts = products.filter((item)=>item.id==id)
+  const cartedproducts = products.filter((item)=>item.id===id)
+  console.log(cartedproducts.length)
   const [quantity,setQuantity] =useState(cartedproducts.length)
   const [sizeSelected,setSizeSelected] =useState(false)
   const [Add, setAdd] = useState(JSON.parse(localStorage.getItem("boolean"))||false);
@@ -18,7 +19,7 @@ export default function Details() {
   
   localStorage.setItem("mycart", JSON.stringify(products));
   localStorage.setItem("boolean", JSON.stringify(Add));
-  console.log(products)
+   
  
    const handleSize=(e)=>{
      setSize(e.target.innerHTML)
@@ -35,7 +36,7 @@ export default function Details() {
    }
    const handleAddtoCart=(data)=>{
     if(sizeSelected){
-        
+        setAdd(true)
         dispatch(AddToCart(data))
     }else{
        setShowMessage(true)
@@ -63,7 +64,7 @@ export default function Details() {
     
    },[handleIncrease])
    useEffect(()=>{
-    const found=products.find((item)=>item.id==id)
+    const found=products.find((item)=>item.id===id)
      if(found){
         setAdd(true)
      }else{
@@ -73,14 +74,19 @@ export default function Details() {
      
    },[quantity])
    
-   console.log(quantity)
+   useEffect(() => {
+     setQuantity(cartedproducts.length)
+   }, [products])
+   
 const Data = () => {
     for (const category in DATA) {
         for (const array in DATA[category]) {
             const filtered = DATA[category][array].find((item) => {
-            
-                return item.id==id
+                
+                return item.id===id
+
             });
+            
             const updated = {...filtered}
              updated.userId=""
              updated.size=size
@@ -142,14 +148,16 @@ const Data = () => {
               { 
               Add?(
                 <button onClick={()=>{dispatch(Remove(updated)); setAdd(false)}}  className="text-white mt-3 max-w-[150px] bg-blue-700 hover:bg-blue-800  font-medium rounded-lg text-sm px-5 py-2.5 text-center ">Remove</button>
-              ):(<button onClick={()=>{handleAddtoCart(updated)}} className="text-white mt-3 max-w-[150px] bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center ">Add to cart</button>)}
+              ):(<button onClick={()=>{handleAddtoCart(updated); }} className="text-white mt-3 max-w-[150px] bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center ">Add to cart</button>)}
             </div>
           </div>
         );
       }
     }
   };
-
+ useEffect(()=>{
+   Data()
+ },[])
  
-  return <div className=" h-full mt-32 mb-20 ">{Data()}</div>;
+  return (<div className=" h-full mt-32 mb-20 ">{Data()}</div>);
 }

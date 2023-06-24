@@ -1,3 +1,4 @@
+import { nanoid } from "nanoid";
 const DATA = {
   MEN: {
       "T-Shirts": [
@@ -546,7 +547,7 @@ const DATA = {
         price: "1899",
       },
     ],
-     "Kurta & Kurta Sets":[ {
+     "Kurta and Kurta Sets":[ {
         image:
           "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/17593278/2022/7/6/d53617f3-7840-4f9d-af76-f8c25aa6e3f51657110309550-Anouk-Men-Kurtas-521657110309090-1.jpg",
         brand: "Anouk",
@@ -952,10 +953,11 @@ for (const category in DATA) {
   for (const subcategory in DATA[category]) {
     const items=DATA[category][subcategory]
     for (let i=0; i<items.length; i++){
-      const uniqueId =Date.now().toString(36)+Math.random().toString(36).substring(2,5)
-      items[i].id=uniqueId
+      // const uniqueId =Date.now().toString(36)+Math.random().toString(36).substring(2,5)
+      items[i].id=nanoid()
     }
   }
 }
+// console.log(DATA)
 
 export default DATA;

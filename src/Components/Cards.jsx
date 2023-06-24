@@ -16,7 +16,7 @@ function Cards({ filtered, items }) {
           className="rounded-t-lg object-cover  object-top   h-full w-full "
           src={filtered?.image || items.image}
           alt="product image"
-          onClick={() => navigate(`/Details/${filtered?.id || items.id}`)}
+          onClick={() => navigate(`/Details/${filtered?.id || items?.id}`)}
         />
       </div>
       <div className="px-2 pb-5 md:px-5 mb-8  mt-4 cursor-pointer ">
