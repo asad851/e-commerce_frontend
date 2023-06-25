@@ -6,7 +6,7 @@ import {Routes,Route} from 'react-router-dom'
 import Details from './pages/Details/Details'
 import Explore from './pages/Explore'
 import { useLocation } from 'react-router-dom'
-import CartProductsPage from './pages/CartProductsPage'
+import CartProductsPage from './pages/CartModal'
 import Collections from './pages/Collections'
 export default function App() {
   const location = useLocation()
@@ -21,7 +21,7 @@ export default function App() {
       <Route path="/Details/:id" element={<Details/>}/>
       <Route path="/Explore/:Category/:Type" element={<Explore/>}/>
       <Route path="/Collection/:Productsby/:endpoint" element={<Collections/>}/>
-      <Route path="/Cart" element={<CartProductsPage/>}/>
+      
     </Routes>
     <Footer/>
     </> 

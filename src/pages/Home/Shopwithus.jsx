@@ -6,7 +6,7 @@ function Shopwithus() {
         .flatMap((Category) => Object.values(Category))
         .flatMap((subcateg) => Object.values(subcateg));
     const items= arr.map(item=>{return item})
-    const Items= items.slice(0,16)
+    const Items= items.slice(40,48)
     console.log(items)
   return (
     <div className="w-full  mt-10 mb-20 justify-center overflow-hidden ">
