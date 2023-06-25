@@ -945,7 +945,11 @@ const DATA = {
 };
 
   Object.values(DATA).flatMap(category=>Object.values(category)).flatMap(subcategory=>Object.values(subcategory)).map((item,index)=>{
-    item.id=index+1
+    item.id=index+1;
+    item.userId="";
+    item.quantity=null;
+    item.size="";
+
   })
 
 

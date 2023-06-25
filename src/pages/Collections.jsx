@@ -1,29 +1,19 @@
 import React from 'react'
 import DATA from '../Db/datadb'
 import Cards from '../Components/Cards'
+import { useParams } from 'react-router-dom'
+import Categories from './Home/Categories'
 function Collections() {
-   const newarr= DATA.MEN['T-Shirts'].filter((item)=>{
-        const keyword =item?.name.toUpperCase()
-        
-        return(keyword.includes(""))
-      
-    })
-    // console.log(DATA.MEN)
+    const {endpoint}=useParams()
+   const arr= Object.values(DATA).find((item)=>item["T-Shirts"])
+   const updated = arr[endpoint]
+   console.log(updated)
+   const newarr= updated.map((item)=>{return item})
     
-    // const result=[]
-    // for(const category in data){
-        
-    //     for(const array in data[category]){
-            
-    //        const filtered = data[category][array].filter((item)=>item.title.toUpperCase().includes("JEANS")) 
-    //         result.push(...filtered)
-    //         console.log(result)
-    //     }
-    // }
-    // console.log(data.men)
-    // console.log(newarr)
   return (
-    <div className='h-full w-full flex flex-wrap gap-5 justify-center'>
+    <div className='w-full flex mt-32 mb-20 justify-center overflow-hidden '>
+        <div className='h-full w-full xl:max-w-[1180px] mx-auto flex flex-wrap gap-5 justify-center 
+        xl:justify-start'>
         {
             newarr.map((items,index)=>{
                 
@@ -32,6 +22,7 @@ function Collections() {
                 )
             })
         }
+    </div>
     </div>
   )
 }

@@ -79,3 +79,20 @@ font-size: 19px;
 font-weight: 500;
 color:rgb(132, 134, 134)
 }
+
+
+::-webkit-scrollbar{
+    width:10px;
+    
+}
+
+::-webkit-scrollbar-track{
+    background: transparent;
+}
+::-webkit-scrollbar-thumb{
+    background: #e97070;
+    /* border-right:3px solid white; */
+    margin-inline: 2px;
+    height:150px;
+    border-radius: 3rem;
+}
