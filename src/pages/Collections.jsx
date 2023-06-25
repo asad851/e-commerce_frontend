@@ -27,7 +27,7 @@ function Collections() {
       const arr = Object.values(DATA)
         .flatMap((Category) => Object.values(Category))
         .flatMap((subcateg) => Object.values(subcateg));
-      const updated = arr.filter((item) => item.brand === endpoint);
+      const updated = arr.filter((item) => item.brand.toUpperCase() === endpoint.toUpperCase());
       const newarr = updated.map((item) => console.log(item));
       return (
         <div
