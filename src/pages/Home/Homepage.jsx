@@ -1,16 +1,18 @@
 import React from 'react'
 import HeroBanner from './HeroBanner'
-import Collections from '../Collections'
+
 import Categories from './Categories'
 import ByBrands from './ByBrands'
+import Shopwithus from './Shopwithus'
 
 function Homepage() {
   return (
     <div className='border-none '>
     <HeroBanner/>
+    <Shopwithus/>
     <Categories/>
     <ByBrands/>
-    {/* <Collections/> */}
+    
     </div>
   )
 }

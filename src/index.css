@@ -1,98 +1,94 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-body{
-    font-family: Rubik;
-    width:100%;
-    height:100%;
-    
+body {
+  font-family: Rubik;
+  width: 100%;
+  height: 100%;
 }
 
-.hoverBox{
-    display: none;
-    justify-content: center;
-    background: white;
-    box-shadow: 0 0 20px -12px rgba(0,0,0,0.5);
-    /* padding:25px; */
-    position:absolute;
-    top:65px;
-    left:-150px;
-    overflow: hidden;
+.hoverBox {
+  display: none;
+  justify-content: center;
+  background: white;
+  box-shadow: 0 0 20px -12px rgba(0, 0, 0, 0.5);
+  /* padding:25px; */
+  position: absolute;
+  top: 65px;
+  left: -150px;
+  overflow: hidden;
 }
-.hoverBox:hover{
-    display: flex;
-    
+.hoverBox:hover {
+  display: flex;
 }
 
-.Men:hover~.hoverBox{
-    display: flex;
-   ;
-    
+.Men:hover ~ .hoverBox {
+  display: flex;
 }
-.Women:hover~.hoverBox{
-    display: flex;
-   
-    
+.Women:hover ~ .hoverBox {
+  display: flex;
 }
-.Kids:hover~.hoverBox{
-    display: flex;
+.Kids:hover ~ .hoverBox {
+  display: flex;
 }
-.Beauty:hover~.hoverBox{
-    display: flex;
+.Beauty:hover ~ .hoverBox {
+  display: flex;
 }
-   
-    
 
-.hoverBox>div>div>p{
-    cursor: pointer;
+.hoverBox > div > div > p {
+  cursor: pointer;
 }
-.hoverBox>div>div>p:hover{
-    scale:1.03;
-    color:rgba(0,0,0,0.8)
+.hoverBox > div > div > p:hover {
+  scale: 1.03;
+  color: rgba(0, 0, 0, 0.8);
 }
-.Signin > input{
- border:none;
- border-radius: 5px;
- font-size:16px;
- /* @media (min-width:400px){
+.Signin > input {
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  /* @media (min-width:400px){
     width:90%
  } */
 }
-.Signin > input:focus{
- outline: white;
- border: none;
- --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
- --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(0px + var(--tw-ring-offset-width)) var(--tw-ring-color);
- box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
- 
+.Signin > input:focus {
+  outline: white;
+  border: none;
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0
+    var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0
+    calc(0px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow),
+    var(--tw-shadow, 0 0 #0000);
 }
-.Signin > input::placeholder{
- color: rgb(188, 189, 189);
- 
+.Signin > input::placeholder {
+  color: rgb(188, 189, 189);
 }
-.Signin> span {
-margin-top:10px;
-margin-bottom:10px;
-font-size: 19px;
-font-weight: 500;
-color:rgb(132, 134, 134)
-}
-
-
-::-webkit-scrollbar{
-    width:10px;
-    
+.Signin > span {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 19px;
+  font-weight: 500;
+  color: rgb(132, 134, 134);
 }
 
-::-webkit-scrollbar-track{
-    background: transparent;
+::-webkit-scrollbar {
+  width: 10px;
+
+  
 }
-::-webkit-scrollbar-thumb{
-    background: #e97070;
-    /* border-right:3px solid white; */
-    margin-inline: 2px;
-    height:150px;
-    border-radius: 3rem;
+@media (max-width:768px){
+    ::-webkit-scrollbar{
+        display:none;
+    } 
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #e97070;
+  /* border-right:3px solid white; */
+  margin-inline: 2px;
+  height: 150px;
+  border-radius: 3rem;
 }
