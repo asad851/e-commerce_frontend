@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 function Categories() {
     const navigate =useNavigate()
     function handleClick(e){
-     navigate(`Collection/${e.target.nextSibling.innerHTML}`)
+     navigate(`Collection/Category/${e.target.nextSibling.innerHTML}`)
     }
   return (
     <div className='my-16 flex flex-col items-center h-full  md:px-20'>
