@@ -28,7 +28,7 @@ function Collections() {
         .flatMap((Category) => Object.values(Category))
         .flatMap((subcateg) => Object.values(subcateg));
       const updated = arr.filter((item) => item.brand.toUpperCase() === endpoint.toUpperCase());
-      const newarr = updated.map((item) => console.log(item));
+      const newarr = updated.map((item) => item);
       return (
         <div
           className="h-full w-full xl:max-w-[1180px] mx-auto flex flex-wrap gap-5 justify-center 
@@ -42,11 +42,7 @@ function Collections() {
     }
   }
 
-  const arr = Object.values(DATA)
-    .flatMap((Category) => Object.values(Category))
-    .flatMap((subcateg) => Object.values(subcateg));
-  const updated = arr.map((item) => item.brand);
-  console.log(updated);
+  
   return (
     <div className="w-full flex mt-32 mb-20 justify-center overflow-hidden ">
       {displayCards()}
