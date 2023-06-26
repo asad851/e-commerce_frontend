@@ -217,9 +217,9 @@ export default function Header() {
                   <p>Account</p>
                   <MdPermIdentity className="text-[25px]" />
                 </div>
-                <div onClick={()=>{navigate("/Cart"); setShowSlider(false)}} className="w-full flex items-center cursor-pointer  bg-gradient-to-br from-pink-500 to-orange-400 rounded-md justify-center gap-[5px] p-[5px]">
+                <div onClick={handleCartClick} className="w-full flex items-center cursor-pointer  bg-gradient-to-br from-pink-500 to-orange-400 rounded-md justify-center gap-[5px] p-[5px]">
                   <p>Cart</p>
-                  <AiOutlineShoppingCart className="text-[22px]" />
+                  <AiOutlineShoppingCart  className="text-[22px]" />
                 </div>
               </div>
             </div>
