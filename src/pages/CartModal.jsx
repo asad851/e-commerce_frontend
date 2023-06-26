@@ -10,13 +10,14 @@ function CartModal({setShowCartModal}) {
      <div className='md:w-[80%] w-[90%] shadow-lg rounded-lg  absolute  top-10 bottom-10  z-50 bg-white '>
      <IoCloseCircleOutline onClick={()=>setShowCartModal(false)} className="absolute top-1 right-1 text-[25px] cursor-pointer text-gray-400"/>
       <div className=''>
-      {products?(<div className='flex flex-col justify-center items-center w-full px-12 py-12 h-full'>
+      {products?(<div className='flex flex-col justify-center  w-full px-12 py-12 h-full'>
+          
           {products.map((item)=>{
             return(
               <div className='w-full h-full py-5 flex flex-col'>
                 <div className='w-full flex items-end gap-5'>
-                  <img className="h-20 w-28 rounded-md object-cover object-top" src={item.image} alt="" srcset="" />
-                  <span className='text-lg text-[rgba(0,0,0,0.6)] mb-2'>{item.name}</span>
+                  <img className="md:h-20 md:w-28 h-12 w-12 rounded-md object-cover object-top" src={item.image} alt="" srcset="" />
+                  <span className='md:text-lg text-md text-[rgba(0,0,0,0.6)] mb-2'>{item.name}</span>
                   <span className='text-lg text-[rgba(0,0,0,0.6)] mb-2'>{item.price}</span>
                   
                 </div>
