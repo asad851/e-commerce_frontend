@@ -963,154 +963,154 @@ const DATA = {
           "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/11097158/2021/2/17/8a4dbf96-9fa1-4ac2-9841-ef7c53e141e31613525189923HIGHLANDERMenGreySneakers1.jpg",
         brand: "HIGHLANDER",
         name: "Men Grey Sneakers",
-        price: "₹597",
+        price: "597Rs",
       },
       {
         image:
           "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/12067984/2021/2/2/0425f19a-852a-45e6-a1f6-7c80526a158f1612240158034-HIGHLANDER-Men-White-Sneakers-2351612240156845-6.jpg",
         brand: "HIGHLANDER",
         name: "Men White Sneakers",
-        price: "₹597",
+        price: "597Rs",
       },
       {
         image:
           "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/11986108/2021/8/5/68605977-c696-4351-b21c-f19ed8ba46951628146095530HIGHLANDERMenWhiteSolidSneakers1.jpg",
         brand: "HIGHLANDER",
         name: "Men White Solid Sneakers",
-        price: "₹597",
+        price: "597Rs",
       },
       {
         image:
           "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/19840272/2022/9/9/fe21309b-c667-4629-98d0-36faf11a32e71662723417906BUCIKMenWhiteColourblockedSneakers1.jpg",
         brand: "BUCIK",
         name: "Men Printed Sneakers",
-        price: "₹593",
+        price: "593Rs",
       },
       {
         image:
           "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/23080896/2023/5/9/6ec3ba52-3307-49cb-9b80-879836a086321683615760593mrwonkerMenWhiteCarsColourblockedSneakers1.jpg",
         brand: "mr.wonker",
         name: "Men Deziner Colourblocked Waterproof Lining Comfort Contrast Sole Sneakers",
-        price: "₹594",
+        price: "594Rs",
       },
       {
         image:
           "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/11986142/2021/7/29/838265d6-aaea-4c09-85ff-74056a5097531627552841062-HIGHLANDER-Men-White-Solid-Sneakers-901627552840929-6.jpg",
         brand: "HIGHLANDER",
         name: "Men White Solid Sneakers",
-        price: "₹597",
+        price: "597Rs",
       },
       {
         image:
           "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/19608466/2022/8/23/29c6245a-441d-4c40-aacd-77ce4633baca1661236459353ELIXIRMANMenWhiteColourblockedSneakers1.jpg",
         brand: "ELIXIR MAN",
         name: "Men White Colourblocked Sneakers",
-        price: "₹584",
+        price: "584Rs",
       },
       {
         image:
           "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/12755822/2021/2/17/217f3554-2af1-4ea6-b999-939cdadb123a1613525192138HIGHLANDERMenWhiteSolidLeatherSneakers1.jpg",
         brand: "HIGHLANDER",
         name: "Men White Solid Leather Sneakers",
-        price: "₹597",
+        price: "597Rs",
       },
       {
         image:
           "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/23168008/2023/5/13/2f7f3274-d865-4f50-9de4-8b7b6d3791571683970530010HRXbyHrithikRoshanMenTealWovenDesignSlip-OnSneakers1.jpg",
         brand: "HRX by Hrithik Roshan",
         name: "Men Teal Blue And White Woven Design Lightweight Slip-On Sneakers",
-        price: "₹597",
+        price: "597Rs",
       },
       {
         image:
           "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/11097174/2021/2/17/590f6671-a8de-4b11-96a9-61bdd8b846b51613525195280HIGHLANDERMenBlackSneakers1.jpg",
         brand: "HIGHLANDER",
         name: "Men Black Sneakers",
-        price: "₹597",
+        price: "597Rs",
       },
       {
         image:
           "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/17409952/2022/3/5/d20edbf3-b858-4668-815e-1d7ce5ec8fe81646477305437BUCIKMenBlackTexturedBrogues1.jpg",
         brand: "BUCIK",
         name: "Men Black Synthetic Leather Casual Sneakers",
-        price: "₹593",
+        price: "593Rs",
       },
       {
         image:
           "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/11097158/2021/2/17/8a4dbf96-9fa1-4ac2-9841-ef7c53e141e31613525189923HIGHLANDERMenGreySneakers1.jpg",
         brand: "HIGHLANDER",
         name: "Men Grey Sneakers",
-        price: "₹597",
+        price: "597Rs",
       },
       {
         image:
           "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/12067984/2021/2/2/0425f19a-852a-45e6-a1f6-7c80526a158f1612240158034-HIGHLANDER-Men-White-Sneakers-2351612240156845-6.jpg",
         brand: "HIGHLANDER",
         name: "Men White Sneakers",
-        price: "₹597",
+        price: "597Rs",
       },
       {
         image:
           "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/11986108/2021/8/5/68605977-c696-4351-b21c-f19ed8ba46951628146095530HIGHLANDERMenWhiteSolidSneakers1.jpg",
         brand: "HIGHLANDER",
         name: "Men White Solid Sneakers",
-        price: "₹597",
+        price: "597Rs",
       },
       {
         image:
           "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/19840272/2022/9/9/fe21309b-c667-4629-98d0-36faf11a32e71662723417906BUCIKMenWhiteColourblockedSneakers1.jpg",
         brand: "BUCIK",
         name: "Men Printed Sneakers",
-        price: "₹593",
+        price: "Rs593",
       },
       {
         image:
           "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/23080896/2023/5/9/6ec3ba52-3307-49cb-9b80-879836a086321683615760593mrwonkerMenWhiteCarsColourblockedSneakers1.jpg",
         brand: "mr.wonker",
         name: "Men Deziner Colourblocked Waterproof Lining Comfort Contrast Sole Sneakers",
-        price: "₹594",
+        price: "Rs594",
       },
       {
         image:
           "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/11986142/2021/7/29/838265d6-aaea-4c09-85ff-74056a5097531627552841062-HIGHLANDER-Men-White-Solid-Sneakers-901627552840929-6.jpg",
         brand: "HIGHLANDER",
         name: "Men White Solid Sneakers",
-        price: "₹597s",
+        price: "597Rss",
       },
       {
         image:
           "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/19608466/2022/8/23/29c6245a-441d-4c40-aacd-77ce4633baca1661236459353ELIXIRMANMenWhiteColourblockedSneakers1.jpg",
         brand: "ELIXIR MAN",
         name: "Men White Colourblocked Sneakers",
-        price: "₹584",
+        price: "Rs584",
       },
       {
         image:
           "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/12755822/2021/2/17/217f3554-2af1-4ea6-b999-939cdadb123a1613525192138HIGHLANDERMenWhiteSolidLeatherSneakers1.jpg",
         brand: "HIGHLANDER",
         name: "Men White Solid Leather Sneakers",
-        price: "₹597",
+        price: "597Rs",
       },
       {
         image:
           "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/23168008/2023/5/13/2f7f3274-d865-4f50-9de4-8b7b6d3791571683970530010HRXbyHrithikRoshanMenTealWovenDesignSlip-OnSneakers1.jpg",
         brand: "HRX by Hrithik Roshan",
         name: "Men Teal Blue And White Woven Design Lightweight Slip-On Sneakers",
-        price: "₹597",
+        price: "597Rs",
       },
       {
         image:
           "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/11097174/2021/2/17/590f6671-a8de-4b11-96a9-61bdd8b846b51613525195280HIGHLANDERMenBlackSneakers1.jpg",
         brand: "HIGHLANDER",
         name: "Men Black Sneakers",
-        price: "₹597",
+        price: "597Rs",
       },
       {
         image:
           "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/17409952/2022/3/5/d20edbf3-b858-4668-815e-1d7ce5ec8fe81646477305437BUCIKMenBlackTexturedBrogues1.jpg",
         brand: "BUCIK",
         name: "Men Black Synthetic Leather Casual Sneakers",
-        price: "₹593",
+        price: "Rs593",
       },
     ],
     "Sport Shoes": [
@@ -1119,77 +1119,77 @@ const DATA = {
           "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/19396722/2022/8/5/9c3f59f1-fc0a-4cfd-b9ef-921826d3f90e1659682264745THAR-131.jpg",
         brand: "ASIAN",
         name: "Men White And Blue Mesh Running Non-Marking Shoes",
-        price: "₹688",
+        price: "688Rs",
       },
       {
         image:
           "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/15077980/2021/8/9/f6bfb2ed-a900-40ce-a574-00156c72a2df1628519552770Cosko1.jpg",
         brand: "ASIAN",
         name: "Men Grey & White Cosko Running Shoes",
-        price: "₹688",
+        price: "688Rs",
       },
       {
         image:
           "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/19836304/2023/1/3/2813b482-3130-4d66-b563-5b5a576c7b411672724977013ASIANMenMeshRunningLace-UpShoes1.jpg",
         brand: "ASIAN",
         name: "Men Mesh Running Lace-Up Shoes",
-        price: "₹688",
+        price: "688Rs",
       },
       {
         image:
           "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/19285218/2022/7/28/698556f3-a317-4115-88e9-1fdde159ba8e1659012740417ASIANMenWhiteMeshRunningNon-MarkingShoes1.jpg",
         brand: "ASIAN",
         name: "Men White Mesh Running Non-Marking Shoes",
-        price: "More Color",
+        price: "959Rs",
       },
       {
         image:
           "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/19396710/2022/8/5/97c24809-7637-47a6-a661-c160725751171659685865529THAR-131.jpg",
         brand: "ASIAN",
         name: "Men Navy Blue Mesh Running Non-Marking Shoes",
-        price: "₹688",
+        price: "688Rs",
       },
       {
         image:
           "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/18725706/2023/1/3/37d9e6a7-c8ff-4de0-829d-5a1236d703511672727148372-ASIAN-Men-Navy-Blue-Mesh-Running-Shoes-2061672727148162-1.jpg",
         brand: "ASIAN",
         name: "Men Navy Blue Mesh Running Shoes",
-        price: "₹688",
+        price: "688Rs",
       },
       {
         image:
           "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/20012730/2022/9/16/1d223283-867d-4044-a553-401b6af22c5e1663306618073mrwonkerMenGreyRunningShoes1.jpg",
         brand: "mr.wonker",
         name: "mr wonker Men Running Shoes",
-        price: "₹524",
+        price: "Rs524",
       },
       {
         image:
           "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/19807064/2022/9/6/aaa7a4c8-e556-4a23-907b-9ae91162d9d91662445343958ASIANMenNavyBlueMeshRunningShoes1.jpg",
         brand: "ASIAN",
         name: "Men Navy Blue Mesh Running Shoes",
-        price: "₹688",
+        price: "688Rs",
       },
       {
         image:
           "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/15077956/2022/4/27/b18bd87e-183e-4a89-86f5-944042fbd9d51651050538896ASIANMenNavyBlueHighCushioningRunningShoes1.jpg",
         brand: "ASIAN",
         name: "Men Navy Blue High Cushioning Running Shoes",
-        price: "₹688",
+        price: "688Rs",
       },
       {
         image:
           "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/15077962/2021/8/9/9ffd50ea-92ee-4ae2-8909-fef1291da5771628519586837Captain-131.jpg",
         brand: "ASIAN",
         name: "Men Navy Blue Textured Captain-13 Running Shoes",
-        price: "₹688",
+        price: "688Rs",
       },
       {
         image:
           "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/15077970/2021/8/9/04c3a1c8-21df-4941-bb50-237d931d1b9c1628517463001Cosko7.jpg",
         brand: "ASIAN",
         name: "Men Grey & Blue Running Shoes",
-        price: "₹688",
+        price: "688Rs",
       },
     ],
   },
