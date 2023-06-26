@@ -1202,7 +1202,7 @@ Object.values(DATA)
   .map((item, index) => {
     item.id = index + 1;
     item.userId = "";
-    item.quantity = null;
+    
     item.size = "";
   });
 
