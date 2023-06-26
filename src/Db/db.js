@@ -75,7 +75,9 @@
     "products":[
     {
     "image":"https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/17755134/2022/7/21/a1ad34dd-6a73-418f-a2a8-73c0a0c9f9941658381549458-ASIAN-Men-Black-Mesh-Men-Running-Lace-Up-Shoes-1061658381549-1.jpg",
-    "nameAndDetails":"ASIAN\nMen Running Lace Up Shoes\nRs. 539Rs. 999(46% OFF)"
+    brand:"ASIAN",
+    name:"Men Running Lace Up Shoes",
+    price:"539Rs"
     },
     {
     "image":"https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/15077980/2021/8/9/f6bfb2ed-a900-40ce-a574-00156c72a2df1628519552770Cosko1.jpg",
