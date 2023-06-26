@@ -311,7 +311,7 @@ const DATA = {
           "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/20073256/2022/11/21/f4b2eaf4-9933-4e3f-928b-4b7b64c8f8321669008045190-Nike-Therma-FIT-Mens-Full-Zip-Fitness-Hoodie-524166900804466-1.jpg",
         brand: "Nike",
         name: "Men Therma-FIT Training Jacket",
-        price: "3595",
+        price: "3595Rs",
       },],
      "Blazers": [{
         image:

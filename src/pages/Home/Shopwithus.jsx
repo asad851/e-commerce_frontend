@@ -7,7 +7,7 @@ function Shopwithus() {
         .flatMap((subcateg) => Object.values(subcateg));
     const items= arr.map(item=>{return item})
     const Items= items.slice(40,48)
-    console.log(items)
+    // console.log(DATA)
   return (
     <div className="w-full  mt-10 mb-20 justify-center overflow-hidden ">
         <h1 className='font-semibold md:text-3xl text-2xl text-center mb-10'>Shop with us</h1>

@@ -12,7 +12,7 @@ import SignupOrInModal from "./SignupOrInModal";
 import { useLocation, useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
-
+import CartModal from '../pages/CartModal'
 export default function Header() {
   const {products} = useSelector(state=>state.cart)
   const [opaque, setOpaque] = useState("hidden");
@@ -23,6 +23,7 @@ export default function Header() {
   const [showAccountModal,setShowAccountModal] =useState(false);
   const [hideCategoryModal,setHideCategoryModal] =useState("")
   const [showCartNum, setShowCartNum] = useState("hidden")
+  const [showCartModal,setShowCartModal] = useState(false)
   const location = useLocation()
   const navigate = useNavigate()
 
@@ -44,6 +45,10 @@ export default function Header() {
   const handleClickAccount=()=>{
     setShowSlider(false)
     setShowAccountModal(true)
+  }
+  const handleCartClick=()=>{
+    setShowCartModal(true)
+    setShowSlider(false)
   }
   useEffect(()=>{
     setShowCartNum("block")
@@ -77,6 +82,7 @@ export default function Header() {
       <div
         className={`  ${opaque} fixed z-[5] top-0 bottom-0 right-0 left-0 bg-[rgba(0,0,0,0.3)]    `}
       ></div>
+      {showCartModal&&<CartModal setShowCartModal={setShowCartModal} />}
       <nav className="flex bg-white z-10 h-[80px] max-[400px]:h-[70px]  w-full fixed top-0   py-[5px] shadow-[0_8px_22px_-14px_rgba(0,0,0,0.4)]   ">
         <div className=" items-center hidden min-[1000px]:flex w-full justify-between  box-border ">
           <img
@@ -113,7 +119,7 @@ export default function Header() {
               );
             })}
           </ul>
-
+          
           <div className="flex w-[33%] items-center min-[768px]:gap-[35px] gap-[20px] relative  ">
             <form className="relative bg-[rgba(0,0,0,0.1)] w-[55%] rounded-[5px] ">
               <input
@@ -128,7 +134,7 @@ export default function Header() {
             
             <MdPermIdentity onClick={()=>setShowAccountModal(true)} className="text-[35px]  w-[8%] font-light cursor-pointer" />
             
-            <AiOutlineShoppingCart onClick={()=>navigate("/Cart")} className="text-[30px] w-[8%] font-light cursor-pointer" />
+            <AiOutlineShoppingCart onClick={handleCartClick} className="text-[30px] w-[8%] font-light cursor-pointer" />
             <span className={`absolute right-12 -top-1 h-4 w-4  rounded-2xl bg-black text-white text-center text-xs ${showCartNum} `}>{products.length}</span>
           </div>
         </div>
@@ -246,6 +252,7 @@ export default function Header() {
         </div>
       </nav>
       {showAccountModal&&<SignupOrInModal setShowAccountModal={setShowAccountModal}/>}
+     
     </>
   );
 }

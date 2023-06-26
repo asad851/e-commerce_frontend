@@ -6,7 +6,7 @@ import {Routes,Route} from 'react-router-dom'
 import Details from './pages/Details/Details'
 import Explore from './pages/Explore'
 import { useLocation } from 'react-router-dom'
-import CartProductsPage from './pages/CartModal'
+
 import Collections from './pages/Collections'
 export default function App() {
   const location = useLocation()
