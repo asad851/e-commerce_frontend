@@ -50,7 +50,7 @@ function CartModal({setShowCartModal}) {
               Total: {total} Rs
             </div>
             </div>
-      </div>):(<h1 className='text-2xl text-center   font-bold'>Add items to your cart</h1>)}
+      </div>):(<h1 className='text-2xl text-center h-full mt-60  font-bold'>Add items to your cart</h1>)}
       </div>
      </div>
     </div>
