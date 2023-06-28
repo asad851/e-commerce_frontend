@@ -19,7 +19,10 @@ function SignupOrInModal({ setShowAccountModal }) {
     password: password,
   };
   const handleSignup=()=>{
-    dispatch(SignUp(USER))
+    if(name.length>0&&email.length>0&&password.length>0){
+      dispatch(SignUp(USER))
+      setShowAccountModal(false)
+    }
   }
   useEffect(() => {
    localStorage.setItem("USER",JSON.stringify(user))
@@ -136,7 +139,7 @@ function SignupOrInModal({ setShowAccountModal }) {
               Sign in{" "}
             </span>
           </p>
-          <button onClick={()=>dispatch(SignUp(USER))} className="bg-gradient-to-br from-pink-500 to-orange-400  py-2 rounded-md mx-auto w-[50%] mt-[25px]">
+          <button onClick={()=>handleSignup} className="bg-gradient-to-br from-pink-500 to-orange-400  py-2 rounded-md mx-auto w-[50%] mt-[25px]">
             Sign Up
           </button>
         </div>
