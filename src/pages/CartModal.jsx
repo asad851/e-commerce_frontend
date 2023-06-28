@@ -38,7 +38,7 @@ function CartModal({ setShowCartModal }) {
         onClick={() => setShowCartModal(false)}
         className="fixed top-0 botton-0 right-0 left-0 h-full w-full z-30 backdrop-blur-[3.5px] bg-[rgba(0,0,0,0.4)]"
       ></div>
-      <div className="md:w-[80%] w-full shadow-lg rounded-lg  absolute top-2 bottom-2 md:top-10 md:bottom-10  z-50 bg-white overflow-y-scroll">
+      <div className="md:w-[80%] w-full shadow-lg rounded-lg px-4 absolute top-2 bottom-2 md:top-10 md:bottom-10  z-50 bg-white overflow-y-scroll">
         <IoCloseCircleOutline
           onClick={() => setShowCartModal(false)}
           className="absolute top-1 right-1 text-[25px] cursor-pointer text-gray-400"
