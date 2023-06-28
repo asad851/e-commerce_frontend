@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import DATA  from "../Db/datadb"
 import Cards from '../Components/Cards'
+import image from '../assets/vector-error-404-unavailable-web-page-file-not-found-concept.jpg' 
 function Explore() {
     const {Category,Type} = useParams()
     const category =Category.toUpperCase()
@@ -23,14 +24,14 @@ function Explore() {
     }
     
   return (
-    <div className='flex justify-between w-full'>
-        <div className='w-[300px]  top-20 bg-white shadow-md left-0 mt-36 h-screen'></div>
-        <div className='mt-36 gap-5 mb-10 flex lg:justify-start justify-center  flex-wrap w-[1000px] '>
+    <div className='flex justify-center w-full'>
+        
+        <div className='mt-36  mb-10 flex  justify-center gap-5 flex-wrap  '>
         {DATA[category]&&getDATA()}
-        {!DATA[category]&&<div className='text-3xl font-bold text-center'>
-            Sorry, We are Working on it
-            </div>}
     </div>
+        {!DATA[category]&&<div className='w-full h-[60%] md:mt-5 mt-14 overflow-hidden flex justify-end mb-1 '>
+            <img className='h-[70%] w-[80%] object-center object-cover' src={image} alt="" />
+            </div>}
     </div>
   )
 }

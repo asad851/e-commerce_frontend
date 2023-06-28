@@ -6,10 +6,10 @@ import img3 from "../../assets/Carousel 3.gif";
 import img4 from "../../assets/Carousel 4.gif";
 import img5 from "../../assets/Carousel 5.png";
 import img6 from "../../assets/Carousel 6.png";
+import CarouselComponent from "../../Components/Carousel";
 
 
 
-import CarouselComponent from "../../Components/carousel";
 function HeroSection() {
   
   const Carouselarray = [img1, img2, img3, img4, img5, img6];

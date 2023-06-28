@@ -13,6 +13,8 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import CartModal from '../pages/CartModal'
+import { useRef } from "react";
+
 export default function Header() {
   const {products} = useSelector(state=>state.cart)
   const [opaque, setOpaque] = useState("hidden");
@@ -24,9 +26,12 @@ export default function Header() {
   const [hideCategoryModal,setHideCategoryModal] =useState("")
   const [showCartNum, setShowCartNum] = useState("hidden")
   const [showCartModal,setShowCartModal] = useState(false)
+  const [Query,setQuery] = useState("")
+  
+  const inputRef = useRef(null)
   const location = useLocation()
   const navigate = useNavigate()
-
+  
   function handleMouseOver(item) {
     setOpaque("block");
     setItem(item);
@@ -59,24 +64,37 @@ export default function Header() {
   useEffect(()=>{
    setHideCategoryModal("")
   },[hideCategoryModal])
+  
+  
   const NavArray = ["Men", "Women", "Kids", "Beauty"];
   const SearchBar = () => {
     return(
       <div className="absolute left-0 right-0 top-[80px] flex justify-center w-screen z-30 overflow-hidden ">
-        <form className="relative   w-[90%] rounded-[5px] ">
+        <form onSubmit={(e)=>handleSubmit(e)} className="relative   w-[90%] rounded-[5px] ">
       <input
+        ref={inputRef}
         className="pl-[35px]  py-[8px] rounded-[8px] w-full text-[15px] focus-visible:outline-none border-none bg-white placeholder:truncate"
         type="text"
         name=""
-        id=""
+        value={Query}
+        
         placeholder="Search for clothes & brands..."
+        onChange={(e)=>setQuery(e.target.value)}
       />
       <BsSearch className="absolute top-[50%] bottom-[50%]  translate-x-[-10%] translate-y-[-50%]    left-3 mr-5 cursor-pointer" />
     </form>
       </div>
     )
   };
-  
+  function handleSubmit(e){
+    
+    e.preventDefault()
+    if(Query.length>0){
+      navigate(`Results/${Query}`)
+      setQuery("")
+    }
+    setShowSeacrh(false)
+  }
   return (
     <>
       <div
@@ -121,13 +139,14 @@ export default function Header() {
           </ul>
           
           <div className="flex w-[33%] items-center min-[768px]:gap-[35px] gap-[20px] relative  ">
-            <form className="relative bg-[rgba(0,0,0,0.1)] w-[55%] rounded-[5px] ">
+            <form onSubmit={(e)=>handleSubmit(e)}className="relative bg-[rgba(0,0,0,0.1)] w-[55%] rounded-[5px] ">
               <input
                 className="pl-[35px] pr-[10px] py-[5px] rounded-[5px] w-full text-[15px] focus-visible:outline-none border-none bg-transparent placeholder:truncate"
                 type="text"
                 name=""
-                id=""
+                value={Query}
                 placeholder="Search for clothes & brands..."
+                onChange={(e)=>{setQuery(e.target.value)}}
               />
               <BsSearch className="absolute top-[50%] bottom-[50%]  translate-x-[-50%] translate-y-[-50%]    left-3 mr-5 cursor-pointer" />
             </form>
@@ -144,7 +163,7 @@ export default function Header() {
         <div className=" items-center flex min-[1000px]:hidden w-screen justify-between px-[25px] box-border ">
           <img onClick={()=>navigate('/')} className=" cursor-pointer " src={logo} alt="logo" />
           <div className="flex gap-[25px] items-centert">
-            <BsSearch className=" cursor-pointer" onClick={()=>setShowSeacrh(true)} />
+            <BsSearch className=" cursor-pointer" onClick={()=>{setShowSeacrh(true);inputRef.current.focus();}} />
             <RxHamburgerMenu
               className="text-xl font-bold cursor-pointer"
               onClick={() => setShowSlider(true)}
