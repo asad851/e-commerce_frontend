@@ -17,7 +17,7 @@ function Resultpage() {
       processedName.toUpperCase().includes(processedQuery.toUpperCase())||processedBrand.toUpperCase().includes(processedQuery.toUpperCase())
     );
   });
-  console.log(queryProducts)
+  
   return (
     <div className="  mt-36 w-full">
       {queryProducts.length>0?(<><h1 className="mb-5 text-lg font-semibold text-gray-500 ml-12">Showing {queryProducts.length} {queryProducts.length>1?"results":"result"} for "{query}" </h1>

@@ -8,6 +8,7 @@ import Explore from './pages/Explore'
 import { useLocation } from 'react-router-dom'
 import Resultpage from './pages/Resultpage'
 import Collections from './pages/Collections'
+import Checkout from './pages/Checkout'
 export default function App() {
   const location = useLocation()
   useEffect(()=>{
@@ -22,7 +23,7 @@ export default function App() {
       <Route path="/Explore/:Category/:Type" element={<Explore/>}/>
       <Route path="/Collection/:Productsby/:endpoint" element={<Collections/>}/>
       <Route path="/Results/:query" element={<Resultpage/>}/>
-      {/* <Route path="/Checkout" element={<Checkout/>}/> */}
+      <Route path="/Checkout" element={<Checkout/>}/>
     </Routes>
     <Footer/>
     </> 
