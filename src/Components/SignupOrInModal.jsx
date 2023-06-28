@@ -1,21 +1,30 @@
 import React from "react";
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import { IoCloseCircleOutline } from "react-icons/io5";
 import { nanoid } from "nanoid";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { SignUp } from "../Store/userSlicer";
+
 function SignupOrInModal({ setShowAccountModal }) {
   const [Switch, setSwitch] = useState("Sign in");
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
   const dispatch = useDispatch()
+  const {user} = useSelector(state=>state.userDetails)
   const USER = {
     id: nanoid(),
     name: name,
     email: email,
     password: password,
   };
+  const handleSignup=()=>{
+    dispatch(SignUp(USER))
+  }
+  useEffect(() => {
+   localStorage.setItem("USER",JSON.stringify(user))
+  }, [user])
+  
   const SwitchKey = (current) => {
     setSwitch(current);
   };
