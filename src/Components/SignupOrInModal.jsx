@@ -2,11 +2,14 @@ import React from "react";
 import { useState } from "react";
 import { IoCloseCircleOutline } from "react-icons/io5";
 import { nanoid } from "nanoid";
+import { useDispatch } from "react-redux";
+import { SignUp } from "../Store/userSlicer";
 function SignupOrInModal({ setShowAccountModal }) {
   const [Switch, setSwitch] = useState("Sign in");
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
+  const dispatch = useDispatch()
   const USER = {
     id: nanoid(),
     name: name,
@@ -60,7 +63,8 @@ function SignupOrInModal({ setShowAccountModal }) {
           <input
             type="email"
             name="email"
-            id=""
+           
+            onChange={(e)=>{setEmail(e.target.value)}}
             required
             placeholder="Enter your email"
           />
@@ -68,7 +72,8 @@ function SignupOrInModal({ setShowAccountModal }) {
           <input
             type="password"
             name="password"
-            id=""
+            onChange={(e)=>{e.target.value}}
+            
             required
             placeholder="Enter your password"
           />
@@ -94,12 +99,13 @@ function SignupOrInModal({ setShowAccountModal }) {
           } transition-[right] duration-400 ease-out flex flex-col px-6 min-[400px]:px-8 ring-0`}
         >
           <span>Name</span>
-          <input type="text" required placeholder="Enter your name" />
+          <input onChange={(e)=>setName(e.target.value)} type="text" required placeholder="Enter your name" />
           <span>Email </span>
           <input
             type="email"
             name="email"
-            id=""
+            
+            onChange={(e)=>setEmail(e.target.value)}
             required
             placeholder="Enter your email"
           />
@@ -107,7 +113,8 @@ function SignupOrInModal({ setShowAccountModal }) {
           <input
             type="password"
             name="password"
-            id=""
+           
+            onChange={(e)=>setPassword(e.target.value) }
             required
             placeholder="Enter your password"
           />
@@ -120,7 +127,7 @@ function SignupOrInModal({ setShowAccountModal }) {
               Sign in{" "}
             </span>
           </p>
-          <button className="bg-gradient-to-br from-pink-500 to-orange-400  py-2 rounded-md mx-auto w-[50%] mt-[25px]">
+          <button onClick={()=>dispatch(SignUp(USER))} className="bg-gradient-to-br from-pink-500 to-orange-400  py-2 rounded-md mx-auto w-[50%] mt-[25px]">
             Sign Up
           </button>
         </div>
