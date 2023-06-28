@@ -77,7 +77,7 @@ function SignupOrInModal({ setShowAccountModal }) {
             name="email"
            
             onChange={(e)=>{setEmail(e.target.value)}}
-            required
+            required={true}
             placeholder="Enter your email"
           />
           <span>password</span>
@@ -86,7 +86,7 @@ function SignupOrInModal({ setShowAccountModal }) {
             name="password"
             onChange={(e)=>{e.target.value}}
             
-            required
+            required={true}
             placeholder="Enter your password"
           />
           <p className="text-[14px] my-[25px] text-center text-[rgba(0,0,0,0.6)]">
