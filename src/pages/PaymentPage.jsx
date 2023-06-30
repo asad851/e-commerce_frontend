@@ -18,10 +18,21 @@ function PaymentPage () {
   }, [])
   
    return (
-    <div className='h-screen w-full mt-20 mb-4 px-4 flex justify-center bg-[url(https://st4.depositphotos.com/3864435/39745/v/450/depositphotos_397454448-stock-illustration-new-smart-pos-terminal-payment.jpg)] bg-center  bg-contain bg-no-repeat '> 
-        {/* <img className='h-[600px] w-[700px] object-contain object-center' src={image} alt="" /> */}
-        <div className=''></div>
+    <div className='h-screen w-full mt-20 mb-4 px-4 flex justify-center items-center bg-[url(https://st4.depositphotos.com/3864435/39745/v/450/depositphotos_397454448-stock-illustration-new-smart-pos-terminal-payment.jpg)] bg-center  bg-contain bg-no-repeat '> 
+        
+        <div className='md:h-[80%] h-full md:w-[40%] bg-[rgba(0,0,0,0.2)] backdrop-blur-[3.5px] w-full border-gray-300 border-[1px] flex flex-col gap-2 px-4 py-10 shadow-lg rounded-md'>
+        
 
+        <input className='rounded-md ' type="text" name=""  required placeholder='Name on card'/>
+        <input className='rounded-md' type="text" name=""  required placeholder='Card number' />
+        <div className='flex gap-2 w-full'>
+        <input className='rounded-md w-full ' type="number" name=""  required placeholder='cvv'/>
+        <input className='rounded-md w-full' type="date" name=""  require placeholder='Date on card' />
+        </div>
+        <div className='flex gap-2 w-full'>
+        
+        </div>
+        </div>
     </div>
   )
 }
