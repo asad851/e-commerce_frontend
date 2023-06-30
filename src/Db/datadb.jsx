@@ -880,6 +880,74 @@ const DATA = {
         price: "479Rs",
       },
     ],
+    "Casual Trousers":[
+      {
+        "image":"https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/productimage/2021/7/2/ae0d5ec5-7c70-46e2-8cb1-80ab9abb124e1625199528538-1.jpg",
+        "brand":"HIGHLANDER",
+        "name":"Men Charcoal Grey Slim Fit Chinos Trousers",
+        "price":"More Colors"
+        },
+        {
+        "image":"https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/8106703/2019/12/3/aa62b1db-57d9-4f47-98a0-212d31c62e371575376636467-HIGHLANDER-Men-Grey-Slim-Fit-Solid-Regular-Trousers-25115753-1.jpg",
+        "brand":"HIGHLANDER",
+        "name":"Men Grey Slim Fit Trousers",
+        "price":"More Colors"
+        },
+        {
+        "image":"https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/8237309/2019/8/23/1eee633c-927b-4780-a2a6-f59989c31fc91566552225073-HIGHLANDER-Men-Black-Slim-Fit-Solid-Regular-Trousers-2231566-1.jpg",
+        "brand":"HIGHLANDER",
+        "name":"Men Black Slim Fit Solid Regular Trousers",
+        "price":"More Colors"
+        },
+        {
+        "image":"https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/15769364/2021/10/9/588c6013-791a-45c3-8351-0c55c54f662a1633739650195KETCHMenGreyTaperedFitEasyWashChinosTrousers1.jpg",
+        "brand":"KETCH",
+        "name":"Men Grey Tapered Fit Cotton Chinos",
+        "price":"More Colors"
+        },
+        {
+        "image":"https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/16680866/2022/1/4/0319c673-d31d-400a-91b9-eda2d29ee06e1641285015276KETCHMenTaupePrintedJoggersTrousers1.jpg",
+        "brand":"KETCH",
+        "name":"Men Taupe Printed Joggers Trousers",
+        "price":"More Colors"
+        },
+        {
+        "image":"https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/15770730/2021/10/13/ae0eb0eb-40ba-4e2d-9e6a-469f573851fa1634133991603KETCHMenBlueTaperedFitEasyWashChinosTrousers1.jpg",
+        "brand":"KETCH",
+        "name":"Men Blue Tapered Fit Easy Wash Chinos Trousers",
+        "price":"More Colors"
+        },
+        {
+        "image":"https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/15770690/2021/10/8/74f600c2-ac10-42db-b3e6-367e7b6ad62a1633691506939KETCHMenPinkTaperedFitEasyWashTrousers1.jpg",
+        "brand":"KETCH",
+        "name":"Men Pink Solid Tapered Fit Easy Wash Trousers",
+        "price":"More Colors"
+        },
+        {
+        "image":"https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/15769406/2021/10/8/1039a101-4eeb-45f4-9b71-68f97d0b36e81633698890531KETCHMenNavyBlueSlimFitEasyWashTrousers1.jpg",
+        "brand":"KETCH",
+        "name":"Men Navy Blue Slim Fit Easy Wash Trousers",
+        "price":"More Colors"
+        },
+        {
+        "image":"https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/15782210/2021/10/9/9f044040-36ce-4cbe-8c73-7273e4d691d01633759818441KETCHMenBeigeSlimFitEasyWashChinosTrousers1.jpg",
+        "brand":"KETCH",
+        "name":"Men Beige Slim Fit Easy Wash Chinos Trousers",
+        "price":"More Colors"
+        },
+        {
+        "image":"https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/15769370/2021/10/8/4642871f-28d3-4edb-aa00-4a338d181ee41633677453805KETCHMenBlueTaperedFitEasyWashChinosTrousers1.jpg",
+        "brand":"KETCH",
+        "name":"Men Blue Tapered Fit Easy Wash Cotton Chinos Trousers",
+        "price":"More Colors"
+        },
+        {
+        "image":"https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/productimage/2021/3/30/24b9d09a-64f2-49b3-ba88-a672c3e31e311617110419303-1.jpg",
+        "brand":"HIGHLANDER",
+        "name":"Men Blue Slim Fit Solid Chinos",
+        "price":"More Colors"
+        }
+    ],
     "Casual Shoes": [
       {
         image:

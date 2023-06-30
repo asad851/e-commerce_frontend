@@ -43,7 +43,7 @@ function HoverComponent({ item,setShowSlider,setShowSubSlider,setHideCategoryMod
               Bottomwear
             </h3>
             <p onClick={(e)=>{navigate(`/Explore/${item}/${e.target.innerHTML}`);handleClick()}} className="px-[4px]  py-[2px] active:bg-gray-100">Jeans</p>
-            <p onClick={(e)=>{navigate(`/Explore/${item}/${e.target.innerHTML}`);handleClick()}} className="px-[4px]  py-[2px] active:bg-gray-100">casual Trousers</p>
+            <p onClick={(e)=>{navigate(`/Explore/${item}/${e.target.innerHTML}`);handleClick()}} className="px-[4px]  py-[2px] active:bg-gray-100">Casual Trousers</p>
             <p onClick={(e)=>{navigate(`/Explore/${item}/${e.target.innerHTML}`);handleClick()}} className="px-[4px]  py-[2px] active:bg-gray-100">Formal Trousers</p>
             <p onClick={(e)=>{navigate(`/Explore/${item}/${e.target.innerHTML}`);handleClick()}} className="px-[4px]  py-[2px] active:bg-gray-100">Shorts</p>
             <p onClick={(e)=>{navigate(`/Explore/${item}/${e.target.innerHTML}`);handleClick()}} className="px-[4px]  py-[2px] active:bg-gray-100">Track Pants & Joggers</p>
