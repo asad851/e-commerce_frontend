@@ -11,11 +11,13 @@ function SignupOrInModal({ setShowAccountModal }) {
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
   const [message,setMessage] =useState("")
+  const [visible,setVisible] = useState("hidden")
   const dispatch = useDispatch()
   const {user} = useSelector(state=>state.userDetails)
   const {loggedIn} = useSelector(state=>state.userDetails)
   const {userName} = useSelector(state=>state.userDetails)
-
+  console.log(userName)
+  console.log(loggedIn)
   const USER = {
     id: nanoid(),
     name: name,
@@ -26,26 +28,22 @@ function SignupOrInModal({ setShowAccountModal }) {
     if(name.length>0&&email.length>0&&password.length>0){
       dispatch(SignUp(USER))
       setShowAccountModal(false)
+      dispatch(setUserName(name))
+      dispatch(setLogin(true))
+      
     }
   }
  const  handleSignin = ()=>{
-  const userFound = user.find((user)=>{
-    return user.email===email
-  })
-  if(userFound){
-    if(userFound.email===email&&userFound.password===password){
-    dispatch(setUserName(name))
+  dispatch(setUserName(name))
     dispatch(setLogin(true))
-    localStorage.setItem("username",JSON.stringify(userName))
-    localStorage.setItem("loggedin",JSON.stringify(loggedIn))
-    }
-    if(userFound.email!==email||userFound.password!==password){
-    setMessage("The email or password entered is wrong")
-    }
-  }else {
-    setMessage("yoy don't have an account please signup")
+    setShowAccountModal(false)
+    
   }
- }
+ useEffect(() => {
+  localStorage.setItem("username",JSON.stringify(userName))
+  localStorage.setItem("loggedin",JSON.stringify(loggedIn))
+ }, [userName])
+ 
   useEffect(() => {
    localStorage.setItem("USER",JSON.stringify(user))
    
@@ -87,19 +85,19 @@ function SignupOrInModal({ setShowAccountModal }) {
             Sign Up
           </div>
         </div>
-        <div
+        {!loggedIn?(<div
           className={`Signin bg-gray-100 w-full  h-[428px] absolute ${
             Switch === "Sign in"
               ? "left-0 top-[71px]  "
               : "top-[71px] left-[-500px]"
           } transition-[left] duration-400 ease-out flex flex-col  px-6 min-[400px]:px-8`}
         >
-          <span>Email </span>
+          <span>Username </span>
           <input
-            type="email"
-            name="email"
+            type="text"
+            name="Username"
            
-            onChange={(e)=>{setEmail(e.target.value)}}
+            onChange={(e)=>{setName(e.target.value)}}
             required
             placeholder="Enter your email"
           />
@@ -125,7 +123,14 @@ function SignupOrInModal({ setShowAccountModal }) {
           <button onClick={handleSignin} className="bg-gradient-to-br from-pink-500 to-orange-400  py-2 rounded-md mx-auto w-[50%] mt-[25px]">
             Sign in
           </button>
-        </div>
+          
+        </div>):(<div className="flex flex-col justify-center  h-full"  >
+          <h1 className="text-2xl text-gray-500 font-semibold">Hello, Welcome to myWardrobe {userName}!</h1>
+          <p className="text-lg text-gray-300 font-medium text-center">to Signout click here</p>
+          <button onClick={()=>{dispatch(setUserName(""));dispatch(setLogin(false))}} className="bg-gradient-to-br from-pink-500 to-orange-400  py-2 rounded-md mx-auto w-[50%] mt-[25px]">
+            Sign out
+          </button>
+        </div>)}
         <div
           className={`Signin bg-gray-100 w-full h-[428px] absolute ${
             Switch === "Sign Up"
@@ -162,9 +167,12 @@ function SignupOrInModal({ setShowAccountModal }) {
               Sign in{" "}
             </span>
           </p>
-          <button onClick={()=>handleSignup} className="bg-gradient-to-br from-pink-500 to-orange-400  py-2 rounded-md mx-auto w-[50%] mt-[25px]">
+          <button onClick={()=>handleSignup()} className="bg-gradient-to-br from-pink-500 to-orange-400  py-2 rounded-md mx-auto w-[50%] mt-[25px]">
             Sign Up
           </button>
+        </div>
+        <div className={`w-[80%] h-24 justify-center items-center  bg-white border-[1px] border-gray-300 rounded-md absolute top-60 ${visible}`}>
+          {message} 
         </div>
       </div>
     </div>
