@@ -3,15 +3,19 @@ import { useState,useEffect } from "react";
 import { IoCloseCircleOutline } from "react-icons/io5";
 import { nanoid } from "nanoid";
 import { useDispatch, useSelector } from "react-redux";
-import { SignUp } from "../Store/userSlicer";
+import { SignUp,setLogin,setUserName } from "../Store/userSlicer";
 
 function SignupOrInModal({ setShowAccountModal }) {
   const [Switch, setSwitch] = useState("Sign in");
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
+  const [message,setMessage] =useState("")
   const dispatch = useDispatch()
   const {user} = useSelector(state=>state.userDetails)
+  const {loggedIn} = useSelector(state=>state.userDetails)
+  const {userName} = useSelector(state=>state.userDetails)
+
   const USER = {
     id: nanoid(),
     name: name,
@@ -24,8 +28,27 @@ function SignupOrInModal({ setShowAccountModal }) {
       setShowAccountModal(false)
     }
   }
+ const  handleSignin = ()=>{
+  const userFound = user.find((user)=>{
+    return user.email===email
+  })
+  if(userFound){
+    if(userFound.email===email&&userFound.password===password){
+    dispatch(setUserName(name))
+    dispatch(setLogin(true))
+    localStorage.setItem("username",JSON.stringify(userName))
+    localStorage.setItem("loggedin",JSON.stringify(loggedIn))
+    }
+    if(userFound.email!==email||userFound.password!==password){
+    setMessage("The email or password entered is wrong")
+    }
+  }else {
+    setMessage("yoy don't have an account please signup")
+  }
+ }
   useEffect(() => {
    localStorage.setItem("USER",JSON.stringify(user))
+   
   }, [user])
   
   const SwitchKey = (current) => {
@@ -99,7 +122,7 @@ function SignupOrInModal({ setShowAccountModal }) {
             </span>{" "}
             {""} if you are new{" "}
           </p>
-          <button className="bg-gradient-to-br from-pink-500 to-orange-400  py-2 rounded-md mx-auto w-[50%] mt-[25px]">
+          <button onClick={handleSignin} className="bg-gradient-to-br from-pink-500 to-orange-400  py-2 rounded-md mx-auto w-[50%] mt-[25px]">
             Sign in
           </button>
         </div>

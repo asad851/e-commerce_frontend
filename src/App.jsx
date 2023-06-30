@@ -10,11 +10,13 @@ import Resultpage from './pages/Resultpage'
 import Collections from './pages/Collections'
 import Checkout from './pages/Checkout'
 import PaymentPage from './pages/PaymentPage'
+
 export default function App() {
   const location = useLocation()
   useEffect(()=>{
   window.scrollTo(0,0)
   },[location])
+  console.log(window.location.path)
   return (
     <>
     <Header/>
@@ -28,6 +30,7 @@ export default function App() {
       <Route path="/Payment" element={<PaymentPage/>}/>
     </Routes>
     <Footer/>
+    
     </> 
   )
 }
