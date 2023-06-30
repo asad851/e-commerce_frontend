@@ -4,11 +4,16 @@ import DATA from "../../Db/datadb";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { AddToCart, Remove, Decrease } from "../../Store/CartSlicer";
+import { toggleModal } from "../../Store/userSlicer";
 import { MdBrowserUpdated } from "react-icons/md";
+import SignupOrInModal from "../../Components/SignupOrInModal";
 export default function Details() {
   const { id } = useParams();
   const dispatch = useDispatch();
   const { products } = useSelector((state) => state.cart);
+  const { loggedIn } = useSelector((state) => state.userDetails);
+  // const { showModal } = useSelector((state) => state.userDetails);
+ const [showAccountModal,setShowAccountModal] =useState(false)
   const cartedproducts = products.filter((item) => item.id == id);
   console.log(cartedproducts.length);
   const [quantity, setQuantity] = useState(cartedproducts.length);
@@ -34,26 +39,35 @@ export default function Details() {
       return;
     }
   };
+  // console.log(showModal)F
   const handleAddtoCart = (data) => {
-    if (sizeSelected) {
+    if (sizeSelected&&loggedIn) {
       setAdd(true);
       dispatch(AddToCart(data));
-    } else {
+    } else if(!sizeSelected) {
       setShowMessage(true);
       setTimeout(() => {
         setShowMessage(false);
       }, 1500);
+    } else if(sizeSelected&&!loggedIn){
+      setShowAccountModal(true)
+
     }
   };
   const handleIncrease = (data) => {
-    if (sizeSelected) {
-      setQuantity((prev) => prev + 1);
-      dispatch(AddToCart(data));
+    if (loggedIn) {
+      if (sizeSelected) {
+        setQuantity((prev) => prev + 1);
+        dispatch(AddToCart(data));
+      } else {
+        setShowMessage(true);
+        setTimeout(() => {
+          setShowMessage(false);
+        }, 1500);
+      }
     } else {
-      setShowMessage(true);
-      setTimeout(() => {
-        setShowMessage(false);
-      }, 1500);
+      setShowAccountModal(true)
+      
     }
   };
   useEffect(() => {}, [handleIncrease]);
@@ -80,10 +94,8 @@ export default function Details() {
     const product = data.find((item) => {
       return item.id == id;
     });
-    const updated = {...product}
+    const updated = { ...product };
     updated.size = size;
-                   
-    
 
     return (
       <div className="md:mx-auto  flex md:max-w-[1200px] md:items-start md:gap-20 gap-10 w-full max-md:flex-col items-center  ">
@@ -203,9 +215,11 @@ export default function Details() {
             </button>
           )}
         </div>
+        {showAccountModal && (
+        <SignupOrInModal setShowAccountModal={setShowAccountModal} />
+      )}
       </div>
     );
-    
   };
   useEffect(() => {
     Data();

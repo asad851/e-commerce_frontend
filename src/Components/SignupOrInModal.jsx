@@ -34,9 +34,11 @@ function SignupOrInModal({ setShowAccountModal }) {
     }
   }
  const  handleSignin = ()=>{
-  dispatch(setUserName(name))
+  if(name.length>0){
+    dispatch(setUserName(name))
     dispatch(setLogin(true))
     setShowAccountModal(false)
+  }
     
   }
  useEffect(() => {

@@ -8,7 +8,8 @@ import { AddToCart, Decrease } from "../Store/CartSlicer";
 
 function CartModal({ setShowCartModal }) {
   const { products } = useSelector((state) => state.cart);
-  
+  const { userName } = useSelector((state) => state.userDetails);
+  const { loggedIn } = useSelector((state) => state.userDetails);
   // console.log(cartedproducts.length);
   const dispatch = useDispatch();
   const [quantity, setQuantity] = useState();
@@ -18,10 +19,10 @@ function CartModal({ setShowCartModal }) {
     return parseInt(item.price.slice(0, -2));
   });
   localStorage.setItem("mycart", JSON.stringify(products));
-  const productsItems = products.filter((item,index,self)=>self.findIndex(i=>i.id==item.id)===index)
- 
-  
-  
+  const productsItems = products.filter(
+    (item, index, self) => self.findIndex((i) => i.id == item.id) === index
+  );
+
   useEffect(() => {
     if (productsPrice.length > 0) {
       const PriceArray = productsPrice?.reduce((a, b) => {
@@ -31,7 +32,6 @@ function CartModal({ setShowCartModal }) {
     }
   }, [products]);
 
-  
   return (
     <div className="fixed top-0 botton-0 right-0 left-0 z-20 h-full w-full flex justify-center ">
       <div
@@ -44,17 +44,19 @@ function CartModal({ setShowCartModal }) {
           className="absolute top-1 right-1 text-[25px] cursor-pointer text-gray-400"
         />
         <div className="">
-          {products.length > 0 ? (
+          {products.length > 0&&loggedIn ? (
             <div className="flex flex-col justify-center px-3 w-full md:px-12 py-12 h-full ">
+              <h1 className="text-2xl text-gray-500 font-semibold text-center m-4">
+                Hello, checkout your cart {userName}!
+              </h1>
               {productsItems.map((item, index) => {
-                const cartedproducts = products.filter((product) => product.id == item.id);
-               
+                const cartedproducts = products.filter(
+                  (product) => product.id == item.id
+                );
+
                 return (
                   <div key={index} className="w-full h-full py-5 flex flex-col">
-                    <div
-                      
-                      className="w-full flex  gap-2 cursor-pointer md:gap-5 justify-between items-center"
-                    >
+                    <div className="w-full flex  gap-2 cursor-pointer md:gap-5 justify-between items-center">
                       <img
                         onClick={() => {
                           navigate(`Details/${item.id}`);
@@ -64,10 +66,13 @@ function CartModal({ setShowCartModal }) {
                         src={item.image}
                         alt=""
                       />
-                      <span onClick={() => {
-                        navigate(`Details/${item.id}`);
-                        setShowCartModal(false);
-                      }} className="md:text-lg truncate max-md:max-w-[100px] max-w-[180px] text-sm text-[rgba(0,0,0,0.6)] mb-2">
+                      <span
+                        onClick={() => {
+                          navigate(`Details/${item.id}`);
+                          setShowCartModal(false);
+                        }}
+                        className="md:text-lg truncate max-md:max-w-[100px] max-w-[180px] text-sm text-[rgba(0,0,0,0.6)] mb-2"
+                      >
                         {item.name}
                       </span>
                       <span className="md:text-lg text-sm text-[rgba(0,0,0,0.6)] mb-2">
@@ -91,7 +96,7 @@ function CartModal({ setShowCartModal }) {
                         </button>
                       </div>
                       <span className="md:text-lg text-sm text-[rgba(0,0,0,0.6)] mb-2 md:min-w-[95px]">
-                        {item.price}{" "}x{cartedproducts.length}
+                        {item.price} x{cartedproducts.length}
                       </span>
                     </div>
                     <div className="w-full h-[1px] my-2 bg-gray-300"></div>
@@ -101,19 +106,33 @@ function CartModal({ setShowCartModal }) {
               <div className="flex w-full justify-end">
                 <div className="text-lg ">Total: {total} Rs</div>
               </div>
-              
+
               <div className="flex justify-end mt-3">
-              <button onClick={()=>{navigate(`/Checkout`); setShowCartModal(false)}} className="text-white mt-3  bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center "
-            >
-             Proceed to Checkout
-            </button>
+                <button
+                  onClick={() => {
+                    navigate(`/Checkout`);
+                    setShowCartModal(false);
+                  }}
+                  className="text-white mt-3  bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center "
+                >
+                  Proceed to Checkout
+                </button>
               </div>
-              
             </div>
           ) : (
             <div className="flex items-center max-md:flex-col max-md:mt-10 justify-around  ">
-              <h1 className="text-2xl font-semibold mx-w-[400px] " >Your cart seems to be empty, you can go and explore now</h1>
-              <img className="  float-right object-cover object-center md:h-[500px] h-[400px] " src="https://assets.materialup.com/uploads/16e7d0ed-140b-4f86-9b7e-d9d1c04edb2b/preview.png" alt="" />
+              {loggedIn?<h1 className="text-2xl font-semibold mx-w-[400px] ">
+                Your cart seems to be empty, you can go and explore now
+                
+              </h1>:<h1 className="text-2xl font-semibold mx-w-[400px] ">
+                Please Signin to access your cart
+                
+              </h1>}
+              <img
+                className="  float-right object-cover object-center md:h-[500px] h-[400px] "
+                src="https://assets.materialup.com/uploads/16e7d0ed-140b-4f86-9b7e-d9d1c04edb2b/preview.png"
+                alt=""
+              />
             </div>
           )}
         </div>

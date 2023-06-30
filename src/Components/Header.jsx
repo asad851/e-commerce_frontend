@@ -11,32 +11,33 @@ import { BsArrowLeft } from "react-icons/bs";
 import SignupOrInModal from "./SignupOrInModal";
 import { useLocation, useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
-import CartModal from '../pages/CartModal'
+import { useDispatch, useSelector } from "react-redux";
+import CartModal from "../pages/CartModal";
 import { useRef } from "react";
-
+import { toggleModal } from "../Store/userSlicer";
 export default function Header() {
-  const {products} = useSelector(state=>state.cart)
+  const { products } = useSelector((state) => state.cart);
   const [opaque, setOpaque] = useState("hidden");
   const [item, setItem] = useState(null);
   const [showSlider, setShowSlider] = useState(false);
   const [showSubSlider, setShowSubSlider] = useState(false);
   const [showSearch, setShowSeacrh] = useState(false);
-  const [showAccountModal,setShowAccountModal] =useState(false);
-  const [hideCategoryModal,setHideCategoryModal] =useState("")
-  const [showCartNum, setShowCartNum] = useState("hidden")
-  const [showCartModal,setShowCartModal] = useState(false)
-  const [Query,setQuery] = useState("")
-  
-  const inputRef = useRef(null)
-  const location = useLocation()
-  const navigate = useNavigate()
-  
+  const [showAccountModal, setShowAccountModal] = useState(false);
+  const [hideCategoryModal, setHideCategoryModal] = useState("");
+  const [showCartNum, setShowCartNum] = useState("hidden");
+  const [showCartModal, setShowCartModal] = useState(false);
+  const [Query, setQuery] = useState("");
+  const { showModal } = useSelector((state) => state.userDetails);
+  const dispatch = useDispatch();
+  const inputRef = useRef(null);
+  const location = useLocation();
+  const navigate = useNavigate();
+
   function handleMouseOver(item) {
     setOpaque("block");
     setItem(item);
   }
-  
+
   const hoverOver = () => {
     setOpaque("block");
   };
@@ -47,64 +48,67 @@ export default function Header() {
     setShowSubSlider(true);
     setItem(data);
   };
-  const handleClickAccount=()=>{
-    setShowSlider(false)
-    setShowAccountModal(true)
-  }
-  const handleCartClick=()=>{
-    setShowCartModal(true)
-    setShowSlider(false)
-  }
-  useEffect(()=>{
-    setShowCartNum("block")
+  const handleClickAccount = () => {
+    setShowSlider(false);
+    setShowAccountModal(true);
+  };
+  const handleCartClick = () => {
+    setShowCartModal(true);
+    setShowSlider(false);
+  };
+  useEffect(() => {
+    setShowCartNum("block");
     setTimeout(() => {
-      setShowCartNum("hidden")
+      setShowCartNum("hidden");
     }, 800);
-  },[products])
-  useEffect(()=>{
-   setHideCategoryModal("")
-  },[hideCategoryModal])
-  
-  
+  }, [products]);
+  useEffect(() => {
+   dispatch(toggleModal(showAccountModal))
+  }, [showAccountModal]);
+  useEffect(() => {
+    setHideCategoryModal("");
+  }, [hideCategoryModal]);
+
   const NavArray = ["Men", "Women", "Kids", "Beauty"];
   const SearchBar = () => {
-    return(
+    return (
       <div className="absolute left-0 right-0 top-[80px] flex justify-center w-screen z-30 overflow-hidden ">
-        <form onSubmit={(e)=>handleSubmit(e)} className="relative   w-[90%] rounded-[5px] ">
-      <input
-        ref={inputRef}
-        className="pl-[35px]  py-[8px] rounded-[8px] w-full text-[15px] focus-visible:outline-none border-none bg-white placeholder:truncate"
-        type="text"
-        name=""
-        value={Query}
-        
-        placeholder="Search for clothes & brands..."
-        onChange={(e)=>setQuery(e.target.value)}
-      />
-      <BsSearch className="absolute top-[50%] bottom-[50%]  translate-x-[-10%] translate-y-[-50%]    left-3 mr-5 cursor-pointer" />
-    </form>
+        <form
+          onSubmit={(e) => handleSubmit(e)}
+          className="relative   w-[90%] rounded-[5px] "
+        >
+          <input
+            ref={inputRef}
+            className="pl-[35px]  py-[8px] rounded-[8px] w-full text-[15px] focus-visible:outline-none border-none bg-white placeholder:truncate"
+            type="text"
+            name=""
+            value={Query}
+            placeholder="Search for clothes & brands..."
+            onChange={(e) => setQuery(e.target.value)}
+          />
+          <BsSearch className="absolute top-[50%] bottom-[50%]  translate-x-[-10%] translate-y-[-50%]    left-3 mr-5 cursor-pointer" />
+        </form>
       </div>
-    )
+    );
   };
-  function handleSubmit(e){
-    
-    e.preventDefault()
-    if(Query.length>0){
-      navigate(`Results/${Query}`)
-      setQuery("")
+  function handleSubmit(e) {
+    e.preventDefault();
+    if (Query.length > 0) {
+      navigate(`Results/${Query}`);
+      setQuery("");
     }
-    setShowSeacrh(false)
+    setShowSeacrh(false);
   }
   return (
     <>
       <div
         className={`  ${opaque} fixed z-[5] top-0 bottom-0 right-0 left-0 bg-[rgba(0,0,0,0.3)]    `}
       ></div>
-      {showCartModal&&<CartModal setShowCartModal={setShowCartModal} />}
+      {showCartModal && <CartModal setShowCartModal={setShowCartModal} />}
       <nav className="flex bg-white z-10 h-[80px] max-[400px]:h-[70px]  w-full fixed top-0   py-[5px] shadow-[0_8px_22px_-14px_rgba(0,0,0,0.4)]   ">
         <div className=" items-center hidden min-[1000px]:flex w-full justify-between  box-border ">
           <img
-            onClick={()=> navigate("/")}
+            onClick={() => navigate("/")}
             className="w-[17%] cursor-pointer ml-[45px]"
             src={logo}
             alt="logo"
@@ -113,70 +117,100 @@ export default function Header() {
             {NavArray.map((data, index) => {
               return (
                 <>
-                  <Link to={`/explore/${item}`}
+                  <li
                     key={index}
                     className={`cursor-pointer hover:underline underline-offset-[20px]  decoration-[3px] decoration-red-300 ${data}  py-[20px] px-[10px] `}
                     onMouseOver={() => {
                       handleMouseOver(data);
                     }}
                     onMouseLeave={handleMouseLeave}
-                    
                   >
                     {data}
-                  </Link>
+                  </li>
                   <div
-                  style={{display:hideCategoryModal}}
+                    style={{ display: hideCategoryModal }}
                     className={`hoverBox  z-10 rounded-sm `}
                     onMouseOver={hoverOver}
                     onMouseLeave={handleMouseLeave}
-                    
                   >
-                    <HoverComponent item={item} setHideCategoryModal={setHideCategoryModal} setShowSlider={setShowSlider} setShowSubSlider={setShowSubSlider} />
+                    <HoverComponent
+                      item={item}
+                      setHideCategoryModal={setHideCategoryModal}
+                      setShowSlider={setShowSlider}
+                      setShowSubSlider={setShowSubSlider}
+                    />
                   </div>
                 </>
               );
             })}
           </ul>
-          
+
           <div className="flex w-[33%] items-center min-[768px]:gap-[35px] gap-[20px] relative  ">
-            <form onSubmit={(e)=>handleSubmit(e)}className="relative bg-[rgba(0,0,0,0.1)] w-[55%] rounded-[5px] ">
+            <form
+              onSubmit={(e) => handleSubmit(e)}
+              className="relative bg-[rgba(0,0,0,0.1)] w-[55%] rounded-[5px] "
+            >
               <input
                 className="pl-[35px] pr-[10px] py-[5px] rounded-[5px] w-full text-[15px] focus-visible:outline-none border-none bg-transparent placeholder:truncate"
                 type="text"
                 name=""
                 value={Query}
                 placeholder="Search for clothes & brands..."
-                onChange={(e)=>{setQuery(e.target.value)}}
+                onChange={(e) => {
+                  setQuery(e.target.value);
+                }}
               />
               <BsSearch className="absolute top-[50%] bottom-[50%]  translate-x-[-50%] translate-y-[-50%]    left-3 mr-5 cursor-pointer" />
             </form>
-            
-            <MdPermIdentity onClick={()=>setShowAccountModal(true)} className="text-[35px]  w-[8%] font-light cursor-pointer" />
-            
-            <AiOutlineShoppingCart onClick={handleCartClick} className="text-[30px] w-[8%] font-light cursor-pointer" />
-            <span className={`absolute right-12 -top-1 h-4 w-4  rounded-2xl bg-black text-white text-center text-xs ${showCartNum} `}>{products.length}</span>
+
+            <MdPermIdentity
+              onClick={() => setShowAccountModal(true)}
+              className="text-[35px]  w-[8%] font-light cursor-pointer"
+            />
+
+            <AiOutlineShoppingCart
+              onClick={handleCartClick}
+              className="text-[30px] w-[8%] font-light cursor-pointer"
+            />
+            <span
+              className={`absolute right-12 -top-1 h-4 w-4  rounded-2xl bg-black text-white text-center text-xs ${showCartNum} `}
+            >
+              {products.length}
+            </span>
           </div>
         </div>
 
         {/* MOBILE MENU */}
 
         <div className=" items-center flex min-[1000px]:hidden w-screen justify-between px-[25px] box-border ">
-          <img onClick={()=>navigate('/')} className=" cursor-pointer " src={logo} alt="logo" />
+          <img
+            onClick={() => navigate("/")}
+            className=" cursor-pointer "
+            src={logo}
+            alt="logo"
+          />
           <div className="flex gap-[25px] items-centert">
-            <BsSearch className=" cursor-pointer" onClick={()=>{setShowSeacrh(true);inputRef.current.focus();}} />
+            <BsSearch
+              className=" cursor-pointer"
+              onClick={() => {
+                setShowSeacrh(true);
+                inputRef.current.focus();
+              }}
+            />
             <RxHamburgerMenu
               className="text-xl font-bold cursor-pointer"
               onClick={() => setShowSlider(true)}
             />
           </div>
-          {showSearch&&
-          <div className=" min-[1000px]:hidden fixed top-[0px] bottom-0 right-0 left-0 bg-[rgba(0,0,0,0.3)] z-10" >
-          <div
-              className=" min-[1000px]:hidden fixed top-[0px] bottom-0 right-0 left-0 bg-[rgba(0,0,0,0.3)] z-10 "
-              onClick={() => setShowSeacrh(false)}
-            ></div>
-            {SearchBar()}
-          </div>}
+          {showSearch && (
+            <div className=" min-[1000px]:hidden fixed top-[0px] bottom-0 right-0 left-0 bg-[rgba(0,0,0,0.3)] z-10">
+              <div
+                className=" min-[1000px]:hidden fixed top-[0px] bottom-0 right-0 left-0 bg-[rgba(0,0,0,0.3)] z-10 "
+                onClick={() => setShowSeacrh(false)}
+              ></div>
+              {SearchBar()}
+            </div>
+          )}
           {showSlider && (
             <div
               className=" max-[1000px]:hidden absolute top-[0px] bottom-0 right-0 left-0 bg-[rgba(0,0,0,0.3)] z-10 "
@@ -232,13 +266,19 @@ export default function Header() {
                 })}
               </ul>
               <div className="flex flex-col gap-[10px] text-slate-100">
-                <div className="w-full flex items-center cursor-pointer   bg-gradient-to-br from-pink-500 to-orange-400 rounded-md justify-center gap-[5px] p-[5px]" onClick={()=>handleClickAccount()} >
+                <div
+                  className="w-full flex items-center cursor-pointer   bg-gradient-to-br from-pink-500 to-orange-400 rounded-md justify-center gap-[5px] p-[5px]"
+                  onClick={() => handleClickAccount()}
+                >
                   <p>Account</p>
                   <MdPermIdentity className="text-[25px]" />
                 </div>
-                <div onClick={handleCartClick} className="w-full flex items-center cursor-pointer  bg-gradient-to-br from-pink-500 to-orange-400 rounded-md justify-center gap-[5px] p-[5px]">
+                <div
+                  onClick={handleCartClick}
+                  className="w-full flex items-center cursor-pointer  bg-gradient-to-br from-pink-500 to-orange-400 rounded-md justify-center gap-[5px] p-[5px]"
+                >
                   <p>Cart</p>
-                  <AiOutlineShoppingCart  className="text-[22px]" />
+                  <AiOutlineShoppingCart className="text-[22px]" />
                 </div>
               </div>
             </div>
@@ -266,12 +306,17 @@ export default function Header() {
             <span className="sr-only">Close menu</span>
           </button>
           <div className="mt-[50px] flex  ">
-            <HoverComponent item={item} setShowSubSlider={setShowSubSlider} setShowSlider={setShowSlider} />
+            <HoverComponent
+              item={item}
+              setShowSubSlider={setShowSubSlider}
+              setShowSlider={setShowSlider}
+            />
           </div>
         </div>
       </nav>
-      {showAccountModal&&<SignupOrInModal setShowAccountModal={setShowAccountModal}/>}
-     
+      {showModal && (
+        <SignupOrInModal setShowAccountModal={setShowAccountModal} />
+      )}
     </>
   );
 }

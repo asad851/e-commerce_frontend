@@ -5,7 +5,8 @@ export const userSlicer = createSlice({
     initialState:{
        user:[],
        loggedIn:JSON.parse(localStorage.getItem("loggedin"))||false,
-       userName:JSON.parse(localStorage.getItem("username"))||""
+       userName:JSON.parse(localStorage.getItem("username"))||"",
+       showModal:false
     },
     reducers:{
         SignUp:(state,action)=>{
@@ -16,8 +17,11 @@ export const userSlicer = createSlice({
         },
         setLogin:(state,action)=>{
             state.loggedIn=action.payload
+        },
+        toggleModal:(state,action)=>{
+            state.showModal=action.payload
         }
     }
 })
-export const  {SignUp,setUserName,setLogin} = userSlicer.actions;
+export const  {SignUp,setUserName,setLogin,toggleModal} = userSlicer.actions;
 export default userSlicer.reducer;
