@@ -134,7 +134,42 @@ export default function Details() {
             Sizes :{" "}
           </h1>
           <div className="flex gap-4 relative">
+          {
+              updated?.name?.includes("Shoe")||updated?.name?.includes("Loafer")||updated?.name?.includes("Sneaker")?(<div className="flex gap-4">
+                <button
+              onClick={(e) => {
+                handleSize(e);
+              }}
+              className="px-3 py-1 rounded-md font-semibold focus:bg-blue-700 focus:text-white bg-gray-100"
+            >
+              8
+            </button>
             <button
+              onClick={(e) => {
+                handleSize(e);
+              }}
+              className="px-3 py-1 rounded-md font-semibold focus:bg-blue-700 focus:text-white bg-gray-100"
+            >
+              9
+            </button>
+            <button
+              onClick={(e) => {
+                handleSize(e);
+              }}
+              className="px-3 py-1 rounded-md font-semibold focus:bg-blue-700 focus:text-white bg-gray-100"
+            >
+              10
+            </button>
+            <button
+              onClick={(e) => {
+                handleSize(e);
+              }}
+              className="px-3 py-1 rounded-md font-semibold focus:bg-blue-700 focus:text-white bg-gray-100"
+            >
+              11
+            </button>
+              </div>):(<div className="flex gap-4">
+                <button
               onClick={(e) => {
                 handleSize(e);
               }}
@@ -166,6 +201,8 @@ export default function Details() {
             >
               XL
             </button>
+              </div>)
+            }
             <span
               className={`px-4 py-1 border-2 rounded-md bg-white absolute max-md:top-9 max-md:right-0 ${
                 showMessage ? "block" : "hidden"
