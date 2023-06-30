@@ -18,7 +18,7 @@ function PaymentPage () {
   }, [])
   
    return (
-    <div className='h-screen w-full mt-20 mb-4 px-4 flex justify-center bg-[url(https://img.freepik.com/free-vector/online-payment-background-design_23-2147697569.jpg?w=2000)] bg-center bg-cover bg-no-repeat '> 
+    <div className='h-screen w-full mt-20 mb-4 px-4 flex justify-center bg-[url(https://w7.pngwing.com/pngs/496/851/png-transparent-emv-credit-card-debit-card-smart-card-atm-card-creative-design-diagram-credit-card-machine-infographic-angle-hand.png)] bg-center  bg-cover bg-no-repeat '> 
         {/* <img className='h-[600px] w-[700px] object-contain object-center' src={image} alt="" /> */}
         <div className=''></div>
 
