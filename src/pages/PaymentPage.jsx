@@ -1,5 +1,5 @@
 import React, { useEffect,useState } from 'react'
-import image from '..//assets/payment.gif'
+import image from '..//assets/payment.png'
 import { useSelector } from 'react-redux';
 
 function PaymentPage () {
@@ -18,7 +18,7 @@ function PaymentPage () {
   }, [])
   
    return (
-    <div className='h-screen w-full mt-20 mb-4 px-4 flex justify-center bg-[url(https://w7.pngwing.com/pngs/496/851/png-transparent-emv-credit-card-debit-card-smart-card-atm-card-creative-design-diagram-credit-card-machine-infographic-angle-hand.png)] bg-center  bg-cover bg-no-repeat '> 
+    <div className='h-screen w-full mt-20 mb-4 px-4 flex justify-center bg-[url(https://st4.depositphotos.com/3864435/39745/v/450/depositphotos_397454448-stock-illustration-new-smart-pos-terminal-payment.jpg)] bg-center  bg-contain bg-no-repeat '> 
         {/* <img className='h-[600px] w-[700px] object-contain object-center' src={image} alt="" /> */}
         <div className=''></div>
 
