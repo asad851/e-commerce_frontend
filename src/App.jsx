@@ -9,6 +9,7 @@ import { useLocation } from 'react-router-dom'
 import Resultpage from './pages/Resultpage'
 import Collections from './pages/Collections'
 import Checkout from './pages/Checkout'
+import PaymentPage from './pages/PaymentPage'
 export default function App() {
   const location = useLocation()
   useEffect(()=>{
@@ -24,6 +25,7 @@ export default function App() {
       <Route path="/Collection/:Productsby/:endpoint" element={<Collections/>}/>
       <Route path="/Results/:query" element={<Resultpage/>}/>
       <Route path="/Checkout" element={<Checkout/>}/>
+      <Route path="/Payment" element={<PaymentPage/>}/>
     </Routes>
     <Footer/>
     </> 
